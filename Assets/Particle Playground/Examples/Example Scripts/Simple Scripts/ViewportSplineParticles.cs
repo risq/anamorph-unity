@@ -27,8 +27,8 @@ public class ViewportSplineParticles : MonoBehaviour {
 		spline = new GameObject("Viewport Spline", typeof(PlaygroundSpline)).GetComponent<PlaygroundSpline>();
 		spline.Loop = true;
 		spline.Reset ();
-		spline.SetControlPointMode(0, BezierControlPointMode.Free);
-		spline.SetControlPointMode(1, BezierControlPointMode.Free);
+		spline.SetControlPointMode(0, PlaygroundSplines.BezierControlPointMode.Free);
+		spline.SetControlPointMode(1, PlaygroundSplines.BezierControlPointMode.Free);
 
 		// Add three additional nodes (a basic spline will contain two initial nodes)
 		spline.AddNode();
