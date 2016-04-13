@@ -10,8 +10,7 @@ public class WebSocketClient : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GameObject go = GameObject.Find("SocketIO");
-        socket = go.GetComponent<SocketIOComponent>();
+        socket = GetComponent<SocketIOComponent>();
        
         socket.On("connect", OnSocketOpen);
         socket.On("state", OnState);
