@@ -34,6 +34,6 @@ public class HudFollowObject : MonoBehaviour {
         points[1] = targetTransform.position;
         lineRenderer.SetPositions(points);
 
-        rectTransform.localRotation = Quaternion.Euler(70 - (140 * viewportPoint.y), -110 + (220 * viewportPoint.x), 0);
+        rectTransform.localRotation = Quaternion.Euler(40 - (60 * viewportPoint.y), -105 + (180 * viewportPoint.x), 0);
     }
 }
