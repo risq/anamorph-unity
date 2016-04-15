@@ -10,6 +10,7 @@ public class ModelSwitcher : MonoBehaviour {
     public float averageDeactivationTime = 0.05f;
     public float minIntensity = -40f;
     public float maxIntensity = 40f;
+    public bool glitch = false;
 
     [Range(0.0f, 100.0f)]
     public float currentValue = 0;
@@ -39,7 +40,10 @@ public class ModelSwitcher : MonoBehaviour {
                 SetMaterial(framesPrefabs[i].transform, material);
         }
 
-        StartCoroutine(ActivationLoop());
+        if (glitch)
+        {
+            StartCoroutine(ActivationLoop());
+        }
     }
 	
 	void Update () {
