@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 39064845190e39c499c0db3cdaa5cbd4
+timeCreated: 1460811846
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: reste_Cloneur_1_Cylindre_1_0
+    100004: reste_Cloneur_1_Cylindre_1_1
+    100006: reste_Cloneur_1_Cylindre_1_2
+    100008: reste_Cloneur_1_Cylindre_1_3
+    100010: reste_Cloneur_1_Cylindre_1_4
+    100012: reste_Cloneur_1_Cylindre_1_5
+    100014: reste_Cloneur_1_Cylindre_1_6
+    100016: reste_Cloneur_1_Cylindre_1_7
+    100018: reste_Cloneur_Neutre_0_Cube
+    100020: reste_Cloneur_Neutre_1_Cube1
+    100022: reste_Cloneur_Neutre_2_Cube2
+    100024: reste_Cloneur_Neutre_3_Cube3
+    100026: reste_Cloneur_Neutre_4_Cube4
+    100028: reste_Cylindre
+    100030: reste_Solide_platonicien
+    100032: reste_Sph_re
+    100034: reste_Tore
+    100036: reste_Tore_2
+    400000: //RootNode
+    400002: reste_Cloneur_1_Cylindre_1_0
+    400004: reste_Cloneur_1_Cylindre_1_1
+    400006: reste_Cloneur_1_Cylindre_1_2
+    400008: reste_Cloneur_1_Cylindre_1_3
+    400010: reste_Cloneur_1_Cylindre_1_4
+    400012: reste_Cloneur_1_Cylindre_1_5
+    400014: reste_Cloneur_1_Cylindre_1_6
+    400016: reste_Cloneur_1_Cylindre_1_7
+    400018: reste_Cloneur_Neutre_0_Cube
+    400020: reste_Cloneur_Neutre_1_Cube1
+    400022: reste_Cloneur_Neutre_2_Cube2
+    400024: reste_Cloneur_Neutre_3_Cube3
+    400026: reste_Cloneur_Neutre_4_Cube4
+    400028: reste_Cylindre
+    400030: reste_Solide_platonicien
+    400032: reste_Sph_re
+    400034: reste_Tore
+    400036: reste_Tore_2
+    2300000: reste_Cloneur_1_Cylindre_1_0
+    2300002: reste_Cloneur_1_Cylindre_1_1
+    2300004: reste_Cloneur_1_Cylindre_1_2
+    2300006: reste_Cloneur_1_Cylindre_1_3
+    2300008: reste_Cloneur_1_Cylindre_1_4
+    2300010: reste_Cloneur_1_Cylindre_1_5
+    2300012: reste_Cloneur_1_Cylindre_1_6
+    2300014: reste_Cloneur_1_Cylindre_1_7
+    2300016: reste_Cloneur_Neutre_0_Cube
+    2300018: reste_Cloneur_Neutre_1_Cube1
+    2300020: reste_Cloneur_Neutre_2_Cube2
+    2300022: reste_Cloneur_Neutre_3_Cube3
+    2300024: reste_Cloneur_Neutre_4_Cube4
+    2300026: reste_Cylindre
+    2300028: reste_Solide_platonicien
+    2300030: reste_Sph_re
+    2300032: reste_Tore
+    2300034: reste_Tore_2
+    3300000: reste_Cloneur_1_Cylindre_1_0
+    3300002: reste_Cloneur_1_Cylindre_1_1
+    3300004: reste_Cloneur_1_Cylindre_1_2
+    3300006: reste_Cloneur_1_Cylindre_1_3
+    3300008: reste_Cloneur_1_Cylindre_1_4
+    3300010: reste_Cloneur_1_Cylindre_1_5
+    3300012: reste_Cloneur_1_Cylindre_1_6
+    3300014: reste_Cloneur_1_Cylindre_1_7
+    3300016: reste_Cloneur_Neutre_0_Cube
+    3300018: reste_Cloneur_Neutre_1_Cube1
+    3300020: reste_Cloneur_Neutre_2_Cube2
+    3300022: reste_Cloneur_Neutre_3_Cube3
+    3300024: reste_Cloneur_Neutre_4_Cube4
+    3300026: reste_Cylindre
+    3300028: reste_Solide_platonicien
+    3300030: reste_Sph_re
+    3300032: reste_Tore
+    3300034: reste_Tore_2
+    4300000: reste_Cloneur_1_Cylindre_1_0
+    4300002: reste_Cloneur_1_Cylindre_1_1
+    4300004: reste_Cloneur_1_Cylindre_1_2
+    4300006: reste_Cloneur_1_Cylindre_1_3
+    4300008: reste_Cloneur_1_Cylindre_1_4
+    4300010: reste_Cloneur_1_Cylindre_1_5
+    4300012: reste_Cloneur_1_Cylindre_1_6
+    4300014: reste_Cloneur_1_Cylindre_1_7
+    4300016: reste_Cloneur_Neutre_0_Cube
+    4300018: reste_Cloneur_Neutre_1_Cube1
+    4300020: reste_Cloneur_Neutre_2_Cube2
+    4300022: reste_Cloneur_Neutre_3_Cube3
+    4300024: reste_Cloneur_Neutre_4_Cube4
+    4300026: reste_Cylindre
+    4300028: reste_Solide_platonicien
+    4300030: reste_Sph_re
+    4300032: reste_Tore
+    4300034: reste_Tore_2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.002
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
