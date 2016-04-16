@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 9e2360639f0e8444983764b3b37bd2e3
+timeCreated: 1460827208
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube
+    100004: Cube_1
+    100006: Neutre_Neutre1_Cloneur_Cylindre_0
+    100008: Neutre_Neutre1_Cloneur_Cylindre_1
+    100010: Neutre_Neutre1_Cloneur_Cylindre_10
+    100012: Neutre_Neutre1_Cloneur_Cylindre_11
+    100014: Neutre_Neutre1_Cloneur_Cylindre_12
+    100016: Neutre_Neutre1_Cloneur_Cylindre_13
+    100018: Neutre_Neutre1_Cloneur_Cylindre_14
+    100020: Neutre_Neutre1_Cloneur_Cylindre_15
+    100022: Neutre_Neutre1_Cloneur_Cylindre_16
+    100024: Neutre_Neutre1_Cloneur_Cylindre_17
+    100026: Neutre_Neutre1_Cloneur_Cylindre_18
+    100028: Neutre_Neutre1_Cloneur_Cylindre_19
+    100030: Neutre_Neutre1_Cloneur_Cylindre_2
+    100032: Neutre_Neutre1_Cloneur_Cylindre_20
+    100034: Neutre_Neutre1_Cloneur_Cylindre_21
+    100036: Neutre_Neutre1_Cloneur_Cylindre_3
+    100038: Neutre_Neutre1_Cloneur_Cylindre_4
+    100040: Neutre_Neutre1_Cloneur_Cylindre_5
+    100042: Neutre_Neutre1_Cloneur_Cylindre_6
+    100044: Neutre_Neutre1_Cloneur_Cylindre_7
+    100046: Neutre_Neutre1_Cloneur_Cylindre_8
+    100048: Neutre_Neutre1_Cloneur_Cylindre_9
+    400000: //RootNode
+    400002: Cube
+    400004: Cube_1
+    400006: Neutre_Neutre1_Cloneur_Cylindre_0
+    400008: Neutre_Neutre1_Cloneur_Cylindre_1
+    400010: Neutre_Neutre1_Cloneur_Cylindre_10
+    400012: Neutre_Neutre1_Cloneur_Cylindre_11
+    400014: Neutre_Neutre1_Cloneur_Cylindre_12
+    400016: Neutre_Neutre1_Cloneur_Cylindre_13
+    400018: Neutre_Neutre1_Cloneur_Cylindre_14
+    400020: Neutre_Neutre1_Cloneur_Cylindre_15
+    400022: Neutre_Neutre1_Cloneur_Cylindre_16
+    400024: Neutre_Neutre1_Cloneur_Cylindre_17
+    400026: Neutre_Neutre1_Cloneur_Cylindre_18
+    400028: Neutre_Neutre1_Cloneur_Cylindre_19
+    400030: Neutre_Neutre1_Cloneur_Cylindre_2
+    400032: Neutre_Neutre1_Cloneur_Cylindre_20
+    400034: Neutre_Neutre1_Cloneur_Cylindre_21
+    400036: Neutre_Neutre1_Cloneur_Cylindre_3
+    400038: Neutre_Neutre1_Cloneur_Cylindre_4
+    400040: Neutre_Neutre1_Cloneur_Cylindre_5
+    400042: Neutre_Neutre1_Cloneur_Cylindre_6
+    400044: Neutre_Neutre1_Cloneur_Cylindre_7
+    400046: Neutre_Neutre1_Cloneur_Cylindre_8
+    400048: Neutre_Neutre1_Cloneur_Cylindre_9
+    2300000: Cube
+    2300002: Cube_1
+    2300004: Neutre_Neutre1_Cloneur_Cylindre_0
+    2300006: Neutre_Neutre1_Cloneur_Cylindre_1
+    2300008: Neutre_Neutre1_Cloneur_Cylindre_10
+    2300010: Neutre_Neutre1_Cloneur_Cylindre_11
+    2300012: Neutre_Neutre1_Cloneur_Cylindre_12
+    2300014: Neutre_Neutre1_Cloneur_Cylindre_13
+    2300016: Neutre_Neutre1_Cloneur_Cylindre_14
+    2300018: Neutre_Neutre1_Cloneur_Cylindre_15
+    2300020: Neutre_Neutre1_Cloneur_Cylindre_16
+    2300022: Neutre_Neutre1_Cloneur_Cylindre_17
+    2300024: Neutre_Neutre1_Cloneur_Cylindre_18
+    2300026: Neutre_Neutre1_Cloneur_Cylindre_19
+    2300028: Neutre_Neutre1_Cloneur_Cylindre_2
+    2300030: Neutre_Neutre1_Cloneur_Cylindre_20
+    2300032: Neutre_Neutre1_Cloneur_Cylindre_21
+    2300034: Neutre_Neutre1_Cloneur_Cylindre_3
+    2300036: Neutre_Neutre1_Cloneur_Cylindre_4
+    2300038: Neutre_Neutre1_Cloneur_Cylindre_5
+    2300040: Neutre_Neutre1_Cloneur_Cylindre_6
+    2300042: Neutre_Neutre1_Cloneur_Cylindre_7
+    2300044: Neutre_Neutre1_Cloneur_Cylindre_8
+    2300046: Neutre_Neutre1_Cloneur_Cylindre_9
+    3300000: Cube
+    3300002: Cube_1
+    3300004: Neutre_Neutre1_Cloneur_Cylindre_0
+    3300006: Neutre_Neutre1_Cloneur_Cylindre_1
+    3300008: Neutre_Neutre1_Cloneur_Cylindre_10
+    3300010: Neutre_Neutre1_Cloneur_Cylindre_11
+    3300012: Neutre_Neutre1_Cloneur_Cylindre_12
+    3300014: Neutre_Neutre1_Cloneur_Cylindre_13
+    3300016: Neutre_Neutre1_Cloneur_Cylindre_14
+    3300018: Neutre_Neutre1_Cloneur_Cylindre_15
+    3300020: Neutre_Neutre1_Cloneur_Cylindre_16
+    3300022: Neutre_Neutre1_Cloneur_Cylindre_17
+    3300024: Neutre_Neutre1_Cloneur_Cylindre_18
+    3300026: Neutre_Neutre1_Cloneur_Cylindre_19
+    3300028: Neutre_Neutre1_Cloneur_Cylindre_2
+    3300030: Neutre_Neutre1_Cloneur_Cylindre_20
+    3300032: Neutre_Neutre1_Cloneur_Cylindre_21
+    3300034: Neutre_Neutre1_Cloneur_Cylindre_3
+    3300036: Neutre_Neutre1_Cloneur_Cylindre_4
+    3300038: Neutre_Neutre1_Cloneur_Cylindre_5
+    3300040: Neutre_Neutre1_Cloneur_Cylindre_6
+    3300042: Neutre_Neutre1_Cloneur_Cylindre_7
+    3300044: Neutre_Neutre1_Cloneur_Cylindre_8
+    3300046: Neutre_Neutre1_Cloneur_Cylindre_9
+    4300000: Cube
+    4300002: Cube_1
+    4300004: Neutre_Neutre1_Cloneur_Cylindre_0
+    4300006: Neutre_Neutre1_Cloneur_Cylindre_1
+    4300008: Neutre_Neutre1_Cloneur_Cylindre_10
+    4300010: Neutre_Neutre1_Cloneur_Cylindre_11
+    4300012: Neutre_Neutre1_Cloneur_Cylindre_12
+    4300014: Neutre_Neutre1_Cloneur_Cylindre_13
+    4300016: Neutre_Neutre1_Cloneur_Cylindre_14
+    4300018: Neutre_Neutre1_Cloneur_Cylindre_15
+    4300020: Neutre_Neutre1_Cloneur_Cylindre_16
+    4300022: Neutre_Neutre1_Cloneur_Cylindre_17
+    4300024: Neutre_Neutre1_Cloneur_Cylindre_18
+    4300026: Neutre_Neutre1_Cloneur_Cylindre_19
+    4300028: Neutre_Neutre1_Cloneur_Cylindre_2
+    4300030: Neutre_Neutre1_Cloneur_Cylindre_20
+    4300032: Neutre_Neutre1_Cloneur_Cylindre_21
+    4300034: Neutre_Neutre1_Cloneur_Cylindre_3
+    4300036: Neutre_Neutre1_Cloneur_Cylindre_4
+    4300038: Neutre_Neutre1_Cloneur_Cylindre_5
+    4300040: Neutre_Neutre1_Cloneur_Cylindre_6
+    4300042: Neutre_Neutre1_Cloneur_Cylindre_7
+    4300044: Neutre_Neutre1_Cloneur_Cylindre_8
+    4300046: Neutre_Neutre1_Cloneur_Cylindre_9
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.002
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
