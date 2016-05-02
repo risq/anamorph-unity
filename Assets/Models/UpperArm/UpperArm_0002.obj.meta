@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 20ba5351932d8e9458459f243ab56e0c
+timeCreated: 1462189555
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_0
+    100002: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_1
+    100004: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_10
+    100006: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_11
+    100008: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_12
+    100010: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_13
+    100012: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_14
+    100014: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_15
+    100016: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_16
+    100018: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_17
+    100020: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_18
+    100022: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_19
+    100024: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_2
+    100026: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_20
+    100028: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_21
+    100030: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_3
+    100032: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_4
+    100034: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_5
+    100036: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_6
+    100038: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_7
+    100040: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_8
+    100042: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_9
+    100044: Neutre_Neutre1_Neutre2_sphere_Sph_re
+    100046: Neutre_Neutre1_Neutre2_sphere_Sph_re_1
+    100048: Neutre_Tore
+    100050: Neutre_Tore_1
+    100052: Neutre_Tore_2
+    100054: //RootNode
+    400000: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_0
+    400002: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_1
+    400004: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_10
+    400006: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_11
+    400008: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_12
+    400010: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_13
+    400012: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_14
+    400014: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_15
+    400016: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_16
+    400018: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_17
+    400020: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_18
+    400022: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_19
+    400024: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_2
+    400026: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_20
+    400028: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_21
+    400030: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_3
+    400032: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_4
+    400034: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_5
+    400036: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_6
+    400038: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_7
+    400040: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_8
+    400042: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_9
+    400044: Neutre_Neutre1_Neutre2_sphere_Sph_re
+    400046: Neutre_Neutre1_Neutre2_sphere_Sph_re_1
+    400048: Neutre_Tore
+    400050: Neutre_Tore_1
+    400052: Neutre_Tore_2
+    400054: //RootNode
+    2300000: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_0
+    2300002: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_1
+    2300004: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_10
+    2300006: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_11
+    2300008: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_12
+    2300010: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_13
+    2300012: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_14
+    2300014: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_15
+    2300016: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_16
+    2300018: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_17
+    2300020: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_18
+    2300022: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_19
+    2300024: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_2
+    2300026: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_20
+    2300028: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_21
+    2300030: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_3
+    2300032: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_4
+    2300034: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_5
+    2300036: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_6
+    2300038: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_7
+    2300040: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_8
+    2300042: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_9
+    2300044: Neutre_Neutre1_Neutre2_sphere_Sph_re
+    2300046: Neutre_Neutre1_Neutre2_sphere_Sph_re_1
+    2300048: Neutre_Tore
+    2300050: Neutre_Tore_1
+    2300052: Neutre_Tore_2
+    3300000: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_0
+    3300002: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_1
+    3300004: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_10
+    3300006: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_11
+    3300008: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_12
+    3300010: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_13
+    3300012: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_14
+    3300014: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_15
+    3300016: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_16
+    3300018: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_17
+    3300020: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_18
+    3300022: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_19
+    3300024: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_2
+    3300026: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_20
+    3300028: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_21
+    3300030: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_3
+    3300032: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_4
+    3300034: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_5
+    3300036: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_6
+    3300038: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_7
+    3300040: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_8
+    3300042: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_9
+    3300044: Neutre_Neutre1_Neutre2_sphere_Sph_re
+    3300046: Neutre_Neutre1_Neutre2_sphere_Sph_re_1
+    3300048: Neutre_Tore
+    3300050: Neutre_Tore_1
+    3300052: Neutre_Tore_2
+    4300000: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_0
+    4300002: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_1
+    4300004: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_10
+    4300006: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_11
+    4300008: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_12
+    4300010: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_13
+    4300012: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_14
+    4300014: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_15
+    4300016: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_16
+    4300018: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_17
+    4300020: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_18
+    4300022: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_19
+    4300024: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_2
+    4300026: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_20
+    4300028: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_21
+    4300030: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_3
+    4300032: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_4
+    4300034: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_5
+    4300036: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_6
+    4300038: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_7
+    4300040: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_8
+    4300042: Neutre_Neutre1_Neutre2_Neutre3_Neutre4_Cloneur_Cylindre_9
+    4300044: Neutre_Neutre1_Neutre2_sphere_Sph_re
+    4300046: Neutre_Neutre1_Neutre2_sphere_Sph_re_1
+    4300048: Neutre_Tore
+    4300050: Neutre_Tore_1
+    4300052: Neutre_Tore_2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
