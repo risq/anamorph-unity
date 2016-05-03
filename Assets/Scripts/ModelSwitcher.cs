@@ -17,6 +17,7 @@ public class ModelSwitcher : MonoBehaviour {
 
     public float sineAmplitude = 50;
     public float sineSpeed = 2;
+    private float sineOffset = 0;
 
     private float lastValue = -1;
     
@@ -48,10 +49,12 @@ public class ModelSwitcher : MonoBehaviour {
         {
             StartCoroutine(ActivationLoop());
         }
+
+        sineOffset = Random.value;
     }
 	
 	void Update () {
-        float tempValue = currentValue + Mathf.Sin(Time.time * sineSpeed) * sineAmplitude;
+        float tempValue = currentValue + Mathf.Sin(sineOffset + Time.time * sineSpeed) * sineAmplitude;
         if (tempValue != lastValue)
         {
             UpdateModel(tempValue);
