@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: eaffab82244c2984da0b1601dd4b2fc1
-timeCreated: 1460815208
+guid: bc2ff04b110acfe4482afbb1cfd0e62d
+timeCreated: 1462273125
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: ventre_Metaball
-    100004: Neutre_Metaball
+    100002: Cube_2
     400000: //RootNode
-    400002: ventre_Metaball
-    400004: Neutre_Metaball
-    2300000: ventre_Metaball
-    2300002: Neutre_Metaball
-    3300000: ventre_Metaball
-    3300002: Neutre_Metaball
-    4300000: ventre_Metaball
-    4300002: Neutre_Metaball
+    400002: Cube_2
+    2300000: Cube_2
+    3300000: Cube_2
+    4300000: Cube_2
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,7 +36,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.012
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

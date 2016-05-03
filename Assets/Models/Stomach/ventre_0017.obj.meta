@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: ventre_Metaball
+    100004: Neutre_Metaball
     400000: //RootNode
     400002: ventre_Metaball
+    400004: Neutre_Metaball
     2300000: ventre_Metaball
+    2300002: Neutre_Metaball
     3300000: ventre_Metaball
+    3300002: Neutre_Metaball
     4300000: ventre_Metaball
+    4300002: Neutre_Metaball
   materials:
     importMaterials: 1
     materialName: 0
