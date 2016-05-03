@@ -14,8 +14,12 @@ public class ModelSwitcher : MonoBehaviour {
 
     [Range(0.0f, 100.0f)]
     public float currentValue = 0;
-    private float lastValue = -1;
 
+    public float sineAmplitude = 50;
+    public float sineSpeed = 2;
+
+    private float lastValue = -1;
+    
     private int currentIndex = -1;
     private int framesCount;
 
@@ -47,16 +51,17 @@ public class ModelSwitcher : MonoBehaviour {
     }
 	
 	void Update () {
-        if (currentValue != lastValue)
+        float tempValue = currentValue + Mathf.Sin(Time.time * sineSpeed) * sineAmplitude;
+        if (tempValue != lastValue)
         {
-            UpdateModel(currentValue);
-            lastValue = currentValue;
+            UpdateModel(tempValue);
+            lastValue = tempValue;
         }
 	}
 
     void UpdateModel(float pos)
     {
-        int index = (int) Mathf.Clamp(Mathf.Round(pos * (framesCount - 1) / 100), 0, framesCount - 1);
+        int index = pos <= 0 ? 0 : pos >= 100 ? framesCount - 1 : (int) Mathf.Clamp(Mathf.Round(pos * (framesCount - 1) / 100), 0, framesCount - 1);
 
         if (currentIndex != index)
         {
