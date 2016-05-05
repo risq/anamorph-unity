@@ -10,23 +10,48 @@ ModelImporter:
     100004: Cylindre
     100006: //RootNode
     100008: Solide_platonicien
+    100010: Cloneur_Tore_0
+    100012: Cloneur_Tore_1
+    100014: Cloneur_Tore_2
+    100016: Cloneur_Tore_3
+    100018: Cloneur_Tore_4
     400000: Cube
     400002: Cube_2
     400004: Cylindre
     400006: //RootNode
     400008: Solide_platonicien
+    400010: Cloneur_Tore_0
+    400012: Cloneur_Tore_1
+    400014: Cloneur_Tore_2
+    400016: Cloneur_Tore_3
+    400018: Cloneur_Tore_4
     2300000: Cube
     2300002: Cube_2
     2300004: Cylindre
     2300006: Solide_platonicien
+    2300008: Cloneur_Tore_0
+    2300010: Cloneur_Tore_1
+    2300012: Cloneur_Tore_2
+    2300014: Cloneur_Tore_3
+    2300016: Cloneur_Tore_4
     3300000: Cube
     3300002: Cube_2
     3300004: Cylindre
     3300006: Solide_platonicien
+    3300008: Cloneur_Tore_0
+    3300010: Cloneur_Tore_1
+    3300012: Cloneur_Tore_2
+    3300014: Cloneur_Tore_3
+    3300016: Cloneur_Tore_4
     4300000: Cube
     4300002: Cube_2
     4300004: Cylindre
     4300006: Solide_platonicien
+    4300008: Cloneur_Tore_0
+    4300010: Cloneur_Tore_1
+    4300012: Cloneur_Tore_2
+    4300014: Cloneur_Tore_3
+    4300016: Cloneur_Tore_4
   materials:
     importMaterials: 1
     materialName: 0
@@ -34,7 +59,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
