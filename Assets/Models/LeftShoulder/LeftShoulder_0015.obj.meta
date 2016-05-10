@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: bf289e560ad524c409e25f15ccacf004
+timeCreated: 1462887404
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cloneur_1_Cube_2_02
+    100002: Cloneur_1_Cube_2_12
+    100004: Cloneur_1_Cube_2_22
+    100006: Cloneur_1_Cube_2_32
+    100008: Cloneur_2_Cube_2_0
+    100010: Cloneur_2_Cube_2_1
+    100012: Cloneur_2_Cube_2_2
+    100014: Cloneur_2_Cube_2_3
+    100016: Cloneur_Cube_2_01
+    100018: Cloneur_Cube_2_11
+    100020: Cloneur_Cube_2_21
+    100022: Cloneur_Cube_2_31
+    100024: Cylindre
+    100026: //RootNode
+    100028: Solide_platonicien
+    400000: Cloneur_1_Cube_2_02
+    400002: Cloneur_1_Cube_2_12
+    400004: Cloneur_1_Cube_2_22
+    400006: Cloneur_1_Cube_2_32
+    400008: Cloneur_2_Cube_2_0
+    400010: Cloneur_2_Cube_2_1
+    400012: Cloneur_2_Cube_2_2
+    400014: Cloneur_2_Cube_2_3
+    400016: Cloneur_Cube_2_01
+    400018: Cloneur_Cube_2_11
+    400020: Cloneur_Cube_2_21
+    400022: Cloneur_Cube_2_31
+    400024: Cylindre
+    400026: //RootNode
+    400028: Solide_platonicien
+    2300000: Cloneur_1_Cube_2_02
+    2300002: Cloneur_1_Cube_2_12
+    2300004: Cloneur_1_Cube_2_22
+    2300006: Cloneur_1_Cube_2_32
+    2300008: Cloneur_2_Cube_2_0
+    2300010: Cloneur_2_Cube_2_1
+    2300012: Cloneur_2_Cube_2_2
+    2300014: Cloneur_2_Cube_2_3
+    2300016: Cloneur_Cube_2_01
+    2300018: Cloneur_Cube_2_11
+    2300020: Cloneur_Cube_2_21
+    2300022: Cloneur_Cube_2_31
+    2300024: Cylindre
+    2300026: Solide_platonicien
+    3300000: Cloneur_1_Cube_2_02
+    3300002: Cloneur_1_Cube_2_12
+    3300004: Cloneur_1_Cube_2_22
+    3300006: Cloneur_1_Cube_2_32
+    3300008: Cloneur_2_Cube_2_0
+    3300010: Cloneur_2_Cube_2_1
+    3300012: Cloneur_2_Cube_2_2
+    3300014: Cloneur_2_Cube_2_3
+    3300016: Cloneur_Cube_2_01
+    3300018: Cloneur_Cube_2_11
+    3300020: Cloneur_Cube_2_21
+    3300022: Cloneur_Cube_2_31
+    3300024: Cylindre
+    3300026: Solide_platonicien
+    4300000: Cloneur_1_Cube_2_02
+    4300002: Cloneur_1_Cube_2_12
+    4300004: Cloneur_1_Cube_2_22
+    4300006: Cloneur_1_Cube_2_32
+    4300008: Cloneur_2_Cube_2_0
+    4300010: Cloneur_2_Cube_2_1
+    4300012: Cloneur_2_Cube_2_2
+    4300014: Cloneur_2_Cube_2_3
+    4300016: Cloneur_Cube_2_01
+    4300018: Cloneur_Cube_2_11
+    4300020: Cloneur_Cube_2_21
+    4300022: Cloneur_Cube_2_31
+    4300024: Cylindre
+    4300026: Solide_platonicien
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
