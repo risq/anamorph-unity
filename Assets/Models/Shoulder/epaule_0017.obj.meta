@@ -1,52 +1,62 @@
 fileFormatVersion: 2
-guid: 58b8c08df98ab7c4ea7a5e2420502446
-timeCreated: 1462192819
+guid: 5fb1143e5c6788742a27a87bf5737bdb
+timeCreated: 1462880839
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube_2
-    100004: Cylindre
-    100006: //RootNode
-    100008: Solide_platonicien
-    100010: Cloneur_Tore_0
-    100012: Cloneur_Tore_1
-    100014: Cloneur_Tore_2
-    100016: Cloneur_Tore_3
-    400000: Cube
-    400002: Cube_2
-    400004: Cylindre
-    400006: //RootNode
-    400008: Solide_platonicien
-    400010: Cloneur_Tore_0
-    400012: Cloneur_Tore_1
-    400014: Cloneur_Tore_2
-    400016: Cloneur_Tore_3
-    2300000: Cube
-    2300002: Cube_2
-    2300004: Cylindre
-    2300006: Solide_platonicien
-    2300008: Cloneur_Tore_0
-    2300010: Cloneur_Tore_1
-    2300012: Cloneur_Tore_2
-    2300014: Cloneur_Tore_3
-    3300000: Cube
-    3300002: Cube_2
-    3300004: Cylindre
-    3300006: Solide_platonicien
-    3300008: Cloneur_Tore_0
-    3300010: Cloneur_Tore_1
-    3300012: Cloneur_Tore_2
-    3300014: Cloneur_Tore_3
-    4300000: Cube
-    4300002: Cube_2
-    4300004: Cylindre
-    4300006: Solide_platonicien
-    4300008: Cloneur_Tore_0
-    4300010: Cloneur_Tore_1
-    4300012: Cloneur_Tore_2
-    4300014: Cloneur_Tore_3
+    100000: //RootNode
+    100002: Neutre_Cloneur_1_Solide_platonicien_1_0
+    100004: Neutre_Cloneur_1_Solide_platonicien_1_1
+    100006: Neutre_Cloneur_Tore_0
+    100008: Neutre_Cloneur_Tore_1
+    100010: Neutre_Cloneur_Tore_2
+    100012: Neutre_Cloneur_Tore_3
+    100014: Neutre_Cube_2
+    100016: Neutre_Cylindre
+    100018: Neutre_Solide_platonicien
+    100020: Neutre_Surface_de_subdivision_Cube
+    400000: //RootNode
+    400002: Neutre_Cloneur_1_Solide_platonicien_1_0
+    400004: Neutre_Cloneur_1_Solide_platonicien_1_1
+    400006: Neutre_Cloneur_Tore_0
+    400008: Neutre_Cloneur_Tore_1
+    400010: Neutre_Cloneur_Tore_2
+    400012: Neutre_Cloneur_Tore_3
+    400014: Neutre_Cube_2
+    400016: Neutre_Cylindre
+    400018: Neutre_Solide_platonicien
+    400020: Neutre_Surface_de_subdivision_Cube
+    2300000: Neutre_Cloneur_1_Solide_platonicien_1_0
+    2300002: Neutre_Cloneur_1_Solide_platonicien_1_1
+    2300004: Neutre_Cloneur_Tore_0
+    2300006: Neutre_Cloneur_Tore_1
+    2300008: Neutre_Cloneur_Tore_2
+    2300010: Neutre_Cloneur_Tore_3
+    2300012: Neutre_Cube_2
+    2300014: Neutre_Cylindre
+    2300016: Neutre_Solide_platonicien
+    2300018: Neutre_Surface_de_subdivision_Cube
+    3300000: Neutre_Cloneur_1_Solide_platonicien_1_0
+    3300002: Neutre_Cloneur_1_Solide_platonicien_1_1
+    3300004: Neutre_Cloneur_Tore_0
+    3300006: Neutre_Cloneur_Tore_1
+    3300008: Neutre_Cloneur_Tore_2
+    3300010: Neutre_Cloneur_Tore_3
+    3300012: Neutre_Cube_2
+    3300014: Neutre_Cylindre
+    3300016: Neutre_Solide_platonicien
+    3300018: Neutre_Surface_de_subdivision_Cube
+    4300000: Neutre_Cloneur_1_Solide_platonicien_1_0
+    4300002: Neutre_Cloneur_1_Solide_platonicien_1_1
+    4300004: Neutre_Cloneur_Tore_0
+    4300006: Neutre_Cloneur_Tore_1
+    4300008: Neutre_Cloneur_Tore_2
+    4300010: Neutre_Cloneur_Tore_3
+    4300012: Neutre_Cube_2
+    4300014: Neutre_Cylindre
+    4300016: Neutre_Solide_platonicien
+    4300018: Neutre_Surface_de_subdivision_Cube
   materials:
     importMaterials: 1
     materialName: 0
