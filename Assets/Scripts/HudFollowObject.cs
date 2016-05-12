@@ -5,8 +5,9 @@ public class HUDFollowObject : MonoBehaviour {
 
     public Transform target;
     public GameObject line;
-    public Vector3 offset;
     public Transform lineOrigin;
+    public Vector3 offset;
+    public bool lerp = true;
     public float speed = 1f;
     public bool rotateFishEye = false;
 
@@ -28,9 +29,19 @@ public class HUDFollowObject : MonoBehaviour {
     void Update()
     {
         Vector2 viewportPoint = Camera.main.WorldToViewportPoint(target.position + offset);
-        Vector2 lerpedPosition = Vector3.Lerp(rectTransform.anchorMin, viewportPoint, Time.deltaTime * speed);
-        rectTransform.anchorMin = lerpedPosition;
-        rectTransform.anchorMax = lerpedPosition;
+
+        if (lerp)
+        {
+            Vector2 lerpedPosition = Vector3.Lerp(rectTransform.anchorMin, viewportPoint, Time.deltaTime * speed);
+            rectTransform.anchorMin = lerpedPosition;
+            rectTransform.anchorMax = lerpedPosition;
+        }
+        else
+        {
+            rectTransform.anchorMin = viewportPoint;
+            rectTransform.anchorMax = viewportPoint;
+        }
+        
 
         if (line)
         {
