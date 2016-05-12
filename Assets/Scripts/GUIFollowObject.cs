@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HUDFollowObject : MonoBehaviour {
+public class GUIFollowObject : MonoBehaviour
+{
 
     public Transform target;
     public GameObject line;
     public Vector3 offset;
-    public Transform lineOrigin;
-    public float speed = 1f;
+
     public bool rotateFishEye = false;
 
     RectTransform rectTransform;
@@ -28,19 +28,14 @@ public class HUDFollowObject : MonoBehaviour {
     void Update()
     {
         Vector2 viewportPoint = Camera.main.WorldToViewportPoint(target.position + offset);
-        Vector2 lerpedPosition = Vector3.Lerp(rectTransform.anchorMin, viewportPoint, Time.deltaTime * speed);
+        Vector2 lerpedPosition = Vector3.Lerp(rectTransform.anchorMin, viewportPoint, 0.1f);
         rectTransform.anchorMin = lerpedPosition;
         rectTransform.anchorMax = lerpedPosition;
 
         if (line)
         {
             Vector3[] points = new Vector3[2];
-
-            if (lineOrigin)
-                points[0] = lineOrigin.position;
-            else 
-                points[0] = lineTransform.position;
-
+            points[0] = lineTransform.position;
             points[1] = target.position;
             lineRenderer.SetPositions(points);
         }
