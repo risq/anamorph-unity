@@ -41,7 +41,6 @@ public class HUDFollowObject : MonoBehaviour {
             rectTransform.anchorMin = viewportPoint;
             rectTransform.anchorMax = viewportPoint;
         }
-        
 
         if (line)
         {
