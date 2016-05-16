@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HUDFollowObject : MonoBehaviour {
+public class HudFollowObject : MonoBehaviour {
 
     public Transform target;
     public GameObject line;
