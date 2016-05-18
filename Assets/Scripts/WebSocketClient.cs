@@ -49,7 +49,6 @@ public class WebSocketClient : MonoBehaviour {
         //here we get the urls to connect social networks
         //Application.OpenURL(twitter); //Open twitter url link and get datas in server
 
-
         //Application.OpenURL("validConnections?clientId=12");
 
     }
