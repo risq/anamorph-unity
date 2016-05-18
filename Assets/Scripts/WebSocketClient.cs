@@ -10,6 +10,7 @@ public class WebSocketClient : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Debug.Log("Start webSocketClient");    
         socket = GetComponent<SocketIOComponent>();
        
         socket.On("connect", OnSocketOpen);
@@ -39,7 +40,18 @@ public class WebSocketClient : MonoBehaviour {
     private void OnState(SocketIOEvent e)
     {
         Debug.Log("OnState");
-        Debug.Log(e.data);
+        Debug.Log(e.data["auth"]);
+
+        string twitterUrl = e.data["auth"]["twitterUrl"].ToString();
+        string linkedInUrl = e.data["auth"]["linkedInUrl"].ToString();
+        string instagramUrl = e.data["auth"]["instagramUrl"].ToString();
+
+        //here we get the urls to connect social networks
+        //Application.OpenURL(twitter); //Open twitter url link and get datas in server
+
+
+        //Application.OpenURL("validConnections?clientId=12");
+
     }
 
     private void Register()
