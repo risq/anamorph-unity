@@ -42,19 +42,16 @@ public class WebSocketClient : MonoBehaviour {
         Debug.Log("OnState");
         Debug.Log(e.data["auth"]);
 
+        //here we get the urls to connect social networks
+        string facebookUrl = e.data["auth"]["facebookUrl"].ToString();
         string twitterUrl = e.data["auth"]["twitterUrl"].ToString();
         string linkedinUrl = e.data["auth"]["linkedinUrl"].ToString();
         string instagramUrl = e.data["auth"]["instagramUrl"].ToString();
 
+        //Application.OpenURL(e.data["auth"]["facebookUrl"].ToString()); //Open facebook url link and set datas in server
 
-        Debug.Log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-
-        //here we get the urls to connect social networks
-        // Application.OpenURL(e.data["auth"]["twitterUrl"].ToString()); //Open twitter url link and get datas in server
-
-        Debug.Log(e.data["auth"]["rootUrl"].ToString().Trim('"') + "/validConnections?clientId=12");
-        Application.OpenURL(e.data["auth"]["rootUrl"].ToString().Trim('"') + "/validConnections?clientId=12");
-
+        //Valid social connections and retrieve all the datas
+        //Application.OpenURL(e.data["auth"]["rootUrl"].ToString().Trim('"') + "/validConnections?clientId=12");
     }
 
     private void Register()
