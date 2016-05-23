@@ -31,6 +31,11 @@ public class WebSocketClient : MonoBehaviour {
         }
     }
 
+    public void OnClientValidConnection(SocketIOEvent e) {
+        Debug.Log("OnClientValidConnection");
+        Debug.Log(e.data);
+    }
+
     private void OnSucessfulRegister()
     {
         Debug.Log("OnSucessfulRegister");
@@ -43,15 +48,21 @@ public class WebSocketClient : MonoBehaviour {
         Debug.Log(e.data["auth"]);
 
         //here we get the urls to connect social networks
-        string facebookUrl = e.data["auth"]["facebookUrl"].ToString();
-        string twitterUrl = e.data["auth"]["twitterUrl"].ToString();
-        string linkedinUrl = e.data["auth"]["linkedinUrl"].ToString();
-        string instagramUrl = e.data["auth"]["instagramUrl"].ToString();
+        //string facebookUrl = e.data["auth"]["facebookUrl"].ToString();
+        //string twitterUrl = e.data["auth"]["twitterUrl"].ToString();
+        //string linkedinUrl = e.data["auth"]["linkedinUrl"].ToString();
+        //string instagramUrl = e.data["auth"]["instagramUrl"].ToString();
 
         //Application.OpenURL(e.data["auth"]["facebookUrl"].ToString()); //Open facebook url link and set datas in server
 
         //Valid social connections and retrieve all the datas
         //Application.OpenURL(e.data["auth"]["rootUrl"].ToString().Trim('"') + "/validConnections?clientId=12");
+    }
+
+    private void OnSocialData(SocketIOEvent e) {
+        Debug.Log("OnSocialData");
+        Debug.Log(e.data);
+
     }
 
     private void Register()
@@ -63,6 +74,7 @@ public class WebSocketClient : MonoBehaviour {
             data["id"] = "12";
             socket.On("client:register:status", OnClientRegisterStatus);
             socket.Emit("client:register", new JSONObject(data));
+            socket.On("socialData", OnSocialData);
         }
     }
  
