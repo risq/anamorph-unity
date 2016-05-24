@@ -20,6 +20,9 @@ ModelImporter:
     100024: Bool_en_Neutre_Sph_re
     100026: Bool_en_Neutre_Sph_re_1
     100028: Solide_platonicien_1
+    100030: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    100032: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    100034: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     400000: Bool_en_Bool_en_1
     400002: Bool_en_Cloneur_Cube_1_1
     400004: Bool_en_Cloneur_Cube_1_2
@@ -35,6 +38,9 @@ ModelImporter:
     400024: Bool_en_Neutre_Sph_re
     400026: Bool_en_Neutre_Sph_re_1
     400028: Solide_platonicien_1
+    400030: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    400032: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    400034: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     2300000: Bool_en_Bool_en_1
     2300002: Bool_en_Cloneur_Cube_1_1
     2300004: Bool_en_Cloneur_Cube_1_2
@@ -49,6 +55,9 @@ ModelImporter:
     2300022: Bool_en_Neutre_Sph_re
     2300024: Bool_en_Neutre_Sph_re_1
     2300026: Solide_platonicien_1
+    2300028: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    2300030: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    2300032: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     3300000: Bool_en_Bool_en_1
     3300002: Bool_en_Cloneur_Cube_1_1
     3300004: Bool_en_Cloneur_Cube_1_2
@@ -63,6 +72,9 @@ ModelImporter:
     3300022: Bool_en_Neutre_Sph_re
     3300024: Bool_en_Neutre_Sph_re_1
     3300026: Solide_platonicien_1
+    3300028: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    3300030: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    3300032: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     4300000: Bool_en_Bool_en_1
     4300002: Bool_en_Cloneur_Cube_1_1
     4300004: Bool_en_Cloneur_Cube_1_2
@@ -77,6 +89,9 @@ ModelImporter:
     4300022: Bool_en_Neutre_Sph_re
     4300024: Bool_en_Neutre_Sph_re_1
     4300026: Solide_platonicien_1
+    4300028: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    4300030: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    4300032: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
   materials:
     importMaterials: 1
     materialName: 0
@@ -84,7 +99,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 

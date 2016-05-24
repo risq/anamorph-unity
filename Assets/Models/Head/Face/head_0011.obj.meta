@@ -19,6 +19,8 @@ ModelImporter:
     100022: tete_Cylindre
     100024: tete_Cylindre_1
     100026: Solide_platonicien_1
+    100028: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    100030: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     400000: Bool_en_Bool_en_1
     400002: Bool_en_Cloneur_Cube_1_1
     400004: Bool_en_Cloneur_Cube_1_2
@@ -33,6 +35,8 @@ ModelImporter:
     400022: tete_Cylindre
     400024: tete_Cylindre_1
     400026: Solide_platonicien_1
+    400028: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    400030: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     2300000: Bool_en_Bool_en_1
     2300002: Bool_en_Cloneur_Cube_1_1
     2300004: Bool_en_Cloneur_Cube_1_2
@@ -46,6 +50,8 @@ ModelImporter:
     2300020: tete_Cylindre
     2300022: tete_Cylindre_1
     2300024: Solide_platonicien_1
+    2300026: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    2300028: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     3300000: Bool_en_Bool_en_1
     3300002: Bool_en_Cloneur_Cube_1_1
     3300004: Bool_en_Cloneur_Cube_1_2
@@ -59,6 +65,8 @@ ModelImporter:
     3300020: tete_Cylindre
     3300022: tete_Cylindre_1
     3300024: Solide_platonicien_1
+    3300026: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    3300028: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     4300000: Bool_en_Bool_en_1
     4300002: Bool_en_Cloneur_Cube_1_1
     4300004: Bool_en_Cloneur_Cube_1_2
@@ -72,6 +80,8 @@ ModelImporter:
     4300020: tete_Cylindre
     4300022: tete_Cylindre_1
     4300024: Solide_platonicien_1
+    4300026: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    4300028: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
   materials:
     importMaterials: 1
     materialName: 0
@@ -79,7 +89,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 

@@ -25,6 +25,9 @@ ModelImporter:
     100034: tete_Cylindre
     100036: tete_Cylindre_1
     100038: Solide_platonicien_1
+    100040: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    100042: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    100044: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     400000: Bool_en_Bool_en_1
     400002: Bool_en_Cloneur_Cube_1_1
     400004: Bool_en_Cloneur_Cube_1_10
@@ -45,6 +48,9 @@ ModelImporter:
     400034: tete_Cylindre
     400036: tete_Cylindre_1
     400038: Solide_platonicien_1
+    400040: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    400042: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    400044: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     2300000: Bool_en_Bool_en_1
     2300002: Bool_en_Cloneur_Cube_1_1
     2300004: Bool_en_Cloneur_Cube_1_10
@@ -64,6 +70,9 @@ ModelImporter:
     2300032: tete_Cylindre
     2300034: tete_Cylindre_1
     2300036: Solide_platonicien_1
+    2300038: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    2300040: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    2300042: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     3300000: Bool_en_Bool_en_1
     3300002: Bool_en_Cloneur_Cube_1_1
     3300004: Bool_en_Cloneur_Cube_1_10
@@ -83,6 +92,9 @@ ModelImporter:
     3300032: tete_Cylindre
     3300034: tete_Cylindre_1
     3300036: Solide_platonicien_1
+    3300038: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    3300040: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    3300042: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
     4300000: Bool_en_Bool_en_1
     4300002: Bool_en_Cloneur_Cube_1_1
     4300004: Bool_en_Cloneur_Cube_1_10
@@ -102,6 +114,9 @@ ModelImporter:
     4300032: tete_Cylindre
     4300034: tete_Cylindre_1
     4300036: Solide_platonicien_1
+    4300038: Bool_en_1_Neutre_1_Cloneur_Cube_10
+    4300040: Bool_en_1_Neutre_1_Cloneur_Cube_11
+    4300042: Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
   materials:
     importMaterials: 1
     materialName: 0
@@ -109,7 +124,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 

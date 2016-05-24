@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 3b58e569d98d403408ea567ecf3baca0
-timeCreated: 1462203291
+guid: d490e6218f9db5c4f9d9093c351df943
+timeCreated: 1464095265
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: tete_Cylindre
-    100004: tete_Cylindre_1
+    100002: cylinder_Cylindre
+    100004: cylinder_Cylindre_1
     400000: //RootNode
-    400002: tete_Cylindre
-    400004: tete_Cylindre_1
-    2300000: tete_Cylindre
-    2300002: tete_Cylindre_1
-    3300000: tete_Cylindre
-    3300002: tete_Cylindre_1
-    4300000: tete_Cylindre
-    4300002: tete_Cylindre_1
+    400002: cylinder_Cylindre
+    400004: cylinder_Cylindre_1
+    2300000: cylinder_Cylindre
+    2300002: cylinder_Cylindre_1
+    3300000: cylinder_Cylindre
+    3300002: cylinder_Cylindre_1
+    4300000: cylinder_Cylindre
+    4300002: cylinder_Cylindre_1
   materials:
     importMaterials: 1
     materialName: 0
@@ -24,7 +24,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
