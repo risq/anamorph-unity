@@ -74,6 +74,7 @@ ModelImporter:
     100132: Neutre4_Tore
     100134: Neutre4_Tore_1
     100136: Neutre4_Tore_2
+    100138: cube_vide_11
     400000: //RootNode
     400002: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_0
     400004: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_1
@@ -143,6 +144,7 @@ ModelImporter:
     400132: Neutre4_Tore
     400134: Neutre4_Tore_1
     400136: Neutre4_Tore_2
+    400138: cube_vide_11
     2300000: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_0
     2300002: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_1
     2300004: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_10
@@ -211,6 +213,7 @@ ModelImporter:
     2300130: Neutre4_Tore
     2300132: Neutre4_Tore_1
     2300134: Neutre4_Tore_2
+    2300136: cube_vide_11
     3300000: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_0
     3300002: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_1
     3300004: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_10
@@ -279,6 +282,7 @@ ModelImporter:
     3300130: Neutre4_Tore
     3300132: Neutre4_Tore_1
     3300134: Neutre4_Tore_2
+    3300136: cube_vide_11
     4300000: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_0
     4300002: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_1
     4300004: Neutre_Neutre1_Neutre2_Neutre3_Bool_en_Neutre4_Cloneur1_Cylindre_10
@@ -347,6 +351,7 @@ ModelImporter:
     4300130: Neutre4_Tore
     4300132: Neutre4_Tore_1
     4300134: Neutre4_Tore_2
+    4300136: cube_vide_11
   materials:
     importMaterials: 1
     materialName: 0
