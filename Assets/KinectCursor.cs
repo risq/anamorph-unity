@@ -4,7 +4,6 @@ using System.Collections;
 public class KinectCursor : MonoBehaviour {
 
     public KinectButton[] kinectButtons;
-
     KinectButton activeKinectButton;
     Transform tr;
 
