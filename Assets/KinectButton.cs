@@ -3,16 +3,21 @@ using System.Collections;
 
 public class KinectButton : MonoBehaviour {
 
+    public enum ButtonType { None, Activity, Influence, PassiveIdentity, Mood, Interests, Public, Private, Pro };
+
     public float radius = 1f;
+    public ButtonType buttonType;
 
     Vector2 pos;
     Animator animator;
+    GUIManager guiManager;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         pos = new Vector2(transform.position.x, transform.position.y);
         animator = GetComponent<Animator>();
-	}
+        guiManager = (GUIManager)FindObjectOfType(typeof(GUIManager));
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -41,5 +46,17 @@ public class KinectButton : MonoBehaviour {
     public void OnCursorLeave()
     {
         animator.SetBool("active", false);
+    }
+
+    public void Validate()
+    {
+        Debug.Log("validate");
+        guiManager.OnCursorValidate(buttonType);
+    }
+
+    public void Unvalidate()
+    {
+        Debug.Log("unvalidate");
+        guiManager.OnCursorUnvalidate(buttonType);
     }
 }
