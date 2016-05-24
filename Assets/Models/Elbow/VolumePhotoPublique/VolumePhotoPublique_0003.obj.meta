@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: f730ef0d149c5a34b81e728836901615
-timeCreated: 1462190908
+guid: b8b9122c4f3943d458b74729dad259e5
+timeCreated: 1464111960
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: Cube
     100002: //RootNode
-    100004: Solide_platonicien
     400000: Cube
     400002: //RootNode
-    400004: Solide_platonicien
     2300000: Cube
-    2300002: Solide_platonicien
     3300000: Cube
-    3300002: Solide_platonicien
     4300000: Cube
-    4300002: Solide_platonicien
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,7 +36,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.005
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -57,8 +52,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
