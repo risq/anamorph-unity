@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: ca5a818e144602146ab0af9f513c7305
+timeCreated: 1464167526
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bool_en_Neutre_1_Solide_platonicien
+    100002: Bool_en_Neutre_Cloneur_Cube_10
+    100004: Bool_en_Neutre_Cloneur_Cube_11
+    100006: Bool_en_Neutre_Cloneur_Cube_12
+    100008: Bool_en_Neutre_Cloneur_Cube_13
+    100010: Bool_en_Neutre_Cloneur_Cube_14
+    100012: Bool_en_Neutre_Cloneur_Cube_15
+    100014: Bool_en_Neutre_Cloneur_Cube_5
+    100016: Bool_en_Neutre_Cloneur_Cube_6
+    100018: Bool_en_Neutre_Cloneur_Cube_7
+    100020: Bool_en_Neutre_Cloneur_Cube_8
+    100022: Bool_en_Neutre_Cloneur_Cube_9
+    100024: //RootNode
+    100026: Cylindre
+    400000: Bool_en_Neutre_1_Solide_platonicien
+    400002: Bool_en_Neutre_Cloneur_Cube_10
+    400004: Bool_en_Neutre_Cloneur_Cube_11
+    400006: Bool_en_Neutre_Cloneur_Cube_12
+    400008: Bool_en_Neutre_Cloneur_Cube_13
+    400010: Bool_en_Neutre_Cloneur_Cube_14
+    400012: Bool_en_Neutre_Cloneur_Cube_15
+    400014: Bool_en_Neutre_Cloneur_Cube_5
+    400016: Bool_en_Neutre_Cloneur_Cube_6
+    400018: Bool_en_Neutre_Cloneur_Cube_7
+    400020: Bool_en_Neutre_Cloneur_Cube_8
+    400022: Bool_en_Neutre_Cloneur_Cube_9
+    400024: //RootNode
+    400026: Cylindre
+    2300000: Bool_en_Neutre_1_Solide_platonicien
+    2300002: Bool_en_Neutre_Cloneur_Cube_10
+    2300004: Bool_en_Neutre_Cloneur_Cube_11
+    2300006: Bool_en_Neutre_Cloneur_Cube_12
+    2300008: Bool_en_Neutre_Cloneur_Cube_13
+    2300010: Bool_en_Neutre_Cloneur_Cube_14
+    2300012: Bool_en_Neutre_Cloneur_Cube_15
+    2300014: Bool_en_Neutre_Cloneur_Cube_5
+    2300016: Bool_en_Neutre_Cloneur_Cube_6
+    2300018: Bool_en_Neutre_Cloneur_Cube_7
+    2300020: Bool_en_Neutre_Cloneur_Cube_8
+    2300022: Bool_en_Neutre_Cloneur_Cube_9
+    2300024: Cylindre
+    3300000: Bool_en_Neutre_1_Solide_platonicien
+    3300002: Bool_en_Neutre_Cloneur_Cube_10
+    3300004: Bool_en_Neutre_Cloneur_Cube_11
+    3300006: Bool_en_Neutre_Cloneur_Cube_12
+    3300008: Bool_en_Neutre_Cloneur_Cube_13
+    3300010: Bool_en_Neutre_Cloneur_Cube_14
+    3300012: Bool_en_Neutre_Cloneur_Cube_15
+    3300014: Bool_en_Neutre_Cloneur_Cube_5
+    3300016: Bool_en_Neutre_Cloneur_Cube_6
+    3300018: Bool_en_Neutre_Cloneur_Cube_7
+    3300020: Bool_en_Neutre_Cloneur_Cube_8
+    3300022: Bool_en_Neutre_Cloneur_Cube_9
+    3300024: Cylindre
+    4300000: Bool_en_Neutre_1_Solide_platonicien
+    4300002: Bool_en_Neutre_Cloneur_Cube_10
+    4300004: Bool_en_Neutre_Cloneur_Cube_11
+    4300006: Bool_en_Neutre_Cloneur_Cube_12
+    4300008: Bool_en_Neutre_Cloneur_Cube_13
+    4300010: Bool_en_Neutre_Cloneur_Cube_14
+    4300012: Bool_en_Neutre_Cloneur_Cube_15
+    4300014: Bool_en_Neutre_Cloneur_Cube_5
+    4300016: Bool_en_Neutre_Cloneur_Cube_6
+    4300018: Bool_en_Neutre_Cloneur_Cube_7
+    4300020: Bool_en_Neutre_Cloneur_Cube_8
+    4300022: Bool_en_Neutre_Cloneur_Cube_9
+    4300024: Cylindre
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
