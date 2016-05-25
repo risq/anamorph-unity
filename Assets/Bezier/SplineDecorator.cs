@@ -8,7 +8,7 @@ public class SplineDecorator : MonoBehaviour {
 	public bool lookForward;
 	public Transform item;
 
-    private Transform[] instances;
+    public Transform[] instances;
     private float stepSize;
 
 	private void Awake () {

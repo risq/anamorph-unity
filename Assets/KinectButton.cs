@@ -50,13 +50,11 @@ public class KinectButton : MonoBehaviour {
 
     public void Validate()
     {
-        Debug.Log("validate");
         guiManager.OnCursorValidate(buttonType);
     }
 
     public void Unvalidate()
     {
-        Debug.Log("unvalidate");
         guiManager.OnCursorUnvalidate(buttonType);
     }
 }
