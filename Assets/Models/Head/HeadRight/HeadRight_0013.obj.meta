@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 42541207a66c2d942a0105d0c3b9af9e
+timeCreated: 1464191906
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: gauche_Cube
+    100002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    100004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    100006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    100008: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    100010: gauche_tete_1_Solide_platonicien
+    100012: gauche_tete_1_Solide_platonicien_1
+    100014: //RootNode
+    100016: Bool_en_Cube
+    100018: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    100020: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    100022: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    100024: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    100026: Bool_en_droite_tete_1_Solide_platonicien
+    100028: Bool_en_droite_tete_1_Solide_platonicien_1
+    400000: gauche_Cube
+    400002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    400004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    400006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    400008: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    400010: gauche_tete_1_Solide_platonicien
+    400012: gauche_tete_1_Solide_platonicien_1
+    400014: //RootNode
+    400016: Bool_en_Cube
+    400018: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    400020: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    400022: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    400024: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    400026: Bool_en_droite_tete_1_Solide_platonicien
+    400028: Bool_en_droite_tete_1_Solide_platonicien_1
+    2300000: gauche_Cube
+    2300002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    2300004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    2300006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    2300008: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    2300010: gauche_tete_1_Solide_platonicien
+    2300012: gauche_tete_1_Solide_platonicien_1
+    2300014: Bool_en_Cube
+    2300016: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    2300018: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    2300020: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    2300022: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    2300024: Bool_en_droite_tete_1_Solide_platonicien
+    2300026: Bool_en_droite_tete_1_Solide_platonicien_1
+    3300000: gauche_Cube
+    3300002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    3300004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    3300006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    3300008: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    3300010: gauche_tete_1_Solide_platonicien
+    3300012: gauche_tete_1_Solide_platonicien_1
+    3300014: Bool_en_Cube
+    3300016: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    3300018: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    3300020: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    3300022: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    3300024: Bool_en_droite_tete_1_Solide_platonicien
+    3300026: Bool_en_droite_tete_1_Solide_platonicien_1
+    4300000: gauche_Cube
+    4300002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    4300004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    4300006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    4300008: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    4300010: gauche_tete_1_Solide_platonicien
+    4300012: gauche_tete_1_Solide_platonicien_1
+    4300014: Bool_en_Cube
+    4300016: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    4300018: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    4300020: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    4300022: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    4300024: Bool_en_droite_tete_1_Solide_platonicien
+    4300026: Bool_en_droite_tete_1_Solide_platonicien_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

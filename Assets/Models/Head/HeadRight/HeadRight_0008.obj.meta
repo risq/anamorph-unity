@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 8af91faa6074400468348eac5b714f1b
+timeCreated: 1464191907
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: gauche_Cube
+    100002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    100004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    100006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    100008: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    100010: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    100012: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    100014: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    100016: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    100018: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    100020: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    100022: gauche_tete_1_Solide_platonicien
+    100024: gauche_tete_1_Solide_platonicien_1
+    100026: //RootNode
+    100028: Bool_en_Cube
+    100030: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    100032: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    100034: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    100036: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    100038: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    100040: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    100042: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    100044: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    100046: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    100048: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    100050: Bool_en_droite_tete_1_Solide_platonicien
+    100052: Bool_en_droite_tete_1_Solide_platonicien_1
+    400000: gauche_Cube
+    400002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    400004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    400006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    400008: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    400010: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    400012: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    400014: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    400016: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    400018: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    400020: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    400022: gauche_tete_1_Solide_platonicien
+    400024: gauche_tete_1_Solide_platonicien_1
+    400026: //RootNode
+    400028: Bool_en_Cube
+    400030: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    400032: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    400034: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    400036: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    400038: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    400040: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    400042: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    400044: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    400046: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    400048: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    400050: Bool_en_droite_tete_1_Solide_platonicien
+    400052: Bool_en_droite_tete_1_Solide_platonicien_1
+    2300000: gauche_Cube
+    2300002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    2300004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    2300006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    2300008: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    2300010: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    2300012: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    2300014: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    2300016: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    2300018: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    2300020: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    2300022: gauche_tete_1_Solide_platonicien
+    2300024: gauche_tete_1_Solide_platonicien_1
+    2300026: Bool_en_Cube
+    2300028: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    2300030: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    2300032: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    2300034: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    2300036: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    2300038: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    2300040: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    2300042: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    2300044: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    2300046: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    2300048: Bool_en_droite_tete_1_Solide_platonicien
+    2300050: Bool_en_droite_tete_1_Solide_platonicien_1
+    3300000: gauche_Cube
+    3300002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    3300004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    3300006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    3300008: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    3300010: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    3300012: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    3300014: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    3300016: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    3300018: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    3300020: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    3300022: gauche_tete_1_Solide_platonicien
+    3300024: gauche_tete_1_Solide_platonicien_1
+    3300026: Bool_en_Cube
+    3300028: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    3300030: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    3300032: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    3300034: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    3300036: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    3300038: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    3300040: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    3300042: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    3300044: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    3300046: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    3300048: Bool_en_droite_tete_1_Solide_platonicien
+    3300050: Bool_en_droite_tete_1_Solide_platonicien_1
+    4300000: gauche_Cube
+    4300002: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    4300004: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    4300006: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    4300008: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    4300010: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    4300012: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    4300014: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    4300016: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    4300018: gauche_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    4300020: gauche_tete_1_Bool_en_1_Neutre_Bool_en_Surface_de_subdivision_Bool_en_11
+    4300022: gauche_tete_1_Solide_platonicien
+    4300024: gauche_tete_1_Solide_platonicien_1
+    4300026: Bool_en_Cube
+    4300028: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_10
+    4300030: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_11
+    4300032: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_3
+    4300034: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_4
+    4300036: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_5
+    4300038: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_6
+    4300040: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_7
+    4300042: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_8
+    4300044: Bool_en_droite_tete_1_Bool_en_1_Neutre_1_Cloneur_Cube_9
+    4300046: Bool_en_droite_tete_1_Bool_en_1_Neutre_Bool_en1_Surface_de_subdivision_Bool_en_11
+    4300048: Bool_en_droite_tete_1_Solide_platonicien
+    4300050: Bool_en_droite_tete_1_Solide_platonicien_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
