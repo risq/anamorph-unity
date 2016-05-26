@@ -61,6 +61,7 @@ ModelImporter:
     100106: Bool_en_cubes_Cube_8
     100108: Bool_en_cubes_Cube_9
     100110: poumon_Neutre_poumon1_poumon2
+    100112: Bool_en_cubes_Cube_10
     400000: Bool_en_boleen_Cloneur_Cube_10
     400002: Bool_en_boleen_Cloneur_Cube_11
     400004: Bool_en_boleen_Cloneur_Cube_13
@@ -117,6 +118,7 @@ ModelImporter:
     400106: Bool_en_cubes_Cube_8
     400108: Bool_en_cubes_Cube_9
     400110: poumon_Neutre_poumon1_poumon2
+    400112: Bool_en_cubes_Cube_10
     2300000: Bool_en_boleen_Cloneur_Cube_10
     2300002: Bool_en_boleen_Cloneur_Cube_11
     2300004: Bool_en_boleen_Cloneur_Cube_13
@@ -172,6 +174,7 @@ ModelImporter:
     2300104: Bool_en_cubes_Cube_8
     2300106: Bool_en_cubes_Cube_9
     2300108: poumon_Neutre_poumon1_poumon2
+    2300110: Bool_en_cubes_Cube_10
     3300000: Bool_en_boleen_Cloneur_Cube_10
     3300002: Bool_en_boleen_Cloneur_Cube_11
     3300004: Bool_en_boleen_Cloneur_Cube_13
@@ -227,6 +230,7 @@ ModelImporter:
     3300104: Bool_en_cubes_Cube_8
     3300106: Bool_en_cubes_Cube_9
     3300108: poumon_Neutre_poumon1_poumon2
+    3300110: Bool_en_cubes_Cube_10
     4300000: Bool_en_boleen_Cloneur_Cube_10
     4300002: Bool_en_boleen_Cloneur_Cube_11
     4300004: Bool_en_boleen_Cloneur_Cube_13
@@ -282,6 +286,7 @@ ModelImporter:
     4300104: Bool_en_cubes_Cube_8
     4300106: Bool_en_cubes_Cube_9
     4300108: poumon_Neutre_poumon1_poumon2
+    4300110: Bool_en_cubes_Cube_10
   materials:
     importMaterials: 1
     materialName: 0
@@ -306,7 +311,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.015
+    globalScale: 0.000015
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -322,8 +327,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 0
+    normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0

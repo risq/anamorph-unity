@@ -56,6 +56,8 @@ ModelImporter:
     100096: Bool_en_cubes_Cube_8
     100098: Bool_en_cubes_Cube_9
     100100: poumon_Neutre_poumon1_poumon2
+    100102: Bool_en_cubes_Cube_10
+    100104: Bool_en_cubes_Cube_3
     400000: Bool_en_boleen_Cloneur_Cube_10
     400002: Bool_en_boleen_Cloneur_Cube_11
     400004: Bool_en_boleen_Cloneur_Cube_14
@@ -107,6 +109,8 @@ ModelImporter:
     400096: Bool_en_cubes_Cube_8
     400098: Bool_en_cubes_Cube_9
     400100: poumon_Neutre_poumon1_poumon2
+    400102: Bool_en_cubes_Cube_10
+    400104: Bool_en_cubes_Cube_3
     2300000: Bool_en_boleen_Cloneur_Cube_10
     2300002: Bool_en_boleen_Cloneur_Cube_11
     2300004: Bool_en_boleen_Cloneur_Cube_14
@@ -157,6 +161,8 @@ ModelImporter:
     2300094: Bool_en_cubes_Cube_8
     2300096: Bool_en_cubes_Cube_9
     2300098: poumon_Neutre_poumon1_poumon2
+    2300100: Bool_en_cubes_Cube_10
+    2300102: Bool_en_cubes_Cube_3
     3300000: Bool_en_boleen_Cloneur_Cube_10
     3300002: Bool_en_boleen_Cloneur_Cube_11
     3300004: Bool_en_boleen_Cloneur_Cube_14
@@ -207,6 +213,8 @@ ModelImporter:
     3300094: Bool_en_cubes_Cube_8
     3300096: Bool_en_cubes_Cube_9
     3300098: poumon_Neutre_poumon1_poumon2
+    3300100: Bool_en_cubes_Cube_10
+    3300102: Bool_en_cubes_Cube_3
     4300000: Bool_en_boleen_Cloneur_Cube_10
     4300002: Bool_en_boleen_Cloneur_Cube_11
     4300004: Bool_en_boleen_Cloneur_Cube_14
@@ -257,6 +265,8 @@ ModelImporter:
     4300094: Bool_en_cubes_Cube_8
     4300096: Bool_en_cubes_Cube_9
     4300098: poumon_Neutre_poumon1_poumon2
+    4300100: Bool_en_cubes_Cube_10
+    4300102: Bool_en_cubes_Cube_3
   materials:
     importMaterials: 1
     materialName: 0
@@ -281,7 +291,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.015
+    globalScale: 0.000015
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -297,8 +307,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 0
+    normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0

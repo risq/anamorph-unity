@@ -44,6 +44,10 @@ ModelImporter:
     100072: Bool_en_cubes_Cube_8
     100074: Bool_en_cubes_Cube_9
     100076: poumon_Neutre_poumon1_poumon2
+    100078: Bool_en_cubes_Cube
+    100080: Bool_en_cubes_Cube_10
+    100082: Bool_en_cubes_Cube_3
+    100084: Bool_en_cubes_Cube_6
     400000: Bool_en_cubes_Cube_101
     400002: Bool_en_cubes_Cube_11
     400004: Bool_en_cubes_Cube_2
@@ -83,6 +87,10 @@ ModelImporter:
     400072: Bool_en_cubes_Cube_8
     400074: Bool_en_cubes_Cube_9
     400076: poumon_Neutre_poumon1_poumon2
+    400078: Bool_en_cubes_Cube
+    400080: Bool_en_cubes_Cube_10
+    400082: Bool_en_cubes_Cube_3
+    400084: Bool_en_cubes_Cube_6
     2300000: Bool_en_cubes_Cube_101
     2300002: Bool_en_cubes_Cube_11
     2300004: Bool_en_cubes_Cube_2
@@ -121,6 +129,10 @@ ModelImporter:
     2300070: Bool_en_cubes_Cube_8
     2300072: Bool_en_cubes_Cube_9
     2300074: poumon_Neutre_poumon1_poumon2
+    2300076: Bool_en_cubes_Cube
+    2300078: Bool_en_cubes_Cube_10
+    2300080: Bool_en_cubes_Cube_3
+    2300082: Bool_en_cubes_Cube_6
     3300000: Bool_en_cubes_Cube_101
     3300002: Bool_en_cubes_Cube_11
     3300004: Bool_en_cubes_Cube_2
@@ -159,6 +171,10 @@ ModelImporter:
     3300070: Bool_en_cubes_Cube_8
     3300072: Bool_en_cubes_Cube_9
     3300074: poumon_Neutre_poumon1_poumon2
+    3300076: Bool_en_cubes_Cube
+    3300078: Bool_en_cubes_Cube_10
+    3300080: Bool_en_cubes_Cube_3
+    3300082: Bool_en_cubes_Cube_6
     4300000: Bool_en_cubes_Cube_101
     4300002: Bool_en_cubes_Cube_11
     4300004: Bool_en_cubes_Cube_2
@@ -197,6 +213,10 @@ ModelImporter:
     4300070: Bool_en_cubes_Cube_8
     4300072: Bool_en_cubes_Cube_9
     4300074: poumon_Neutre_poumon1_poumon2
+    4300076: Bool_en_cubes_Cube
+    4300078: Bool_en_cubes_Cube_10
+    4300080: Bool_en_cubes_Cube_3
+    4300082: Bool_en_cubes_Cube_6
   materials:
     importMaterials: 1
     materialName: 0
@@ -221,7 +241,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.015
+    globalScale: 0.000015
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -237,8 +257,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 0
+    normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
