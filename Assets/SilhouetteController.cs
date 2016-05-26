@@ -28,7 +28,7 @@ public class SilhouetteController : MonoBehaviour {
     ModelSwitcher RightUpperArmProModelSwitcher;
     Material RightUpperArmMaterial;
 
-    Transform[] SplineBones;
+    SplineDecorator Spline;
 
     // Use this for initialization
     void Start () {
@@ -56,9 +56,7 @@ public class SilhouetteController : MonoBehaviour {
         RightUpperArmProModelSwitcher = GameObject.Find("RightUpperArm/Upper Arm Model/Pro").GetComponent<ModelSwitcher>();
         RightUpperArmMaterial = GameObject.Find("RightUpperArm/Upper Arm Model/Inner").GetComponent<Renderer>().material;
 
-        SplineBones = GameObject.Find("Spline Model").GetComponent<SplineDecorator>().instances;
-
-        Debug.Log("SplineBones : " + SplineBones.Length);
+        Spline = GameObject.Find("Spline Model").GetComponent<SplineDecorator>();
     }
 	
 	// Update is called once per frame
@@ -99,7 +97,7 @@ public class SilhouetteController : MonoBehaviour {
         SetColor(LeftUpperArmMaterial, randColorctivityFreqMix);
         SetColor(RightUpperArmMaterial, randColorctivityFreqMix);
 
-        SetBones(activityPublicVol, activityPrivateVol, activityProVol);
+        SetBones(activityFreqValue, activityPublicVol, activityPrivateVol, activityProVol);
     }
 
     void SetColor(Material objectMaterial, Color color)
@@ -108,13 +106,15 @@ public class SilhouetteController : MonoBehaviour {
         objectMaterial.SetColor("_DiffColor", color);
     }
 
-    void SetBones(float publicVol, float privateVol, float proVol)
+    void SetBones(float activityFreqValue, float publicVol, float privateVol, float proVol)
     {
-        for (int i = 0; i < SplineBones.Length; i++)
+        Transform[] splineBones = Spline.CreateSpline((int)(activityFreqValue / 4));
+
+        for (int i = 0; i < splineBones.Length; i++)
         {
-            SplineBones[i].transform.FindChild("Public").localScale = new Vector3(1f + publicVol / 100f * 8f, 1, 1);
-            SplineBones[i].transform.FindChild("Private").localScale = new Vector3(1f + privateVol / 100f * 8f, 1, 1);
-            SplineBones[i].transform.FindChild("Pro").localScale = new Vector3(1f + proVol / 100f * 8f, 1, 1);
+            splineBones[i].transform.FindChild("Public").localScale = new Vector3(1f + publicVol / 100f * 5f, 1, 1);
+            splineBones[i].transform.FindChild("Private").localScale = new Vector3(1f + privateVol / 100f * 5f, 1, 1);
+            splineBones[i].transform.FindChild("Pro").localScale = new Vector3(1f + proVol / 100f * 5f, 1, 1);
         }
     }
 
