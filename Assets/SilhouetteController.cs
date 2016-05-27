@@ -197,7 +197,6 @@ public class SilhouetteController : MonoBehaviour {
 
     void SetMainLight(IdentityCircle mainCircle)
     {
-        Debug.Log(mainCircle);
         if (mainCircle == IdentityCircle.Private) {
             PrivateLights.SetActive(true);
             PublicLights.SetActive(false);
@@ -232,5 +231,8 @@ public class SilhouetteController : MonoBehaviour {
     {
         if (GUI.Button(new Rect(10, 10, 150, 50), "UpdateData"))
             UpdateData();
+
+        if (GUI.Button(new Rect(10, 60, 150, 50), "Clean mem"))
+            Resources.UnloadUnusedAssets();
     }
 }

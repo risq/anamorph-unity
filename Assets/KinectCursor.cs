@@ -7,30 +7,33 @@ public class KinectCursor : MonoBehaviour {
     KinectButton activeKinectButton;
     Transform tr;
 
-	// Use this for initialization
-	void Start () {
+    float closestButtonDistance;
+    int kinectButtonsLength;
+    KinectButton closestButton;
+
+    // Use this for initialization
+    void Start () {
         tr = GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        kinectButtonsLength = kinectButtons.Length;
         StartCoroutine(StartTestingButtons());
-
     }
 
     void TestActiveKinectButton()
     {
-        float closestButtonDistance = Mathf.Infinity;
-        KinectButton closestButton = null;
+        closestButtonDistance = float.MaxValue;
+        closestButton = null;
 
-        foreach (KinectButton kinectButton in kinectButtons)
+        for (int i = 0; i < kinectButtonsLength; i++)
         {
-            float hitTestDistance = kinectButton.HitTest(tr.position);
+            float hitTestDistance = kinectButtons[i].HitTest(tr.position);
 
             if (hitTestDistance >= 0 && hitTestDistance < closestButtonDistance)
             {
-                closestButton = kinectButton;
+                closestButton = kinectButtons[i];
             }
         }
 
@@ -57,7 +60,7 @@ public class KinectCursor : MonoBehaviour {
         while (true)
         {
             TestActiveKinectButton();
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.3f);
         }
     }
 

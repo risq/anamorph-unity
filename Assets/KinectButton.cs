@@ -11,6 +11,7 @@ public class KinectButton : MonoBehaviour {
     Vector2 pos;
     Animator animator;
     GUIManager guiManager;
+    float distance;
 
     // Use this for initialization
     void Start () {
@@ -26,16 +27,8 @@ public class KinectButton : MonoBehaviour {
 
     public float HitTest(Vector2 cursorPos)
     {
-        float distance = Vector2.Distance(pos, cursorPos);
-
-        if (distance <= radius)
-        {
-            return distance;
-        }
-        else
-        {
-            return -1f;
-        }
+        distance = Vector2.Distance(pos, cursorPos);
+        return distance <= radius ? distance : -1f;
     }
 
     public void OnCursorEnter()
