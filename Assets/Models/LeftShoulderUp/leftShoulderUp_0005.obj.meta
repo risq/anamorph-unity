@@ -12,6 +12,8 @@ ModelImporter:
     100008: Cube_1
     100010: //RootNode
     100012: Tore_2
+    100014: Cloneur_1_Cube_2_3
+    100016: Cloneur_1_Cube_2_4
     400000: Cloneur_1_Cube_2_0
     400002: Cloneur_1_Cube_2_1
     400004: Cloneur_1_Cube_2_2
@@ -19,24 +21,32 @@ ModelImporter:
     400008: Cube_1
     400010: //RootNode
     400012: Tore_2
+    400014: Cloneur_1_Cube_2_3
+    400016: Cloneur_1_Cube_2_4
     2300000: Cloneur_1_Cube_2_0
     2300002: Cloneur_1_Cube_2_1
     2300004: Cloneur_1_Cube_2_2
     2300006: Cube
     2300008: Cube_1
     2300010: Tore_2
+    2300012: Cloneur_1_Cube_2_3
+    2300014: Cloneur_1_Cube_2_4
     3300000: Cloneur_1_Cube_2_0
     3300002: Cloneur_1_Cube_2_1
     3300004: Cloneur_1_Cube_2_2
     3300006: Cube
     3300008: Cube_1
     3300010: Tore_2
+    3300012: Cloneur_1_Cube_2_3
+    3300014: Cloneur_1_Cube_2_4
     4300000: Cloneur_1_Cube_2_0
     4300002: Cloneur_1_Cube_2_1
     4300004: Cloneur_1_Cube_2_2
     4300006: Cube
     4300008: Cube_1
     4300010: Tore_2
+    4300012: Cloneur_1_Cube_2_3
+    4300014: Cloneur_1_Cube_2_4
   materials:
     importMaterials: 1
     materialName: 0
@@ -61,7 +71,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.0012
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
