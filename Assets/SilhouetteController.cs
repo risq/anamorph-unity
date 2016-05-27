@@ -7,6 +7,11 @@ public class SilhouetteController : MonoBehaviour {
     public Color PublicColor;
     public Color ProColor;
 
+    // Global
+    GameObject PrivateLights;
+    GameObject PublicLights;
+    GameObject ProLights;
+
     // Activity
     ModelSwitcher LeftLowerArmModelSwitcher;
     ModelSwitcher LeftLowerArmPublicModelSwitcher;
@@ -48,6 +53,11 @@ public class SilhouetteController : MonoBehaviour {
     SplineDecorator Spline;
 
     void Start () {
+        // Global
+        PrivateLights = GameObject.Find("Light/Private");
+        PublicLights = GameObject.Find("Light/Public");
+        ProLights = GameObject.Find("Light/Pro");
+
         // Activity
         LeftLowerArmModelSwitcher = GameObject.Find("LeftElbow/Lower Arm Model/Inner").GetComponent<ModelSwitcher>();
         LeftLowerArmPublicModelSwitcher = GameObject.Find("LeftElbow/Lower Arm Model/Public").GetComponent<ModelSwitcher>();
@@ -96,6 +106,9 @@ public class SilhouetteController : MonoBehaviour {
 
     void UpdateData()
     {
+        IdentityCircle mainCircle = (IdentityCircle)Random.Range(1, 4);
+        SetMainLight(mainCircle);
+
         // ========== Activity ==========
 
         // Freq
@@ -179,6 +192,28 @@ public class SilhouetteController : MonoBehaviour {
             splineBones[i].transform.FindChild("Public").localScale = new Vector3(1f + publicVol / 100f * 5f, 1, 1);
             splineBones[i].transform.FindChild("Private").localScale = new Vector3(1f + privateVol / 100f * 5f, 1, 1);
             splineBones[i].transform.FindChild("Pro").localScale = new Vector3(1f + proVol / 100f * 5f, 1, 1);
+        }
+    }
+
+    void SetMainLight(IdentityCircle mainCircle)
+    {
+        Debug.Log(mainCircle);
+        if (mainCircle == IdentityCircle.Private) {
+            PrivateLights.SetActive(true);
+            PublicLights.SetActive(false);
+            ProLights.SetActive(false);
+        }
+        else if (mainCircle == IdentityCircle.Public)
+        {
+            PrivateLights.SetActive(false);
+            PublicLights.SetActive(true);
+            ProLights.SetActive(false);
+        }
+        else if (mainCircle == IdentityCircle.Pro)
+        {
+            PrivateLights.SetActive(false);
+            PublicLights.SetActive(false);
+            ProLights.SetActive(true);
         }
     }
 
