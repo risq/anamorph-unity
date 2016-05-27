@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ParticlePlayground;
 
 public class SilhouetteController : MonoBehaviour {
 
@@ -42,6 +43,9 @@ public class SilhouetteController : MonoBehaviour {
 
     ModelSwitcher LeftBottomShoulderModelSwitcher;
     ModelSwitcher RightBottomShoulderModelSwitcher;
+
+    // Influence
+    PlaygroundParticlesC FollowersParticles;
 
     // Mood
     ModelSwitcher LeftLungModelSwitcher;
@@ -89,6 +93,9 @@ public class SilhouetteController : MonoBehaviour {
         LeftBottomShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
         RightBottomShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
 
+        // Influence
+        FollowersParticles = GameObject.Find("Head/Followers/Followers Particles System").GetComponent<PlaygroundParticlesC>();
+
         // Mood
         LeftLungModelSwitcher = GameObject.Find("Left Lung Model/Inner").GetComponent<ModelSwitcher>();
         LeftLungMaterial = GameObject.Find("Left Lung Model/Inner").GetComponent<Renderer>().material;
@@ -116,7 +123,7 @@ public class SilhouetteController : MonoBehaviour {
         float activityPrivateFreq = Random.Range(0, 100);
         float activityPublicFreq = Random.Range(0, 100);
         float activityProFreq = Random.Range(0, 100);
-        Color activityFreqMix = GenerateColor(activityGlobalFreq, activityPrivateFreq, activityPublicFreq);     
+        Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);     
 
         LeftLowerArmModelSwitcher.currentValue = activityGlobalFreq;
         LeftLowerArmPublicModelSwitcher.currentValue = activityPublicFreq;
@@ -161,7 +168,16 @@ public class SilhouetteController : MonoBehaviour {
         LeftBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol;
         RightBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol;
 
+        // ========== Influence ==========
 
+        float influenceGlobalScore = Random.value;
+        float influenceyPrivateScore = Random.Range(0, 100);
+        float influencePublicScore = Random.Range(0, 100);
+        float influenceProScore = Random.Range(0, 100);
+        Color influenceScoreMix = GenerateColor(influenceyPrivateScore, influencePublicScore, influenceProScore);
+
+        FollowersParticles.particleCount = (int)(influenceGlobalScore * 400f);
+        SetColor(FollowersParticles.particleSystemRenderer.material, influenceScoreMix);
 
         // ========== Mood ==========
 
@@ -222,9 +238,9 @@ public class SilhouetteController : MonoBehaviour {
         privatePart = publicPart / (publicPart + privatePart + proPart);
         proPart = publicPart / (publicPart + privatePart + proPart);
 
-        return new Color(PrivateColor.r * publicPart + PublicColor.r * publicPart + ProColor.r * proPart,
-            PrivateColor.g * publicPart + PublicColor.g * publicPart + ProColor.g * proPart,
-            PrivateColor.b * publicPart + PublicColor.b * publicPart + ProColor.b * proPart);
+        return new Color(PrivateColor.r * privatePart + PublicColor.r * publicPart + ProColor.r * proPart,
+            PrivateColor.g * privatePart + PublicColor.g * publicPart + ProColor.g * proPart,
+            PrivateColor.b * privatePart + PublicColor.b * publicPart + ProColor.b * proPart);
     }
 
     void OnGUI()
