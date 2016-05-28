@@ -13,9 +13,12 @@ public class SilhouetteController : MonoBehaviour {
     HSBColor ProColorHSB;
 
     // Global
-    GameObject PrivateLights;
-    GameObject PublicLights;
-    GameObject ProLights;
+    GameObject PrivatePrimaryLight;
+    GameObject PrivateSecondaryLight;
+    GameObject PublicPrimaryLight;
+    GameObject PublicSecondaryLight;
+    GameObject ProPrimaryLight;
+    GameObject ProSecondaryLight;
 
     // Activity
     ModelSwitcher LeftLowerArmModelSwitcher;
@@ -68,9 +71,12 @@ public class SilhouetteController : MonoBehaviour {
         ProColorHSB = new HSBColor(ProColor);
 
         // Global
-        PrivateLights = GameObject.Find("Light/Private");
-        PublicLights = GameObject.Find("Light/Public");
-        ProLights = GameObject.Find("Light/Pro");
+        PrivatePrimaryLight = GameObject.Find("Light/Private/Primary");
+        PrivateSecondaryLight = GameObject.Find("Light/Private/Secondary");
+        PublicPrimaryLight = GameObject.Find("Light/Public/Primary");
+        PublicSecondaryLight = GameObject.Find("Light/Public/Secondary");
+        ProPrimaryLight = GameObject.Find("Light/Pro/Primary");
+        ProSecondaryLight = GameObject.Find("Light/Pro/Secondary");
 
         // Activity
         LeftLowerArmModelSwitcher = GameObject.Find("LeftElbow/Lower Arm Model/Inner").GetComponent<ModelSwitcher>();
@@ -125,8 +131,9 @@ public class SilhouetteController : MonoBehaviour {
 
     void UpdateData()
     {
-        IdentityCircle mainCircle = (IdentityCircle)Random.Range(1, 4);
-        SetMainLight(mainCircle);
+        IdentityCircle primaryCircle = (IdentityCircle)Random.Range(1, 4);
+        IdentityCircle secondaryCircle = (IdentityCircle)Random.Range(1, 4);
+        SetLights(primaryCircle, secondaryCircle);
 
         // ========== Activity ==========
 
@@ -226,24 +233,44 @@ public class SilhouetteController : MonoBehaviour {
         }
     }
 
-    void SetMainLight(IdentityCircle mainCircle)
+    void SetLights(IdentityCircle primaryCircle, IdentityCircle secondaryCircle)
     {
-        if (mainCircle == IdentityCircle.Private) {
-            PrivateLights.SetActive(true);
-            PublicLights.SetActive(false);
-            ProLights.SetActive(false);
-        }
-        else if (mainCircle == IdentityCircle.Public)
+        if (primaryCircle == IdentityCircle.Private)
         {
-            PrivateLights.SetActive(false);
-            PublicLights.SetActive(true);
-            ProLights.SetActive(false);
+            PrivatePrimaryLight.SetActive(true);
+            PublicPrimaryLight.SetActive(false);
+            ProPrimaryLight.SetActive(false);
         }
-        else if (mainCircle == IdentityCircle.Pro)
+        else if (primaryCircle == IdentityCircle.Public)
         {
-            PrivateLights.SetActive(false);
-            PublicLights.SetActive(false);
-            ProLights.SetActive(true);
+            PrivatePrimaryLight.SetActive(false);
+            PublicPrimaryLight.SetActive(true);
+            ProPrimaryLight.SetActive(false);
+        }
+        else if (primaryCircle == IdentityCircle.Pro)
+        {
+            PrivatePrimaryLight.SetActive(false);
+            PublicPrimaryLight.SetActive(false);
+            ProPrimaryLight.SetActive(true);
+        }
+
+        if (secondaryCircle == IdentityCircle.Private)
+        {
+            PrivateSecondaryLight.SetActive(true);
+            PublicSecondaryLight.SetActive(false);
+            ProSecondaryLight.SetActive(false);
+        }
+        else if (secondaryCircle == IdentityCircle.Public)
+        {
+            PrivateSecondaryLight.SetActive(false);
+            PublicSecondaryLight.SetActive(true);
+            ProSecondaryLight.SetActive(false);
+        }
+        else if (secondaryCircle == IdentityCircle.Pro)
+        {
+            PrivateSecondaryLight.SetActive(false);
+            PublicSecondaryLight.SetActive(false);
+            ProSecondaryLight.SetActive(true);
         }
     }
 
