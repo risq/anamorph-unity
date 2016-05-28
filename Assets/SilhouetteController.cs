@@ -8,6 +8,10 @@ public class SilhouetteController : MonoBehaviour {
     public Color PublicColor;
     public Color ProColor;
 
+    HSBColor PrivateColorHSB;
+    HSBColor PublicColorHSB;
+    HSBColor ProColorHSB;
+
     // Global
     GameObject PrivateLights;
     GameObject PublicLights;
@@ -56,7 +60,13 @@ public class SilhouetteController : MonoBehaviour {
 
     SplineDecorator Spline;
 
+    const int maxParticles = 300;
+
     void Start () {
+        PrivateColorHSB = new HSBColor(PrivateColor);
+        PublicColorHSB = new HSBColor(PublicColor);
+        ProColorHSB = new HSBColor(ProColor);
+
         // Global
         PrivateLights = GameObject.Find("Light/Private");
         PublicLights = GameObject.Find("Light/Public");
@@ -121,76 +131,79 @@ public class SilhouetteController : MonoBehaviour {
         // ========== Activity ==========
 
         // Freq
-        float activityGlobalFreq = Random.Range(0, 100);
-        float activityPrivateFreq = Random.Range(0, 100);
-        float activityPublicFreq = Random.Range(0, 100);
-        float activityProFreq = Random.Range(0, 100);
+        float activityGlobalFreq = Random.value;
+        float activityPrivateFreq = Random.value;
+        float activityPublicFreq = Random.value;
+        float activityProFreq = Random.value;
         Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);     
 
-        LeftLowerArmModelSwitcher.currentValue = activityGlobalFreq;
-        LeftLowerArmPublicModelSwitcher.currentValue = activityPublicFreq;
-        LeftLowerArmPrivateModelSwitcher.currentValue = activityPrivateFreq;
-        LeftLowerArmProModelSwitcher.currentValue = activityProFreq;
+        LeftLowerArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
+        LeftLowerArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
+        LeftLowerArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
+        LeftLowerArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(LeftLowerArmMaterial, activityFreqMix);
 
-        RightLowerArmModelSwitcher.currentValue = activityGlobalFreq;
-        RightLowerArmPublicModelSwitcher.currentValue = activityPublicFreq;
-        RightLowerArmPrivateModelSwitcher.currentValue = activityPrivateFreq;
-        LeftUpperArmProModelSwitcher.currentValue = activityProFreq;
+        RightLowerArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
+        RightLowerArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
+        RightLowerArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
+        LeftUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(RightLowerArmMaterial, activityFreqMix);
 
-        LeftUpperArmModelSwitcher.currentValue = activityGlobalFreq;
-        LeftUpperArmPublicModelSwitcher.currentValue = activityPublicFreq;
-        LeftUpperArmPrivateModelSwitcher.currentValue = activityPrivateFreq;
-        LeftUpperArmProModelSwitcher.currentValue = activityProFreq;
+        LeftUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
+        LeftUpperArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
+        LeftUpperArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
+        LeftUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(LeftUpperArmMaterial, activityFreqMix);
 
-        RightUpperArmModelSwitcher.currentValue = activityGlobalFreq;
-        RightUpperArmPublicModelSwitcher.currentValue = activityPublicFreq;
-        RightUpperArmPrivateModelSwitcher.currentValue = activityPrivateFreq;
-        RightUpperArmProModelSwitcher.currentValue = activityProFreq;
+        RightUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
+        RightUpperArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
+        RightUpperArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
+        RightUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(RightUpperArmMaterial, activityFreqMix);
 
         // Volume
-        float activityGlobalVol = Random.Range(0, 100);
-        float activityPrivateVol = Random.Range(0, 100);
-        float activityPublicVol = Random.Range(0, 100);
-        float activityProVol = Random.Range(0, 100);
+        float activityGlobalVol = Random.value;
+        float activityPrivateVol = Random.value;
+        float activityPublicVol = Random.value;
+        float activityProVol = Random.value;
 
         SetBones(activityGlobalFreq, activityPublicVol, activityPrivateVol, activityProVol);
 
         // Photos posts volume
-        float activityPrivatePhotoVol = Random.Range(0, 100);
-        float activityPublicPhotoVol = Random.Range(0, 100);
-        float activityProPhotoVol = Random.Range(0, 100);
+        float activityPrivatePhotoVol = Random.value;
+        float activityPublicPhotoVol = Random.value;
+        float activityProPhotoVol = Random.value;
 
-        LeftElbowModelSwitcher.currentValue = activityPrivatePhotoVol;
-        RightElbowModelSwitcher.currentValue = activityPrivatePhotoVol;
+        LeftElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
+        RightElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
 
-        LeftBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol;
-        RightBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol;
+        LeftBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
+        RightBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
 
         // ========== Influence ==========
 
         float influenceGlobalScore = Random.value;
-        float influenceyPrivateScore = Random.Range(0, 100);
-        float influencePublicScore = Random.Range(0, 100);
-        float influenceProScore = Random.Range(0, 100);
-        Color influenceScoreMix = GenerateColor(influenceyPrivateScore, influencePublicScore, influenceProScore);
+        float influencePrivateScore = Random.value;
+        float influencePublicScore = Random.value;
+        float influenceProScore = Random.value;
+        Color influenceScoreMix = GenerateColor(influencePrivateScore, influencePublicScore, influenceProScore, 0.6f);
 
-        FollowersParticles.particleCount = (int)(influenceGlobalScore * 400f);
+        FollowersParticles.particleCount = (int)(influenceGlobalScore * maxParticles);
         SetColor(FollowersParticles.particleSystemRenderer.material, influenceScoreMix);
 
         // ========== Mood ==========
 
         // Expressivity
-        float moodGlobalExpressivity = Random.Range(0, 100);
-        Color moodExpressivityMix = new Color(Random.value, Random.value, Random.value);
+        float moodGlobalExpressivity = Random.value;
+        float moodPrivateExpressivity = Random.value;
+        float moodPublicExpressivity = Random.value;
+        float moodProExpressivity = Random.value;
+        Color moodExpressivityMix = GenerateColor(moodPrivateExpressivity, moodPublicExpressivity, moodProExpressivity, 0.6f);
 
-        LeftLungModelSwitcher.currentValue = moodGlobalExpressivity;
+        LeftLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
         SetColor(LeftLungMaterial, moodExpressivityMix);
 
-        RightLungModelSwitcher.currentValue = moodGlobalExpressivity;
+        RightLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
         SetColor(RightLungMaterial, moodExpressivityMix);
     }
 
@@ -207,9 +220,9 @@ public class SilhouetteController : MonoBehaviour {
 
         for (int i = 0; i < splineBones.Length; i++)
         {
-            splineBones[i].transform.FindChild("Public").localScale = new Vector3(1f + publicVol / 100f * 5f, 1, 1);
-            splineBones[i].transform.FindChild("Private").localScale = new Vector3(1f + privateVol / 100f * 5f, 1, 1);
-            splineBones[i].transform.FindChild("Pro").localScale = new Vector3(1f + proVol / 100f * 5f, 1, 1);
+            splineBones[i].transform.FindChild("Public").localScale = new Vector3(1f + publicVol * 5f, 1, 1);
+            splineBones[i].transform.FindChild("Private").localScale = new Vector3(1f + privateVol * 5f, 1, 1);
+            splineBones[i].transform.FindChild("Pro").localScale = new Vector3(1f + proVol * 5f, 1, 1);
         }
     }
 
@@ -234,15 +247,23 @@ public class SilhouetteController : MonoBehaviour {
         }
     }
 
-    Color GenerateColor(float privatePart, float publicPart, float proPart)
+    Color GenerateColor(float privatePart, float publicPart, float proPart, float brightness = -1f)
     {
         publicPart = publicPart / (publicPart + privatePart + proPart);
         privatePart = publicPart / (publicPart + privatePart + proPart);
         proPart = publicPart / (publicPart + privatePart + proPart);
 
-        return new Color(PrivateColor.r * privatePart + PublicColor.r * publicPart + ProColor.r * proPart,
-            PrivateColor.g * privatePart + PublicColor.g * publicPart + ProColor.g * proPart,
-            PrivateColor.b * privatePart + PublicColor.b * publicPart + ProColor.b * proPart);
+        HSBColor hsb = new HSBColor(PrivateColorHSB.h * privatePart + PublicColorHSB.h * publicPart + ProColorHSB.h * proPart,
+            PrivateColorHSB.s * privatePart + PublicColorHSB.s * publicPart + ProColorHSB.s * proPart,
+            PrivateColorHSB.b * privatePart + PublicColorHSB.b * publicPart + ProColorHSB.b * proPart);
+
+        if (brightness >= 0)
+        {
+            hsb.b = 1;
+            hsb.s = 1 - brightness;
+        }
+
+        return hsb.ToColor();
     }
 
     void OnGUI()
