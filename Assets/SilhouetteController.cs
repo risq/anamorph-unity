@@ -104,6 +104,8 @@ public class SilhouetteController : MonoBehaviour {
         RightLungMaterial = GameObject.Find("Right Lung Model/Inner").GetComponent<Renderer>().material;
 
         Spline = GameObject.Find("Spline Model").GetComponent<SplineDecorator>();
+
+        UpdateData();
     }
 	
 	// Update is called once per frame
