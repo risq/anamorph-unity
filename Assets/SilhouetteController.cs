@@ -223,7 +223,7 @@ public class SilhouetteController : MonoBehaviour {
 
     void SetBones(float activityFreqValue, float publicVol, float privateVol, float proVol)
     {
-        Transform[] splineBones = Spline.CreateSpline((int)(4 + activityFreqValue / 4));
+        Transform[] splineBones = Spline.CreateSpline((int)(10f + activityFreqValue * 20f));
 
         for (int i = 0; i < splineBones.Length; i++)
         {
