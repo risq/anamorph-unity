@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public enum IdentityComposante { None, Activity, Influence, PassiveIdentity, Mood, Interests };
 public enum IdentityCircle { None, Public, Private, Pro };
 
 public class GUIManager : MonoBehaviour {
-
+    public Image overlay;
     public HUDGroup activityHUD;
     public HUDGroup influenceHUD;
     public HUDGroup passiveIdentityHUD;
@@ -14,6 +16,10 @@ public class GUIManager : MonoBehaviour {
 
     IdentityComposante currentIdentityComposante;
     IdentityCircle currentIdentityCircle;
+
+    Tweener overlayFadeTweener;
+    const float overlayFadeAmount = 0.5f;
+    const float overlayFadeTime = 1f;
 
     // Use this for initialization
     void Start () {
@@ -63,9 +69,12 @@ public class GUIManager : MonoBehaviour {
 
     void SetActiveHUD(IdentityComposante activeHUD)
     {
+        overlayFadeTweener.Kill();
+
         if (activeHUD == IdentityComposante.Activity)
         {
             currentIdentityComposante = IdentityComposante.Activity;
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Show();
             influenceHUD.Hide();
@@ -76,6 +85,8 @@ public class GUIManager : MonoBehaviour {
         else if (activeHUD == IdentityComposante.Influence)
         {
             currentIdentityComposante = IdentityComposante.Influence;
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
+
 
             activityHUD.Hide();
             influenceHUD.Show();
@@ -86,6 +97,7 @@ public class GUIManager : MonoBehaviour {
         else if (activeHUD == IdentityComposante.PassiveIdentity)
         {
             currentIdentityComposante = IdentityComposante.PassiveIdentity;
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Hide();
             influenceHUD.Hide();
@@ -96,6 +108,7 @@ public class GUIManager : MonoBehaviour {
         else if (activeHUD == IdentityComposante.Mood)
         {
             currentIdentityComposante = IdentityComposante.Mood;
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Hide();
             influenceHUD.Hide();
@@ -106,6 +119,7 @@ public class GUIManager : MonoBehaviour {
         else if (activeHUD == IdentityComposante.Interests)
         {
             currentIdentityComposante = IdentityComposante.Interests;
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Hide();
             influenceHUD.Hide();
@@ -116,6 +130,7 @@ public class GUIManager : MonoBehaviour {
         else
         {
             currentIdentityComposante = IdentityComposante.None;
+            overlayFadeTweener = overlay.DOFade(0, overlayFadeTime);
 
             activityHUD.Hide();
             influenceHUD.Hide();

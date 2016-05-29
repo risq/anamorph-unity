@@ -16,8 +16,6 @@ public class HUDGroup : MonoBehaviour {
         canvasGroup = GetComponent<CanvasGroup>();
         panes = GetComponentsInChildren<HUDPane>();
         panesCount = panes.Length;
-
-        linkedFocusCamera.SetActive(false);
     }
 
     public void Show()
