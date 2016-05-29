@@ -23,7 +23,7 @@ public class HUDPane : MonoBehaviour {
     public void Fold ()
     {
         tweener.Kill();
-        tweener = rtr.DOLocalMove(new Vector3(0, 0, 0), 0.5f);
+        tweener = rtr.DOLocalMove(new Vector3(0, 0, 0), 0.2f);
     }
 
     public void Unfold()
