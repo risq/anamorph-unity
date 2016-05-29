@@ -6,11 +6,11 @@ public enum IdentityCircle { None, Public, Private, Pro };
 
 public class GUIManager : MonoBehaviour {
 
-    public GameObject activityHUD;
-    public GameObject influenceHUD;
-    public GameObject passiveIdentityHUD;
-    public GameObject moodHUD;
-    public GameObject interestsHUD;
+    public HUDGroup activityHUD;
+    public HUDGroup influenceHUD;
+    public HUDGroup passiveIdentityHUD;
+    public HUDGroup moodHUD;
+    public HUDGroup interestsHUD;
 
     IdentityComposante currentIdentityComposante;
     IdentityCircle currentIdentityCircle;
@@ -67,61 +67,61 @@ public class GUIManager : MonoBehaviour {
         {
             currentIdentityComposante = IdentityComposante.Activity;
 
-            activityHUD.SetActive(true);
-            influenceHUD.SetActive(false);
-            passiveIdentityHUD.SetActive(false);
-            moodHUD.SetActive(false);
-            interestsHUD.SetActive(false);
+            activityHUD.Show();
+            influenceHUD.Hide();
+            passiveIdentityHUD.Hide();
+            moodHUD.Hide();
+            interestsHUD.Hide();
         }
         else if (activeHUD == IdentityComposante.Influence)
         {
             currentIdentityComposante = IdentityComposante.Influence;
 
-            activityHUD.SetActive(false);
-            influenceHUD.SetActive(true);
-            passiveIdentityHUD.SetActive(false);
-            moodHUD.SetActive(false);
-            interestsHUD.SetActive(false);
+            activityHUD.Hide();
+            influenceHUD.Show();
+            passiveIdentityHUD.Hide();
+            moodHUD.Hide();
+            interestsHUD.Hide();
         }
         else if (activeHUD == IdentityComposante.PassiveIdentity)
         {
             currentIdentityComposante = IdentityComposante.PassiveIdentity;
 
-            activityHUD.SetActive(false);
-            influenceHUD.SetActive(false);
-            passiveIdentityHUD.SetActive(true);
-            moodHUD.SetActive(false);
-            interestsHUD.SetActive(false);
+            activityHUD.Hide();
+            influenceHUD.Hide();
+            passiveIdentityHUD.Show();
+            moodHUD.Hide();
+            interestsHUD.Hide();
         }
         else if (activeHUD == IdentityComposante.Mood)
         {
             currentIdentityComposante = IdentityComposante.Mood;
 
-            activityHUD.SetActive(false);
-            influenceHUD.SetActive(false);
-            passiveIdentityHUD.SetActive(false);
-            moodHUD.SetActive(true);
-            interestsHUD.SetActive(false);
+            activityHUD.Hide();
+            influenceHUD.Hide();
+            passiveIdentityHUD.Hide();
+            moodHUD.Show();
+            interestsHUD.Hide();
         }
         else if (activeHUD == IdentityComposante.Interests)
         {
             currentIdentityComposante = IdentityComposante.Interests;
 
-            activityHUD.SetActive(false);
-            influenceHUD.SetActive(false);
-            passiveIdentityHUD.SetActive(false);
-            moodHUD.SetActive(false);
-            interestsHUD.SetActive(true);
+            activityHUD.Hide();
+            influenceHUD.Hide();
+            passiveIdentityHUD.Hide();
+            moodHUD.Hide();
+            interestsHUD.Show();
         }
         else
         {
             currentIdentityComposante = IdentityComposante.None;
 
-            activityHUD.SetActive(false);
-            influenceHUD.SetActive(false);
-            passiveIdentityHUD.SetActive(false);
-            moodHUD.SetActive(false);
-            interestsHUD.SetActive(false);
+            activityHUD.Hide();
+            influenceHUD.Hide();
+            passiveIdentityHUD.Hide();
+            moodHUD.Hide();
+            interestsHUD.Hide();
         }
     }
 }
