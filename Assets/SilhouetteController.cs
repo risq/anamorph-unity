@@ -121,7 +121,7 @@ public class SilhouetteController : MonoBehaviour {
 
         Spline = GameObject.Find("Spline Model").GetComponent<SplineDecorator>();
 
-        UpdateData();
+        UpdateData(null);
     }
 	
 	// Update is called once per frame
@@ -129,10 +129,10 @@ public class SilhouetteController : MonoBehaviour {
 	
 	}
 
-    void UpdateData()
+    public void UpdateData(JSONObject data)
     {
-        IdentityCircle primaryCircle = (IdentityCircle)Random.Range(1, 4);
-        IdentityCircle secondaryCircle = (IdentityCircle)Random.Range(1, 4);
+        IdentityCircle primaryCircle = IdentityCircle.Pro; //(IdentityCircle)Random.Range(1, 4);
+        IdentityCircle secondaryCircle = IdentityCircle.Public; //(IdentityCircle)Random.Range(1, 4);
         SetLights(primaryCircle, secondaryCircle);
 
         // ========== Activity ==========
@@ -142,7 +142,16 @@ public class SilhouetteController : MonoBehaviour {
         float activityPrivateFreq = Random.value;
         float activityPublicFreq = Random.value;
         float activityProFreq = Random.value;
-        Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);     
+
+        if (data)
+        {
+            data.GetField("activity").GetField("globalData").GetField(ref activityGlobalFreq, "postFrequency");
+            data.GetField("activity").GetField("privateData").GetField(ref activityPrivateFreq, "postFrequency");
+            data.GetField("activity").GetField("publicData").GetField(ref activityPublicFreq, "postFrequency");
+            data.GetField("activity").GetField("professionalData").GetField(ref activityProFreq, "postFrequency");
+        }
+
+        Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);
 
         LeftLowerArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
         LeftLowerArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
@@ -162,7 +171,7 @@ public class SilhouetteController : MonoBehaviour {
         LeftUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(LeftUpperArmMaterial, activityFreqMix);
 
-        RightUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
+        // RightUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
         RightUpperArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
         RightUpperArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
         RightUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
@@ -174,12 +183,28 @@ public class SilhouetteController : MonoBehaviour {
         float activityPublicVol = Random.value;
         float activityProVol = Random.value;
 
+        if (data)
+        {
+            data.GetField("activity").GetField("globalData").GetField(ref activityGlobalVol, "volumePosts");
+            data.GetField("activity").GetField("privateData").GetField(ref activityPrivateVol, "volumePosts");
+            data.GetField("activity").GetField("publicData").GetField(ref activityPublicVol, "volumePosts");
+            data.GetField("activity").GetField("professionalData").GetField(ref activityProVol, "volumePosts");
+        }
+
+
         SetBones(activityGlobalFreq, activityPublicVol, activityPrivateVol, activityProVol);
 
         // Photos posts volume
         float activityPrivatePhotoVol = Random.value;
         float activityPublicPhotoVol = Random.value;
         float activityProPhotoVol = Random.value;
+
+        if (data)
+        {
+            data.GetField("activity").GetField("privateData").GetField(ref activityPrivatePhotoVol, "volumePhotos");
+            data.GetField("activity").GetField("publicData").GetField(ref activityPublicPhotoVol, "volumePhotos");
+            data.GetField("activity").GetField("professionalData").GetField(ref activityProPhotoVol, "volumePhotos");
+        }
 
         LeftElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
         RightElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
@@ -193,6 +218,15 @@ public class SilhouetteController : MonoBehaviour {
         float influencePrivateScore = Random.value;
         float influencePublicScore = Random.value;
         float influenceProScore = Random.value;
+
+        if (data)
+        {
+            data.GetField("influence").GetField("globalData").GetField(ref influenceGlobalScore, "influence");
+            data.GetField("influence").GetField("privateData").GetField(ref influencePrivateScore, "influence");
+            data.GetField("influence").GetField("publicData").GetField(ref influencePublicScore, "influence");
+            data.GetField("influence").GetField("professionalData").GetField(ref influenceProScore, "influence");
+        }
+
         Color influenceScoreMix = GenerateColor(influencePrivateScore, influencePublicScore, influenceProScore, 0.6f);
 
         FollowersParticles.particleCount = (int)(influenceGlobalScore * maxParticles);
@@ -205,6 +239,15 @@ public class SilhouetteController : MonoBehaviour {
         float moodPrivateExpressivity = Random.value;
         float moodPublicExpressivity = Random.value;
         float moodProExpressivity = Random.value;
+
+        if (data)
+        {
+            data.GetField("mood").GetField("globalData").GetField(ref moodGlobalExpressivity, "expressivity");
+            data.GetField("mood").GetField("privateData").GetField(ref moodPrivateExpressivity, "expressivity");
+            data.GetField("mood").GetField("publicData").GetField(ref moodPublicExpressivity, "expressivity");
+            data.GetField("mood").GetField("professionalData").GetField(ref moodProExpressivity, "expressivity");
+        }
+
         Color moodExpressivityMix = GenerateColor(moodPrivateExpressivity, moodPublicExpressivity, moodProExpressivity, 0.6f);
 
         LeftLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
@@ -296,7 +339,7 @@ public class SilhouetteController : MonoBehaviour {
     void OnGUI()
     {
         if (GUI.Button(new Rect(10, 10, 150, 50), "UpdateData"))
-            UpdateData();
+            UpdateData(null);
 
         if (GUI.Button(new Rect(10, 60, 150, 50), "Clean mem"))
             Resources.UnloadUnusedAssets();

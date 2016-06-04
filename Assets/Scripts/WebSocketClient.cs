@@ -7,25 +7,34 @@ public class WebSocketClient : MonoBehaviour {
 
     SocketIOComponent socket;
     bool registered = false;
+    JSONObject JSONSample;
+    public SilhouetteController silhouetteController;
 
-    // Use this for initialization
     void Start () {
         Debug.Log("Start webSocketClient");    
         socket = GetComponent<SocketIOComponent>();
-       
-        socket.On("connect", OnSocketOpen);
+
+        socket.On("connect", OnConnect);
         socket.On("state", OnState);
+
+        socket.Connect();
     }
 
-    public void OnSocketOpen(SocketIOEvent e)
+    public void OnConnect(SocketIOEvent e)
     {
+        Debug.Log("OnConnect");
         Register();
+    }
+
+    public void OnDisconnect(SocketIOEvent e)
+    {
+        Debug.Log("OnDisconnect");
     }
 
     public void OnClientRegisterStatus(SocketIOEvent e)
     {
-        Debug.Log("OnClientRegisterStatus");
-        if (!e.data.GetField("err"))
+        Debug.Log("OnClientRegisterStatus " + e.data.GetField("err"));
+        if (e.data.GetField("err") != null)
         {
             OnSucessfulRegister();
         }
@@ -36,13 +45,15 @@ public class WebSocketClient : MonoBehaviour {
         Debug.Log(e.data);
     }
 
-    private void OnSucessfulRegister()
+    public void OnSucessfulRegister()
     {
         Debug.Log("OnSucessfulRegister");
         registered = true;
+        socket.On("samples", OnSamples);
+        socket.Emit("samples:get");
     }
 
-    private void OnState(SocketIOEvent e)
+    public void OnState(SocketIOEvent e)
     {
         Debug.Log("OnState");
         Debug.Log(e.data["auth"]);
@@ -59,28 +70,42 @@ public class WebSocketClient : MonoBehaviour {
         //Application.OpenURL(e.data["auth"]["rootUrl"].ToString().Trim('"') + "/validConnections?clientId=12");
     }
 
-    private void OnSocialData(SocketIOEvent e) {
+    public void OnSamples(SocketIOEvent e)
+    {
+        Debug.Log("OnSamples");
+        JSONSample = e.data;
+    }
+
+    public void OnSocialData(SocketIOEvent e) {
         Debug.Log("OnSocialData");
         Debug.Log(e.data);
 
     }
 
-    private void Register()
+    public void Register()
     {
         if (!registered)
         {
             Debug.Log("Registering...");
             Dictionary<string, string> data = new Dictionary<string, string>();
-            data["id"] = "12";
+            data["id"] = "1";
             socket.On("client:register:status", OnClientRegisterStatus);
             socket.Emit("client:register", new JSONObject(data));
             socket.On("socialData", OnSocialData);
         }
     }
- 
 
-    // Update is called once per frame
-    void Update () {
-	
-	}
+
+    void OnGUI()
+    {
+        if (GUI.Button(new Rect(10, 300, 150, 50), "Load sample JSON") && JSONSample)
+        {
+            LoadData(JSONSample);
+        }
+    }
+
+    void LoadData(JSONObject data)
+    {
+        silhouetteController.UpdateData(data);
+    }
 }
