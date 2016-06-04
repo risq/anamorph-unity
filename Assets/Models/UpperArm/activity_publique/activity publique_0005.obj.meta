@@ -13,6 +13,40 @@ ModelImporter:
     100010: Cloneur_1_Cube_4
     100012: Cloneur_1_Cube_5
     100014: Cloneur_1_Cube_6
+    100016: Cloneur_1_Sph_re_0
+    100018: Cloneur_1_Sph_re_1
+    100020: Cloneur_1_Sph_re_2
+    100022: Cloneur_1_Sph_re_3
+    100024: Cloneur_1_Sph_re_4
+    100026: Cloneur_1_Sph_re_5
+    100028: Cloneur_1_Sph_re_6
+    100030: Cloneur_1_Sph_re_7
+    100032: Cloneur_1_Sph_re_8
+    100034: Cloneur_1_Sph_re_9
+    100036: Cloneur_1_Neutre_0_Cube
+    100038: Cloneur_1_Neutre_0_Cube1
+    100040: Cloneur_1_Neutre_0_Cube2
+    100042: Cloneur_1_Neutre_1_Cube3
+    100044: Cloneur_1_Neutre_1_Cube4
+    100046: Cloneur_1_Neutre_1_Cube5
+    100048: Cloneur_1_Neutre_2_Cube6
+    100050: Cloneur_1_Neutre_2_Cube7
+    100052: Cloneur_1_Neutre_2_Cube8
+    100054: Cloneur_1_Neutre_3_Cube10
+    100056: Cloneur_1_Neutre_3_Cube11
+    100058: Cloneur_1_Neutre_3_Cube9
+    100060: Cloneur_1_Neutre_4_Cube12
+    100062: Cloneur_1_Neutre_4_Cube13
+    100064: Cloneur_1_Neutre_4_Cube14
+    100066: Cloneur_1_Neutre_5_Cube15
+    100068: Cloneur_1_Neutre_5_Cube16
+    100070: Cloneur_1_Neutre_5_Cube17
+    100072: Cloneur_1_Neutre_6_Cube18
+    100074: Cloneur_1_Neutre_6_Cube19
+    100076: Cloneur_1_Neutre_6_Cube20
+    100078: Cloneur_1_Neutre_7_Cube21
+    100080: Cloneur_1_Neutre_7_Cube22
+    100082: Cloneur_1_Neutre_7_Cube23
     400000: //RootNode
     400002: Cloneur_1_Cube_0
     400004: Cloneur_1_Cube_1
@@ -21,6 +55,40 @@ ModelImporter:
     400010: Cloneur_1_Cube_4
     400012: Cloneur_1_Cube_5
     400014: Cloneur_1_Cube_6
+    400016: Cloneur_1_Sph_re_0
+    400018: Cloneur_1_Sph_re_1
+    400020: Cloneur_1_Sph_re_2
+    400022: Cloneur_1_Sph_re_3
+    400024: Cloneur_1_Sph_re_4
+    400026: Cloneur_1_Sph_re_5
+    400028: Cloneur_1_Sph_re_6
+    400030: Cloneur_1_Sph_re_7
+    400032: Cloneur_1_Sph_re_8
+    400034: Cloneur_1_Sph_re_9
+    400036: Cloneur_1_Neutre_0_Cube
+    400038: Cloneur_1_Neutre_0_Cube1
+    400040: Cloneur_1_Neutre_0_Cube2
+    400042: Cloneur_1_Neutre_1_Cube3
+    400044: Cloneur_1_Neutre_1_Cube4
+    400046: Cloneur_1_Neutre_1_Cube5
+    400048: Cloneur_1_Neutre_2_Cube6
+    400050: Cloneur_1_Neutre_2_Cube7
+    400052: Cloneur_1_Neutre_2_Cube8
+    400054: Cloneur_1_Neutre_3_Cube10
+    400056: Cloneur_1_Neutre_3_Cube11
+    400058: Cloneur_1_Neutre_3_Cube9
+    400060: Cloneur_1_Neutre_4_Cube12
+    400062: Cloneur_1_Neutre_4_Cube13
+    400064: Cloneur_1_Neutre_4_Cube14
+    400066: Cloneur_1_Neutre_5_Cube15
+    400068: Cloneur_1_Neutre_5_Cube16
+    400070: Cloneur_1_Neutre_5_Cube17
+    400072: Cloneur_1_Neutre_6_Cube18
+    400074: Cloneur_1_Neutre_6_Cube19
+    400076: Cloneur_1_Neutre_6_Cube20
+    400078: Cloneur_1_Neutre_7_Cube21
+    400080: Cloneur_1_Neutre_7_Cube22
+    400082: Cloneur_1_Neutre_7_Cube23
     2300000: Cloneur_1_Cube_0
     2300002: Cloneur_1_Cube_1
     2300004: Cloneur_1_Cube_2
@@ -28,6 +96,40 @@ ModelImporter:
     2300008: Cloneur_1_Cube_4
     2300010: Cloneur_1_Cube_5
     2300012: Cloneur_1_Cube_6
+    2300014: Cloneur_1_Sph_re_0
+    2300016: Cloneur_1_Sph_re_1
+    2300018: Cloneur_1_Sph_re_2
+    2300020: Cloneur_1_Sph_re_3
+    2300022: Cloneur_1_Sph_re_4
+    2300024: Cloneur_1_Sph_re_5
+    2300026: Cloneur_1_Sph_re_6
+    2300028: Cloneur_1_Sph_re_7
+    2300030: Cloneur_1_Sph_re_8
+    2300032: Cloneur_1_Sph_re_9
+    2300034: Cloneur_1_Neutre_0_Cube
+    2300036: Cloneur_1_Neutre_0_Cube1
+    2300038: Cloneur_1_Neutre_0_Cube2
+    2300040: Cloneur_1_Neutre_1_Cube3
+    2300042: Cloneur_1_Neutre_1_Cube4
+    2300044: Cloneur_1_Neutre_1_Cube5
+    2300046: Cloneur_1_Neutre_2_Cube6
+    2300048: Cloneur_1_Neutre_2_Cube7
+    2300050: Cloneur_1_Neutre_2_Cube8
+    2300052: Cloneur_1_Neutre_3_Cube10
+    2300054: Cloneur_1_Neutre_3_Cube11
+    2300056: Cloneur_1_Neutre_3_Cube9
+    2300058: Cloneur_1_Neutre_4_Cube12
+    2300060: Cloneur_1_Neutre_4_Cube13
+    2300062: Cloneur_1_Neutre_4_Cube14
+    2300064: Cloneur_1_Neutre_5_Cube15
+    2300066: Cloneur_1_Neutre_5_Cube16
+    2300068: Cloneur_1_Neutre_5_Cube17
+    2300070: Cloneur_1_Neutre_6_Cube18
+    2300072: Cloneur_1_Neutre_6_Cube19
+    2300074: Cloneur_1_Neutre_6_Cube20
+    2300076: Cloneur_1_Neutre_7_Cube21
+    2300078: Cloneur_1_Neutre_7_Cube22
+    2300080: Cloneur_1_Neutre_7_Cube23
     3300000: Cloneur_1_Cube_0
     3300002: Cloneur_1_Cube_1
     3300004: Cloneur_1_Cube_2
@@ -35,6 +137,40 @@ ModelImporter:
     3300008: Cloneur_1_Cube_4
     3300010: Cloneur_1_Cube_5
     3300012: Cloneur_1_Cube_6
+    3300014: Cloneur_1_Sph_re_0
+    3300016: Cloneur_1_Sph_re_1
+    3300018: Cloneur_1_Sph_re_2
+    3300020: Cloneur_1_Sph_re_3
+    3300022: Cloneur_1_Sph_re_4
+    3300024: Cloneur_1_Sph_re_5
+    3300026: Cloneur_1_Sph_re_6
+    3300028: Cloneur_1_Sph_re_7
+    3300030: Cloneur_1_Sph_re_8
+    3300032: Cloneur_1_Sph_re_9
+    3300034: Cloneur_1_Neutre_0_Cube
+    3300036: Cloneur_1_Neutre_0_Cube1
+    3300038: Cloneur_1_Neutre_0_Cube2
+    3300040: Cloneur_1_Neutre_1_Cube3
+    3300042: Cloneur_1_Neutre_1_Cube4
+    3300044: Cloneur_1_Neutre_1_Cube5
+    3300046: Cloneur_1_Neutre_2_Cube6
+    3300048: Cloneur_1_Neutre_2_Cube7
+    3300050: Cloneur_1_Neutre_2_Cube8
+    3300052: Cloneur_1_Neutre_3_Cube10
+    3300054: Cloneur_1_Neutre_3_Cube11
+    3300056: Cloneur_1_Neutre_3_Cube9
+    3300058: Cloneur_1_Neutre_4_Cube12
+    3300060: Cloneur_1_Neutre_4_Cube13
+    3300062: Cloneur_1_Neutre_4_Cube14
+    3300064: Cloneur_1_Neutre_5_Cube15
+    3300066: Cloneur_1_Neutre_5_Cube16
+    3300068: Cloneur_1_Neutre_5_Cube17
+    3300070: Cloneur_1_Neutre_6_Cube18
+    3300072: Cloneur_1_Neutre_6_Cube19
+    3300074: Cloneur_1_Neutre_6_Cube20
+    3300076: Cloneur_1_Neutre_7_Cube21
+    3300078: Cloneur_1_Neutre_7_Cube22
+    3300080: Cloneur_1_Neutre_7_Cube23
     4300000: Cloneur_1_Cube_0
     4300002: Cloneur_1_Cube_1
     4300004: Cloneur_1_Cube_2
@@ -42,6 +178,40 @@ ModelImporter:
     4300008: Cloneur_1_Cube_4
     4300010: Cloneur_1_Cube_5
     4300012: Cloneur_1_Cube_6
+    4300014: Cloneur_1_Sph_re_0
+    4300016: Cloneur_1_Sph_re_1
+    4300018: Cloneur_1_Sph_re_2
+    4300020: Cloneur_1_Sph_re_3
+    4300022: Cloneur_1_Sph_re_4
+    4300024: Cloneur_1_Sph_re_5
+    4300026: Cloneur_1_Sph_re_6
+    4300028: Cloneur_1_Sph_re_7
+    4300030: Cloneur_1_Sph_re_8
+    4300032: Cloneur_1_Sph_re_9
+    4300034: Cloneur_1_Neutre_0_Cube
+    4300036: Cloneur_1_Neutre_0_Cube1
+    4300038: Cloneur_1_Neutre_0_Cube2
+    4300040: Cloneur_1_Neutre_1_Cube3
+    4300042: Cloneur_1_Neutre_1_Cube4
+    4300044: Cloneur_1_Neutre_1_Cube5
+    4300046: Cloneur_1_Neutre_2_Cube6
+    4300048: Cloneur_1_Neutre_2_Cube7
+    4300050: Cloneur_1_Neutre_2_Cube8
+    4300052: Cloneur_1_Neutre_3_Cube10
+    4300054: Cloneur_1_Neutre_3_Cube11
+    4300056: Cloneur_1_Neutre_3_Cube9
+    4300058: Cloneur_1_Neutre_4_Cube12
+    4300060: Cloneur_1_Neutre_4_Cube13
+    4300062: Cloneur_1_Neutre_4_Cube14
+    4300064: Cloneur_1_Neutre_5_Cube15
+    4300066: Cloneur_1_Neutre_5_Cube16
+    4300068: Cloneur_1_Neutre_5_Cube17
+    4300070: Cloneur_1_Neutre_6_Cube18
+    4300072: Cloneur_1_Neutre_6_Cube19
+    4300074: Cloneur_1_Neutre_6_Cube20
+    4300076: Cloneur_1_Neutre_7_Cube21
+    4300078: Cloneur_1_Neutre_7_Cube22
+    4300080: Cloneur_1_Neutre_7_Cube23
   materials:
     importMaterials: 1
     materialName: 0
