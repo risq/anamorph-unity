@@ -124,11 +124,6 @@ public class SilhouetteController : MonoBehaviour {
         UpdateData(null);
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void UpdateData(JSONObject data)
     {
         IdentityCircle primaryCircle = IdentityCircle.Pro; //(IdentityCircle)Random.Range(1, 4);
@@ -320,8 +315,8 @@ public class SilhouetteController : MonoBehaviour {
     Color GenerateColor(float privatePart, float publicPart, float proPart, float brightness = -1f)
     {
         publicPart = publicPart / (publicPart + privatePart + proPart);
-        privatePart = publicPart / (publicPart + privatePart + proPart);
-        proPart = publicPart / (publicPart + privatePart + proPart);
+        privatePart = privatePart / (publicPart + privatePart + proPart);
+        proPart = proPart / (publicPart + privatePart + proPart);
 
         HSBColor hsb = new HSBColor(PrivateColorHSB.h * privatePart + PublicColorHSB.h * publicPart + ProColorHSB.h * proPart,
             PrivateColorHSB.s * privatePart + PublicColorHSB.s * publicPart + ProColorHSB.s * proPart,
