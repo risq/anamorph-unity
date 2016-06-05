@@ -9,19 +9,74 @@ ModelImporter:
     100002: //RootNode
     100004: Cylindre
     100006: Tore
+    100008: Bool_en_Neutre_1_Cube
+    100010: Bool_en_Neutre_Cloneur_Cube_10
+    100012: Bool_en_Neutre_Cloneur_Cube_11
+    100014: Bool_en_Neutre_Cloneur_Cube_12
+    100016: Bool_en_Neutre_Cloneur_Cube_13
+    100018: Bool_en_Neutre_Cloneur_Cube_14
+    100020: Bool_en_Neutre_Cloneur_Cube_5
+    100022: Bool_en_Neutre_Cloneur_Cube_6
+    100024: Bool_en_Neutre_Cloneur_Cube_7
+    100026: Bool_en_Neutre_Cloneur_Cube_8
+    100028: Bool_en_Neutre_Cloneur_Cube_9
     400000: Bool_en_Neutre_1_Solide_platonicien
     400002: //RootNode
     400004: Cylindre
     400006: Tore
+    400008: Bool_en_Neutre_1_Cube
+    400010: Bool_en_Neutre_Cloneur_Cube_10
+    400012: Bool_en_Neutre_Cloneur_Cube_11
+    400014: Bool_en_Neutre_Cloneur_Cube_12
+    400016: Bool_en_Neutre_Cloneur_Cube_13
+    400018: Bool_en_Neutre_Cloneur_Cube_14
+    400020: Bool_en_Neutre_Cloneur_Cube_5
+    400022: Bool_en_Neutre_Cloneur_Cube_6
+    400024: Bool_en_Neutre_Cloneur_Cube_7
+    400026: Bool_en_Neutre_Cloneur_Cube_8
+    400028: Bool_en_Neutre_Cloneur_Cube_9
     2300000: Bool_en_Neutre_1_Solide_platonicien
     2300002: Cylindre
     2300004: Tore
+    2300006: Bool_en_Neutre_1_Cube
+    2300008: Bool_en_Neutre_Cloneur_Cube_10
+    2300010: Bool_en_Neutre_Cloneur_Cube_11
+    2300012: Bool_en_Neutre_Cloneur_Cube_12
+    2300014: Bool_en_Neutre_Cloneur_Cube_13
+    2300016: Bool_en_Neutre_Cloneur_Cube_14
+    2300018: Bool_en_Neutre_Cloneur_Cube_5
+    2300020: Bool_en_Neutre_Cloneur_Cube_6
+    2300022: Bool_en_Neutre_Cloneur_Cube_7
+    2300024: Bool_en_Neutre_Cloneur_Cube_8
+    2300026: Bool_en_Neutre_Cloneur_Cube_9
     3300000: Bool_en_Neutre_1_Solide_platonicien
     3300002: Cylindre
     3300004: Tore
+    3300006: Bool_en_Neutre_1_Cube
+    3300008: Bool_en_Neutre_Cloneur_Cube_10
+    3300010: Bool_en_Neutre_Cloneur_Cube_11
+    3300012: Bool_en_Neutre_Cloneur_Cube_12
+    3300014: Bool_en_Neutre_Cloneur_Cube_13
+    3300016: Bool_en_Neutre_Cloneur_Cube_14
+    3300018: Bool_en_Neutre_Cloneur_Cube_5
+    3300020: Bool_en_Neutre_Cloneur_Cube_6
+    3300022: Bool_en_Neutre_Cloneur_Cube_7
+    3300024: Bool_en_Neutre_Cloneur_Cube_8
+    3300026: Bool_en_Neutre_Cloneur_Cube_9
     4300000: Bool_en_Neutre_1_Solide_platonicien
     4300002: Cylindre
     4300004: Tore
+    4300006: Bool_en_Neutre_1_Cube
+    4300008: Bool_en_Neutre_Cloneur_Cube_10
+    4300010: Bool_en_Neutre_Cloneur_Cube_11
+    4300012: Bool_en_Neutre_Cloneur_Cube_12
+    4300014: Bool_en_Neutre_Cloneur_Cube_13
+    4300016: Bool_en_Neutre_Cloneur_Cube_14
+    4300018: Bool_en_Neutre_Cloneur_Cube_5
+    4300020: Bool_en_Neutre_Cloneur_Cube_6
+    4300022: Bool_en_Neutre_Cloneur_Cube_7
+    4300024: Bool_en_Neutre_Cloneur_Cube_8
+    4300026: Bool_en_Neutre_Cloneur_Cube_9
   materials:
     importMaterials: 1
     materialName: 0
