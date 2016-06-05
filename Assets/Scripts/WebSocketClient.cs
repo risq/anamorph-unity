@@ -7,7 +7,9 @@ public class WebSocketClient : MonoBehaviour {
 
     SocketIOComponent socket;
     bool registered = false;
-    JSONObject JSONSample;
+    JSONObject JSONSample1;
+    JSONObject JSONSample2;
+    JSONObject JSONSample3;
     public SilhouetteController silhouetteController;
 
     void Start () {
@@ -72,8 +74,10 @@ public class WebSocketClient : MonoBehaviour {
 
     public void OnSamples(SocketIOEvent e)
     {
-        Debug.Log("OnSamples");
-        JSONSample = e.data;
+        Debug.Log("OnSamples " + e.data);
+        JSONSample1 = e.data.GetField("sample1");
+        JSONSample2 = e.data.GetField("sample2");
+        JSONSample3 = e.data.GetField("sample3");
     }
 
     public void OnSocialData(SocketIOEvent e) {
@@ -95,12 +99,19 @@ public class WebSocketClient : MonoBehaviour {
         }
     }
 
-
-    void OnGUI()
+    void Update()
     {
-        if (GUI.Button(new Rect(10, 300, 150, 50), "Load sample JSON") && JSONSample)
+        if (Input.GetKey(KeyCode.Alpha1) && JSONSample1)
         {
-            LoadData(JSONSample);
+            LoadData(JSONSample1);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2) && JSONSample2)
+        {
+            LoadData(JSONSample2);
+        }
+        else if (Input.GetKey(KeyCode.Alpha3) && JSONSample3)
+        {
+            LoadData(JSONSample3);
         }
     }
 

@@ -126,8 +126,22 @@ public class SilhouetteController : MonoBehaviour {
 	
     public void UpdateData(JSONObject data)
     {
-        IdentityCircle primaryCircle = IdentityCircle.Pro; //(IdentityCircle)Random.Range(1, 4);
-        IdentityCircle secondaryCircle = IdentityCircle.Public; //(IdentityCircle)Random.Range(1, 4);
+        IdentityCircle primaryCircle = (IdentityCircle)Random.Range(1, 4);
+        IdentityCircle secondaryCircle = (IdentityCircle)Random.Range(1, 4);
+
+        if (data)
+        {
+            string primaryCircleString = "";
+            string secondaryCircleString = "";
+
+            data.GetField("global").GetField(ref primaryCircleString, "primaryCircle");
+            data.GetField("global").GetField(ref secondaryCircleString, "secondaryCircle");
+            primaryCircle = GetIdentityCircle(primaryCircleString);
+            secondaryCircle = GetIdentityCircle(secondaryCircleString);
+        }
+
+        Debug.Log("primaryCircle " + primaryCircle);
+        Debug.Log("secondaryCircle " + secondaryCircle);
         SetLights(primaryCircle, secondaryCircle);
 
         // ========== Activity ==========
@@ -329,6 +343,14 @@ public class SilhouetteController : MonoBehaviour {
         }
 
         return hsb.ToColor();
+    }
+
+    IdentityCircle GetIdentityCircle(string circleString)
+    {
+        return  circleString == "private" ? IdentityCircle.Private :
+                circleString == "public" ? IdentityCircle.Public :
+                circleString == "pro" ? IdentityCircle.Pro :
+                IdentityCircle.None;
     }
 
     void OnGUI()
