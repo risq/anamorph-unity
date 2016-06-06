@@ -50,6 +50,23 @@ public class SilhouetteController : MonoBehaviour {
 
     ModelSwitcher LeftBottomShoulderModelSwitcher;
     ModelSwitcher RightBottomShoulderModelSwitcher;
+    ModelSwitcher LeftOuterBottomShoulderModelSwitcher;
+    ModelSwitcher RightOuterBottomShoulderModelSwitcher;
+
+    // Passive Identity
+    ModelSwitcher LeftPrivateTopShoulderModelSwitcher;
+    ModelSwitcher LeftPublicTopShoulderModelSwitcher;
+    ModelSwitcher LeftProTopShoulderModelSwitcher;
+
+    ModelSwitcher RightTopShoulderModelSwitcher;
+
+    TransformModifier LeftPrivateTopShoulderInnerModifier;
+    TransformModifier LeftPublicTopShoulderInnerModifier;
+    TransformModifier LeftProTopShoulderInnerModifier;
+
+    TransformModifier LeftPrivateTopShoulderOuterModifier;
+    TransformModifier LeftPublicTopShoulderOuterModifier;
+    TransformModifier LeftProTopShoulderOuterModifier;
 
     // Influence
     PlaygroundParticlesC FollowersParticles;
@@ -108,6 +125,24 @@ public class SilhouetteController : MonoBehaviour {
 
         LeftBottomShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
         RightBottomShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
+        LeftOuterBottomShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Bottom Shoulder Model/Outer").GetComponent<ModelSwitcher>();
+        RightOuterBottomShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Bottom Shoulder Model/Outer").GetComponent<ModelSwitcher>();
+
+        // Passive Identity
+        LeftPrivateTopShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Inner").GetComponent<ModelSwitcher>();
+        LeftPublicTopShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Inner").GetComponent<ModelSwitcher>();
+        LeftProTopShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Inner").GetComponent<ModelSwitcher>();
+
+        RightTopShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Right Top Shoulder Model/Inner").GetComponent<ModelSwitcher>();
+
+        LeftPrivateTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Inner2").GetComponent<TransformModifier>();
+        LeftPublicTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Inner2").GetComponent<TransformModifier>();
+        LeftProTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Inner2").GetComponent<TransformModifier>();
+
+        LeftPrivateTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Outer").GetComponent<TransformModifier>();
+        LeftPublicTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Outer").GetComponent<TransformModifier>();
+        LeftProTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Outer").GetComponent<TransformModifier>();
+
 
         // Influence
         FollowersParticles = GameObject.Find("Head/Followers/Followers Particles System").GetComponent<PlaygroundParticlesC>();
@@ -221,6 +256,9 @@ public class SilhouetteController : MonoBehaviour {
         LeftBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
         RightBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
 
+        LeftOuterBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
+        RightOuterBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
+
         // ========== Influence ==========
 
         float influenceGlobalScore = Random.value;
@@ -240,6 +278,34 @@ public class SilhouetteController : MonoBehaviour {
 
         FollowersParticles.particleCount = (int)(influenceGlobalScore * maxParticles);
         SetColor(FollowersParticles.particleSystemRenderer.material, influenceScoreMix);
+
+        //  ========== Passive Identity ==========
+        float passiveIdGlobalScore = Random.value;
+        float passiveIdPrivateScore = Random.value;
+        float passiveIdPublicScore = Random.value;
+        float passiveIdProScore = Random.value;
+
+        if (data)
+        {
+            data.GetField("passiveIdentity").GetField("globalData").GetField(ref passiveIdGlobalScore, "score");
+            data.GetField("passiveIdentity").GetField("privateData").GetField(ref passiveIdPrivateScore, "score");
+            data.GetField("passiveIdentity").GetField("publicData").GetField(ref passiveIdPublicScore, "score");
+            data.GetField("passiveIdentity").GetField("professionalData").GetField(ref passiveIdProScore, "score");
+        }
+
+        LeftPrivateTopShoulderModelSwitcher.currentValue = passiveIdPrivateScore * 100f;
+        LeftPublicTopShoulderModelSwitcher.currentValue = passiveIdPublicScore * 100f;
+        LeftProTopShoulderModelSwitcher.currentValue = passiveIdProScore * 100f;
+
+        RightTopShoulderModelSwitcher.currentValue = passiveIdGlobalScore * 100f;
+
+        LeftPrivateTopShoulderInnerModifier.CurrentValue = passiveIdPrivateScore * 100f;
+        LeftPublicTopShoulderInnerModifier.CurrentValue = passiveIdPublicScore * 100f;
+        LeftProTopShoulderInnerModifier.CurrentValue = passiveIdProScore * 100f;
+
+        LeftPrivateTopShoulderOuterModifier.CurrentValue = passiveIdPrivateScore * 100f;
+        LeftPublicTopShoulderOuterModifier.CurrentValue = passiveIdPublicScore * 100f;
+        LeftProTopShoulderOuterModifier.CurrentValue = passiveIdProScore * 100f;
 
         // ========== Mood ==========
 
