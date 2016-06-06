@@ -93,10 +93,14 @@ public class SilhouetteController : MonoBehaviour {
     TransformModifier LeftNeckModifier;
     TransformModifier RightNeckModifier;
 
-
     // Mood
     ModelSwitcher LeftLungModelSwitcher;
     ModelSwitcher RightLungModelSwitcher;
+
+    // Interests
+    ModelSwitcher StomachModelSwitcher;
+    TransformModifier StomachSphereModifier;
+    RotateAround StomachSphereRotate;
 
     SplineDecorator Spline;
 
@@ -192,6 +196,11 @@ public class SilhouetteController : MonoBehaviour {
         LeftLungModelSwitcher = GameObject.Find("Left Lung Model/Inner").GetComponent<ModelSwitcher>();
         RightLungModelSwitcher = GameObject.Find("Right Lung Model/Inner").GetComponent<ModelSwitcher>();
 
+        // Interests 
+        StomachModelSwitcher = GameObject.Find("/Stomach Model/Inner").GetComponent<ModelSwitcher>();
+        StomachSphereModifier = GameObject.Find("/Stomach Model/Sphere").GetComponent<TransformModifier>();
+        StomachSphereRotate = GameObject.Find("/Stomach Model/Sphere").GetComponent<RotateAround>();
+
         Spline = GameObject.Find("Spline Model").GetComponent<SplineDecorator>();
 
         UpdateData(null);
@@ -246,7 +255,7 @@ public class SilhouetteController : MonoBehaviour {
         RightLowerArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
         RightLowerArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
         RightLowerArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
-        LeftUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
+        RightLowerArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(RightLowerArmMaterial, activityFreqMix);
 
         LeftUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
@@ -404,8 +413,19 @@ public class SilhouetteController : MonoBehaviour {
 
         LeftLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
         RightLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
-        
+
         // ========== Interests ==========
+
+        float hobbiesVolume = Random.value;
+
+        if (data)
+        {
+            data.GetField("hobbies").GetField("globalData").GetField(ref hobbiesVolume, "hobbiesVolume");
+        }
+
+        StomachModelSwitcher.currentValue = hobbiesVolume * 100f;
+        StomachSphereModifier.CurrentValue = hobbiesVolume * 100f;
+        StomachSphereRotate.speed = Mathf.Lerp(80f, 20f, hobbiesVolume);
 
     }
 
@@ -422,9 +442,9 @@ public class SilhouetteController : MonoBehaviour {
 
         for (int i = 0; i < splineBones.Length; i++)
         {
-            splineBones[i].transform.FindChild("Public").localScale = new Vector3(1f + publicVol * 5f, 1, 1);
-            splineBones[i].transform.FindChild("Private").localScale = new Vector3(1f + privateVol * 5f, 1, 1);
-            splineBones[i].transform.FindChild("Pro").localScale = new Vector3(1f + proVol * 5f, 1, 1);
+            splineBones[i].transform.FindChild("Public").localScale = new Vector3(Mathf.Lerp(1f, 3f, publicVol), 1f, 1f);
+            splineBones[i].transform.FindChild("Private").localScale = new Vector3(Mathf.Lerp(0.2f, 5f, privateVol), 2f, 1f);
+            splineBones[i].transform.FindChild("Pro").localScale = new Vector3(0.2f, Mathf.Lerp(3.5f, 6f, proVol), 0.2f);
         }
     }
 
