@@ -41,8 +41,6 @@ public class TransformModifier : MonoBehaviour {
 	}
 	
 	public void UpdateTransform () {
-        Debug.Log("UpdateTransform");
-
         transform.localPosition = new Vector3(minX + (maxX - minX) * currentValue / 100, minY + (maxY - minY) * currentValue / 100, minZ + (maxZ - minZ) * currentValue / 100);
         transform.localScale = new Vector3(minScaleX + (maxScaleX - minScaleX) * currentValue / 100, minScaleY + (maxScaleY - minScaleY) * currentValue / 100, minScaleZ + (maxScaleZ - minScaleZ) * currentValue / 100);
 	}

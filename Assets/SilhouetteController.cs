@@ -72,6 +72,12 @@ public class SilhouetteController : MonoBehaviour {
 
     // Influence
     PlaygroundParticlesC FollowersParticles;
+    ManipulatorObjectC FollowersGravitationalManipulator;
+    ManipulatorObjectC FollowersRepellentManipulator;
+
+    ModelSwitcher HeadInnerLeftModelSwitcher;
+    ModelSwitcher HeadInnerRightModelSwitcher;
+    ModelSwitcher HeadCylinderModelSwitcher;
 
     // Mood
     ModelSwitcher LeftLungModelSwitcher;
@@ -147,9 +153,14 @@ public class SilhouetteController : MonoBehaviour {
 
         RightTopShoulderInnerModifier = GameObject.Find("/Right Top Shoulder Inner 2/Inner").GetComponent<TransformModifier>();
 
-
         // Influence
         FollowersParticles = GameObject.Find("Head/Followers/Followers Particles System").GetComponent<PlaygroundParticlesC>();
+        FollowersGravitationalManipulator = FollowersParticles.manipulators[0];
+        FollowersRepellentManipulator = FollowersParticles.manipulators[1];
+
+        HeadInnerLeftModelSwitcher = GameObject.Find("Head/Head Model/InnerLeft").GetComponent<ModelSwitcher>();
+        HeadInnerRightModelSwitcher = GameObject.Find("Head/Head Model/InnerRight").GetComponent<ModelSwitcher>();
+        HeadCylinderModelSwitcher = GameObject.Find("Head/Head Model/Cylinder").GetComponent<ModelSwitcher>();
 
         // Mood
         LeftLungModelSwitcher = GameObject.Find("Left Lung Model/Inner").GetComponent<ModelSwitcher>();
@@ -165,6 +176,8 @@ public class SilhouetteController : MonoBehaviour {
 	
     public void UpdateData(JSONObject data)
     {
+        // ========== General ==========
+
         IdentityCircle primaryCircle = (IdentityCircle)Random.Range(1, 4);
         IdentityCircle secondaryCircle = (IdentityCircle)Random.Range(1, 4);
 
@@ -281,9 +294,30 @@ public class SilhouetteController : MonoBehaviour {
         Color influenceScoreMix = GenerateColor(influencePrivateScore, influencePublicScore, influenceProScore, 0.6f);
 
         FollowersParticles.particleCount = (int)(influenceGlobalScore * maxParticles);
+        FollowersGravitationalManipulator.size = Mathf.Lerp(1f, 5f, influenceGlobalScore);
+        FollowersRepellentManipulator.strength = Mathf.Lerp(.5f, 4f, influenceGlobalScore);
+
         SetColor(FollowersParticles.particleSystemRenderer.material, influenceScoreMix);
 
+        // Nb of likes
+        float passiveIdPrivateNbOfLikes = Random.value;
+        float passiveIdPublicNbOfLikes = Random.value;
+        float passiveIdProNbOfLikes = Random.value;
+
+        if (data)
+        {
+            data.GetField("passiveIdentity").GetField("privateData").GetField(ref passiveIdPrivateNbOfLikes, "nbOfLikes");
+            data.GetField("passiveIdentity").GetField("publicData").GetField(ref passiveIdPublicNbOfLikes, "nbOfLikes");
+            data.GetField("passiveIdentity").GetField("professionalData").GetField(ref passiveIdProNbOfLikes, "nbOfLikes");
+        }
+
+        HeadInnerLeftModelSwitcher.currentValue = passiveIdPrivateNbOfLikes * 100f;
+        HeadInnerRightModelSwitcher.currentValue = passiveIdPublicNbOfLikes * 100f;
+        HeadCylinderModelSwitcher.currentValue = passiveIdProNbOfLikes * 100f;
+
+
         //  ========== Passive Identity ==========
+
         float passiveIdGlobalScore = Random.value;
         float passiveIdPrivateScore = Random.value;
         float passiveIdPublicScore = Random.value;
