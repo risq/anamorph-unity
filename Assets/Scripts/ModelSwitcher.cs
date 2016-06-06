@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ModelSwitcher : MonoBehaviour {
@@ -106,6 +106,13 @@ public class ModelSwitcher : MonoBehaviour {
     void DoSortFrames()
     {
         System.Array.Sort(framesPrefabs, (a, b) => a.name.CompareTo(b.name));
+        Debug.Log(gameObject.name + ".frames have been sorted alphabetically.");
+    }
+    
+    [ContextMenu("Inverse Sort Frames")]
+    void DoInverseSortFrames()
+    {
+        System.Array.Sort(framesPrefabs, (a, b) => b.name.CompareTo(a.name));
         Debug.Log(gameObject.name + ".frames have been sorted alphabetically.");
     }
 }
