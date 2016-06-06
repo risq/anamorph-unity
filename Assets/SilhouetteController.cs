@@ -48,6 +48,9 @@ public class SilhouetteController : MonoBehaviour {
     ModelSwitcher LeftElbowModelSwitcher;
     ModelSwitcher RightElbowModelSwitcher;
 
+    TransformModifier LeftElbowModifier;
+    TransformModifier RightElbowModifier;
+
     ModelSwitcher LeftBottomShoulderModelSwitcher;
     ModelSwitcher RightBottomShoulderModelSwitcher;
     ModelSwitcher LeftOuterBottomShoulderModelSwitcher;
@@ -78,6 +81,13 @@ public class SilhouetteController : MonoBehaviour {
     ModelSwitcher HeadInnerLeftModelSwitcher;
     ModelSwitcher HeadInnerRightModelSwitcher;
     ModelSwitcher HeadCylinderModelSwitcher;
+
+    ModelSwitcher LeftNeckModelSwitcher;
+    ModelSwitcher RightNeckModelSwitcher;
+
+    TransformModifier LeftNeckModifier;
+    TransformModifier RightNeckModifier;
+
 
     // Mood
     ModelSwitcher LeftLungModelSwitcher;
@@ -131,6 +141,9 @@ public class SilhouetteController : MonoBehaviour {
         LeftElbowModelSwitcher = GameObject.Find("LeftElbow/Elbow Model/Inner").GetComponent<ModelSwitcher>();
         RightElbowModelSwitcher = GameObject.Find("RightElbow/Elbow Model/Inner").GetComponent<ModelSwitcher>();
 
+        LeftElbowModifier = GameObject.Find("LeftElbow/Elbow Model/Inner").GetComponent<TransformModifier>();
+        RightElbowModifier = GameObject.Find("RightElbow/Elbow Model/Inner").GetComponent<TransformModifier>();
+
         LeftBottomShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
         RightBottomShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
         LeftOuterBottomShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Bottom Shoulder Model/Outer").GetComponent<ModelSwitcher>();
@@ -161,6 +174,12 @@ public class SilhouetteController : MonoBehaviour {
         HeadInnerLeftModelSwitcher = GameObject.Find("Head/Head Model/InnerLeft").GetComponent<ModelSwitcher>();
         HeadInnerRightModelSwitcher = GameObject.Find("Head/Head Model/InnerRight").GetComponent<ModelSwitcher>();
         HeadCylinderModelSwitcher = GameObject.Find("Head/Head Model/Cylinder").GetComponent<ModelSwitcher>();
+
+        LeftNeckModelSwitcher = GameObject.Find("/Left Neck Model/Inner").GetComponent<ModelSwitcher>();
+        RightNeckModelSwitcher = GameObject.Find("/Right Neck Model/Inner").GetComponent<ModelSwitcher>();
+
+        LeftNeckModifier = GameObject.Find("/Left Neck Model/Outer").GetComponent<TransformModifier>();
+        RightNeckModifier = GameObject.Find("/Right Neck Model/Outer").GetComponent<TransformModifier>();
 
         // Mood
         LeftLungModelSwitcher = GameObject.Find("Left Lung Model/Inner").GetComponent<ModelSwitcher>();
@@ -270,6 +289,9 @@ public class SilhouetteController : MonoBehaviour {
         LeftElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
         RightElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
 
+        LeftElbowModifier.CurrentValue = activityPrivatePhotoVol * 100f;
+        RightElbowModifier.CurrentValue = activityPrivatePhotoVol * 100f;
+
         LeftBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
         RightBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
 
@@ -296,6 +318,12 @@ public class SilhouetteController : MonoBehaviour {
         FollowersParticles.particleCount = (int)(influenceGlobalScore * maxParticles);
         FollowersGravitationalManipulator.size = Mathf.Lerp(1f, 5f, influenceGlobalScore);
         FollowersRepellentManipulator.strength = Mathf.Lerp(.5f, 4f, influenceGlobalScore);
+
+        LeftNeckModelSwitcher.currentValue = influenceGlobalScore * 100f;
+        RightNeckModelSwitcher.currentValue = influenceGlobalScore * 100f;
+
+        LeftNeckModifier.CurrentValue = influenceGlobalScore * 100f;
+        RightNeckModifier.CurrentValue = influenceGlobalScore * 100f;
 
         SetColor(FollowersParticles.particleSystemRenderer.material, influenceScoreMix);
 
