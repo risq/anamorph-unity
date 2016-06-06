@@ -232,7 +232,7 @@ public class SilhouetteController : MonoBehaviour {
         LeftUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(LeftUpperArmMaterial, activityFreqMix);
 
-        // RightUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
+        RightUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
         RightUpperArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
         RightUpperArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
         RightUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;

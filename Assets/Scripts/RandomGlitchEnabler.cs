@@ -27,4 +27,17 @@ public class RandomGlitchEnabler : MonoBehaviour {
             yield return new WaitForSeconds(Random.Range(0, averageActivationTime * 2));
         }
     }
+
+    IEnumerator ActivateGlitch()
+    {
+        glitchEffect.intensity = Random.Range(minIntensity, maxIntensity);
+        glitchEffect.enabled = true;
+        yield return new WaitForSeconds(Random.Range(0, averageDeactivationTime * 2));
+        glitchEffect.enabled = false;
+    }
+
+    public void DoGlitch()
+    {
+        StartCoroutine(ActivateGlitch());
+    }
 }
