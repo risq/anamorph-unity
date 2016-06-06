@@ -62,6 +62,7 @@ public class SilhouetteController : MonoBehaviour {
     ModelSwitcher LeftProTopShoulderModelSwitcher;
 
     ModelSwitcher RightTopShoulderModelSwitcher;
+    TransformModifier RightTopShoulderModifier;
 
     TransformModifier LeftPrivateTopShoulderInnerModifier;
     TransformModifier LeftPublicTopShoulderInnerModifier;
@@ -82,6 +83,10 @@ public class SilhouetteController : MonoBehaviour {
     ModelSwitcher HeadInnerRightModelSwitcher;
     ModelSwitcher HeadCylinderModelSwitcher;
 
+    TransformModifier HeadInnerLeftModifier;
+    TransformModifier HeadInnerRightModifier;
+    TransformModifier HeadCylinderModifier;
+
     ModelSwitcher LeftNeckModelSwitcher;
     ModelSwitcher RightNeckModelSwitcher;
 
@@ -91,10 +96,7 @@ public class SilhouetteController : MonoBehaviour {
 
     // Mood
     ModelSwitcher LeftLungModelSwitcher;
-    Material LeftLungMaterial;
-
     ModelSwitcher RightLungModelSwitcher;
-    Material RightLungMaterial;
 
     SplineDecorator Spline;
 
@@ -155,6 +157,7 @@ public class SilhouetteController : MonoBehaviour {
         LeftProTopShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Inner").GetComponent<ModelSwitcher>();
 
         RightTopShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Right Top Shoulder Model/Inner").GetComponent<ModelSwitcher>();
+        RightTopShoulderModifier = GameObject.Find("RightShoulder/Full Shoulder/Right Top Shoulder Model/Inner").GetComponent<TransformModifier>();
 
         LeftPrivateTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Inner2").GetComponent<TransformModifier>();
         LeftPublicTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Inner2").GetComponent<TransformModifier>();
@@ -175,6 +178,10 @@ public class SilhouetteController : MonoBehaviour {
         HeadInnerRightModelSwitcher = GameObject.Find("Head/Head Model/InnerRight").GetComponent<ModelSwitcher>();
         HeadCylinderModelSwitcher = GameObject.Find("Head/Head Model/Cylinder").GetComponent<ModelSwitcher>();
 
+        HeadInnerLeftModifier = GameObject.Find("Head/Head Model/InnerLeft").GetComponent<TransformModifier>();
+        HeadInnerRightModifier = GameObject.Find("Head/Head Model/InnerRight").GetComponent<TransformModifier>();
+        HeadCylinderModifier = GameObject.Find("Head/Head Model/Cylinder").GetComponent<TransformModifier>();
+
         LeftNeckModelSwitcher = GameObject.Find("/Left Neck Model/Inner").GetComponent<ModelSwitcher>();
         RightNeckModelSwitcher = GameObject.Find("/Right Neck Model/Inner").GetComponent<ModelSwitcher>();
 
@@ -183,10 +190,7 @@ public class SilhouetteController : MonoBehaviour {
 
         // Mood
         LeftLungModelSwitcher = GameObject.Find("Left Lung Model/Inner").GetComponent<ModelSwitcher>();
-        LeftLungMaterial = GameObject.Find("Left Lung Model/Inner").GetComponent<Renderer>().material;
-
         RightLungModelSwitcher = GameObject.Find("Right Lung Model/Inner").GetComponent<ModelSwitcher>();
-        RightLungMaterial = GameObject.Find("Right Lung Model/Inner").GetComponent<Renderer>().material;
 
         Spline = GameObject.Find("Spline Model").GetComponent<SplineDecorator>();
 
@@ -316,7 +320,7 @@ public class SilhouetteController : MonoBehaviour {
         Color influenceScoreMix = GenerateColor(influencePrivateScore, influencePublicScore, influenceProScore, 0.6f);
 
         FollowersParticles.particleCount = (int)(influenceGlobalScore * maxParticles);
-        FollowersGravitationalManipulator.size = Mathf.Lerp(1f, 5f, influenceGlobalScore);
+        FollowersGravitationalManipulator.size = Mathf.Lerp(1f, 6f, influenceGlobalScore);
         FollowersRepellentManipulator.strength = Mathf.Lerp(.5f, 4f, influenceGlobalScore);
 
         LeftNeckModelSwitcher.currentValue = influenceGlobalScore * 100f;
@@ -334,14 +338,18 @@ public class SilhouetteController : MonoBehaviour {
 
         if (data)
         {
-            data.GetField("passiveIdentity").GetField("privateData").GetField(ref passiveIdPrivateNbOfLikes, "nbOfLikes");
-            data.GetField("passiveIdentity").GetField("publicData").GetField(ref passiveIdPublicNbOfLikes, "nbOfLikes");
-            data.GetField("passiveIdentity").GetField("professionalData").GetField(ref passiveIdProNbOfLikes, "nbOfLikes");
+            data.GetField("influence").GetField("privateData").GetField(ref passiveIdPrivateNbOfLikes, "likesScore");
+            data.GetField("influence").GetField("publicData").GetField(ref passiveIdPublicNbOfLikes, "likesScore");
+            data.GetField("influence").GetField("professionalData").GetField(ref passiveIdProNbOfLikes, "likesScore");
         }
 
         HeadInnerLeftModelSwitcher.currentValue = passiveIdPrivateNbOfLikes * 100f;
         HeadInnerRightModelSwitcher.currentValue = passiveIdPublicNbOfLikes * 100f;
         HeadCylinderModelSwitcher.currentValue = passiveIdProNbOfLikes * 100f;
+
+        HeadInnerLeftModifier.CurrentValue = passiveIdPrivateNbOfLikes * 100f;
+        HeadInnerRightModifier.CurrentValue = passiveIdPublicNbOfLikes * 100f;
+        HeadCylinderModifier.CurrentValue = passiveIdProNbOfLikes * 100f;
 
 
         //  ========== Passive Identity ==========
@@ -364,6 +372,7 @@ public class SilhouetteController : MonoBehaviour {
         LeftProTopShoulderModelSwitcher.currentValue = passiveIdProScore * 100f;
 
         RightTopShoulderModelSwitcher.currentValue = passiveIdGlobalScore * 100f;
+        RightTopShoulderModifier.CurrentValue = passiveIdGlobalScore * 100f;
 
         LeftPrivateTopShoulderInnerModifier.CurrentValue = passiveIdPrivateScore * 100f;
         LeftPublicTopShoulderInnerModifier.CurrentValue = passiveIdPublicScore * 100f;
@@ -394,10 +403,10 @@ public class SilhouetteController : MonoBehaviour {
         Color moodExpressivityMix = GenerateColor(moodPrivateExpressivity, moodPublicExpressivity, moodProExpressivity, 0.6f);
 
         LeftLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
-        SetColor(LeftLungMaterial, moodExpressivityMix);
-
         RightLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
-        SetColor(RightLungMaterial, moodExpressivityMix);
+        
+        // ========== Interests ==========
+
     }
 
     void SetColor(Material objectMaterial, Color color)
