@@ -186,8 +186,8 @@ public class SilhouetteController : MonoBehaviour {
             string primaryCircleString = "";
             string secondaryCircleString = "";
 
-            data.GetField("global").GetField(ref primaryCircleString, "primaryCircle");
-            data.GetField("global").GetField(ref secondaryCircleString, "secondaryCircle");
+            data.GetField("general").GetField("globalData").GetField(ref primaryCircleString, "primaryCircle");
+            data.GetField("general").GetField("globalData").GetField(ref secondaryCircleString, "secondaryCircle");
             primaryCircle = GetIdentityCircle(primaryCircleString);
             secondaryCircle = GetIdentityCircle(secondaryCircleString);
         }
@@ -206,10 +206,10 @@ public class SilhouetteController : MonoBehaviour {
 
         if (data)
         {
-            data.GetField("activity").GetField("globalData").GetField(ref activityGlobalFreq, "postFrequency");
-            data.GetField("activity").GetField("privateData").GetField(ref activityPrivateFreq, "postFrequency");
-            data.GetField("activity").GetField("publicData").GetField(ref activityPublicFreq, "postFrequency");
-            data.GetField("activity").GetField("professionalData").GetField(ref activityProFreq, "postFrequency");
+            data.GetField("activity").GetField("globalData").GetField(ref activityGlobalFreq, "postFrequencyScore");
+            data.GetField("activity").GetField("privateData").GetField(ref activityPrivateFreq, "postFrequencyScore");
+            data.GetField("activity").GetField("publicData").GetField(ref activityPublicFreq, "postFrequencyScore");
+            data.GetField("activity").GetField("professionalData").GetField(ref activityProFreq, "postFrequencyScore");
         }
 
         Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);
