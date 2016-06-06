@@ -68,6 +68,8 @@ public class SilhouetteController : MonoBehaviour {
     TransformModifier LeftPublicTopShoulderOuterModifier;
     TransformModifier LeftProTopShoulderOuterModifier;
 
+    TransformModifier RightTopShoulderInnerModifier;
+
     // Influence
     PlaygroundParticlesC FollowersParticles;
 
@@ -142,6 +144,8 @@ public class SilhouetteController : MonoBehaviour {
         LeftPrivateTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Outer").GetComponent<TransformModifier>();
         LeftPublicTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Outer").GetComponent<TransformModifier>();
         LeftProTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Outer").GetComponent<TransformModifier>();
+
+        RightTopShoulderInnerModifier = GameObject.Find("/Right Top Shoulder Inner 2/Inner").GetComponent<TransformModifier>();
 
 
         // Influence
@@ -306,6 +310,8 @@ public class SilhouetteController : MonoBehaviour {
         LeftPrivateTopShoulderOuterModifier.CurrentValue = passiveIdPrivateScore * 100f;
         LeftPublicTopShoulderOuterModifier.CurrentValue = passiveIdPublicScore * 100f;
         LeftProTopShoulderOuterModifier.CurrentValue = passiveIdProScore * 100f;
+
+        RightTopShoulderInnerModifier.CurrentValue = passiveIdGlobalScore * 100f;
 
         // ========== Mood ==========
 
