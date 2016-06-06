@@ -37,6 +37,7 @@ ModelImporter:
     100058: Neutre_Neutre_1_R_seau_d_atomes_8_Cube5
     100060: Neutre_Neutre_1_R_seau_d_atomes_9_Cube4
     100062: Neutre_Neutre_1_R_seau_d_atomes_Cube13
+    100064: R_seau_d_atomes_Cube
     400000: //RootNode
     400002: ventre_Metaball
     400004: Neutre_Metaball
@@ -69,6 +70,7 @@ ModelImporter:
     400058: Neutre_Neutre_1_R_seau_d_atomes_8_Cube5
     400060: Neutre_Neutre_1_R_seau_d_atomes_9_Cube4
     400062: Neutre_Neutre_1_R_seau_d_atomes_Cube13
+    400064: R_seau_d_atomes_Cube
     2300000: ventre_Metaball
     2300002: Neutre_Metaball
     2300004: Neutre_1_R_seau_d_atomes_10_Cube3
@@ -100,6 +102,7 @@ ModelImporter:
     2300056: Neutre_Neutre_1_R_seau_d_atomes_8_Cube5
     2300058: Neutre_Neutre_1_R_seau_d_atomes_9_Cube4
     2300060: Neutre_Neutre_1_R_seau_d_atomes_Cube13
+    2300062: R_seau_d_atomes_Cube
     3300000: ventre_Metaball
     3300002: Neutre_Metaball
     3300004: Neutre_1_R_seau_d_atomes_10_Cube3
@@ -131,6 +134,7 @@ ModelImporter:
     3300056: Neutre_Neutre_1_R_seau_d_atomes_8_Cube5
     3300058: Neutre_Neutre_1_R_seau_d_atomes_9_Cube4
     3300060: Neutre_Neutre_1_R_seau_d_atomes_Cube13
+    3300062: R_seau_d_atomes_Cube
     4300000: ventre_Metaball
     4300002: Neutre_Metaball
     4300004: Neutre_1_R_seau_d_atomes_10_Cube3
@@ -162,6 +166,7 @@ ModelImporter:
     4300056: Neutre_Neutre_1_R_seau_d_atomes_8_Cube5
     4300058: Neutre_Neutre_1_R_seau_d_atomes_9_Cube4
     4300060: Neutre_Neutre_1_R_seau_d_atomes_Cube13
+    4300062: R_seau_d_atomes_Cube
   materials:
     importMaterials: 1
     materialName: 0

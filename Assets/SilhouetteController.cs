@@ -50,9 +50,34 @@ public class SilhouetteController : MonoBehaviour {
 
     ModelSwitcher LeftBottomShoulderModelSwitcher;
     ModelSwitcher RightBottomShoulderModelSwitcher;
+    ModelSwitcher LeftOuterBottomShoulderModelSwitcher;
+    ModelSwitcher RightOuterBottomShoulderModelSwitcher;
+
+    // Passive Identity
+    ModelSwitcher LeftPrivateTopShoulderModelSwitcher;
+    ModelSwitcher LeftPublicTopShoulderModelSwitcher;
+    ModelSwitcher LeftProTopShoulderModelSwitcher;
+
+    ModelSwitcher RightTopShoulderModelSwitcher;
+
+    TransformModifier LeftPrivateTopShoulderInnerModifier;
+    TransformModifier LeftPublicTopShoulderInnerModifier;
+    TransformModifier LeftProTopShoulderInnerModifier;
+
+    TransformModifier LeftPrivateTopShoulderOuterModifier;
+    TransformModifier LeftPublicTopShoulderOuterModifier;
+    TransformModifier LeftProTopShoulderOuterModifier;
+
+    TransformModifier RightTopShoulderInnerModifier;
 
     // Influence
     PlaygroundParticlesC FollowersParticles;
+    ManipulatorObjectC FollowersGravitationalManipulator;
+    ManipulatorObjectC FollowersRepellentManipulator;
+
+    ModelSwitcher HeadInnerLeftModelSwitcher;
+    ModelSwitcher HeadInnerRightModelSwitcher;
+    ModelSwitcher HeadCylinderModelSwitcher;
 
     // Mood
     ModelSwitcher LeftLungModelSwitcher;
@@ -108,9 +133,34 @@ public class SilhouetteController : MonoBehaviour {
 
         LeftBottomShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
         RightBottomShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Bottom Shoulder Model/Inner").GetComponent<ModelSwitcher>();
+        LeftOuterBottomShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Bottom Shoulder Model/Outer").GetComponent<ModelSwitcher>();
+        RightOuterBottomShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Bottom Shoulder Model/Outer").GetComponent<ModelSwitcher>();
+
+        // Passive Identity
+        LeftPrivateTopShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Inner").GetComponent<ModelSwitcher>();
+        LeftPublicTopShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Inner").GetComponent<ModelSwitcher>();
+        LeftProTopShoulderModelSwitcher = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Inner").GetComponent<ModelSwitcher>();
+
+        RightTopShoulderModelSwitcher = GameObject.Find("RightShoulder/Full Shoulder/Right Top Shoulder Model/Inner").GetComponent<ModelSwitcher>();
+
+        LeftPrivateTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Inner2").GetComponent<TransformModifier>();
+        LeftPublicTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Inner2").GetComponent<TransformModifier>();
+        LeftProTopShoulderInnerModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Inner2").GetComponent<TransformModifier>();
+
+        LeftPrivateTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Private/Outer").GetComponent<TransformModifier>();
+        LeftPublicTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Outer").GetComponent<TransformModifier>();
+        LeftProTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Outer").GetComponent<TransformModifier>();
+
+        RightTopShoulderInnerModifier = GameObject.Find("/Right Top Shoulder Inner 2/Inner").GetComponent<TransformModifier>();
 
         // Influence
         FollowersParticles = GameObject.Find("Head/Followers/Followers Particles System").GetComponent<PlaygroundParticlesC>();
+        FollowersGravitationalManipulator = FollowersParticles.manipulators[0];
+        FollowersRepellentManipulator = FollowersParticles.manipulators[1];
+
+        HeadInnerLeftModelSwitcher = GameObject.Find("Head/Head Model/InnerLeft").GetComponent<ModelSwitcher>();
+        HeadInnerRightModelSwitcher = GameObject.Find("Head/Head Model/InnerRight").GetComponent<ModelSwitcher>();
+        HeadCylinderModelSwitcher = GameObject.Find("Head/Head Model/Cylinder").GetComponent<ModelSwitcher>();
 
         // Mood
         LeftLungModelSwitcher = GameObject.Find("Left Lung Model/Inner").GetComponent<ModelSwitcher>();
@@ -121,18 +171,29 @@ public class SilhouetteController : MonoBehaviour {
 
         Spline = GameObject.Find("Spline Model").GetComponent<SplineDecorator>();
 
-        UpdateData();
+        UpdateData(null);
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    void UpdateData()
+    public void UpdateData(JSONObject data)
     {
+        // ========== General ==========
+
         IdentityCircle primaryCircle = (IdentityCircle)Random.Range(1, 4);
         IdentityCircle secondaryCircle = (IdentityCircle)Random.Range(1, 4);
+
+        if (data)
+        {
+            string primaryCircleString = "";
+            string secondaryCircleString = "";
+
+            data.GetField("general").GetField("globalData").GetField(ref primaryCircleString, "primaryCircle");
+            data.GetField("general").GetField("globalData").GetField(ref secondaryCircleString, "secondaryCircle");
+            primaryCircle = GetIdentityCircle(primaryCircleString);
+            secondaryCircle = GetIdentityCircle(secondaryCircleString);
+        }
+
+        Debug.Log("primaryCircle " + primaryCircle);
+        Debug.Log("secondaryCircle " + secondaryCircle);
         SetLights(primaryCircle, secondaryCircle);
 
         // ========== Activity ==========
@@ -142,7 +203,16 @@ public class SilhouetteController : MonoBehaviour {
         float activityPrivateFreq = Random.value;
         float activityPublicFreq = Random.value;
         float activityProFreq = Random.value;
-        Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);     
+
+        if (data)
+        {
+            data.GetField("activity").GetField("globalData").GetField(ref activityGlobalFreq, "postFrequencyScore");
+            data.GetField("activity").GetField("privateData").GetField(ref activityPrivateFreq, "postFrequencyScore");
+            data.GetField("activity").GetField("publicData").GetField(ref activityPublicFreq, "postFrequencyScore");
+            data.GetField("activity").GetField("professionalData").GetField(ref activityProFreq, "postFrequencyScore");
+        }
+
+        Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);
 
         LeftLowerArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
         LeftLowerArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
@@ -162,7 +232,7 @@ public class SilhouetteController : MonoBehaviour {
         LeftUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
         SetColor(LeftUpperArmMaterial, activityFreqMix);
 
-        RightUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
+        // RightUpperArmModelSwitcher.currentValue = activityGlobalFreq * 100f;
         RightUpperArmPublicModelSwitcher.currentValue = activityPublicFreq * 100f;
         RightUpperArmPrivateModelSwitcher.currentValue = activityPrivateFreq * 100f;
         RightUpperArmProModelSwitcher.currentValue = activityProFreq * 100f;
@@ -174,6 +244,15 @@ public class SilhouetteController : MonoBehaviour {
         float activityPublicVol = Random.value;
         float activityProVol = Random.value;
 
+        if (data)
+        {
+            data.GetField("activity").GetField("globalData").GetField(ref activityGlobalVol, "volumePosts");
+            data.GetField("activity").GetField("privateData").GetField(ref activityPrivateVol, "volumePosts");
+            data.GetField("activity").GetField("publicData").GetField(ref activityPublicVol, "volumePosts");
+            data.GetField("activity").GetField("professionalData").GetField(ref activityProVol, "volumePosts");
+        }
+
+
         SetBones(activityGlobalFreq, activityPublicVol, activityPrivateVol, activityProVol);
 
         // Photos posts volume
@@ -181,11 +260,21 @@ public class SilhouetteController : MonoBehaviour {
         float activityPublicPhotoVol = Random.value;
         float activityProPhotoVol = Random.value;
 
+        if (data)
+        {
+            data.GetField("activity").GetField("privateData").GetField(ref activityPrivatePhotoVol, "volumePhotos");
+            data.GetField("activity").GetField("publicData").GetField(ref activityPublicPhotoVol, "volumePhotos");
+            data.GetField("activity").GetField("professionalData").GetField(ref activityProPhotoVol, "volumePhotos");
+        }
+
         LeftElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
         RightElbowModelSwitcher.currentValue = activityPrivatePhotoVol * 100f;
 
         LeftBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
         RightBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
+
+        LeftOuterBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
+        RightOuterBottomShoulderModelSwitcher.currentValue = activityPublicPhotoVol * 100f;
 
         // ========== Influence ==========
 
@@ -193,10 +282,70 @@ public class SilhouetteController : MonoBehaviour {
         float influencePrivateScore = Random.value;
         float influencePublicScore = Random.value;
         float influenceProScore = Random.value;
+
+        if (data)
+        {
+            data.GetField("influence").GetField("globalData").GetField(ref influenceGlobalScore, "influence");
+            data.GetField("influence").GetField("privateData").GetField(ref influencePrivateScore, "influence");
+            data.GetField("influence").GetField("publicData").GetField(ref influencePublicScore, "influence");
+            data.GetField("influence").GetField("professionalData").GetField(ref influenceProScore, "influence");
+        }
+
         Color influenceScoreMix = GenerateColor(influencePrivateScore, influencePublicScore, influenceProScore, 0.6f);
 
         FollowersParticles.particleCount = (int)(influenceGlobalScore * maxParticles);
+        FollowersGravitationalManipulator.size = Mathf.Lerp(1f, 5f, influenceGlobalScore);
+        FollowersRepellentManipulator.strength = Mathf.Lerp(.5f, 4f, influenceGlobalScore);
+
         SetColor(FollowersParticles.particleSystemRenderer.material, influenceScoreMix);
+
+        // Nb of likes
+        float passiveIdPrivateNbOfLikes = Random.value;
+        float passiveIdPublicNbOfLikes = Random.value;
+        float passiveIdProNbOfLikes = Random.value;
+
+        if (data)
+        {
+            data.GetField("passiveIdentity").GetField("privateData").GetField(ref passiveIdPrivateNbOfLikes, "nbOfLikes");
+            data.GetField("passiveIdentity").GetField("publicData").GetField(ref passiveIdPublicNbOfLikes, "nbOfLikes");
+            data.GetField("passiveIdentity").GetField("professionalData").GetField(ref passiveIdProNbOfLikes, "nbOfLikes");
+        }
+
+        HeadInnerLeftModelSwitcher.currentValue = passiveIdPrivateNbOfLikes * 100f;
+        HeadInnerRightModelSwitcher.currentValue = passiveIdPublicNbOfLikes * 100f;
+        HeadCylinderModelSwitcher.currentValue = passiveIdProNbOfLikes * 100f;
+
+
+        //  ========== Passive Identity ==========
+
+        float passiveIdGlobalScore = Random.value;
+        float passiveIdPrivateScore = Random.value;
+        float passiveIdPublicScore = Random.value;
+        float passiveIdProScore = Random.value;
+
+        if (data)
+        {
+            data.GetField("passiveIdentity").GetField("globalData").GetField(ref passiveIdGlobalScore, "score");
+            data.GetField("passiveIdentity").GetField("privateData").GetField(ref passiveIdPrivateScore, "score");
+            data.GetField("passiveIdentity").GetField("publicData").GetField(ref passiveIdPublicScore, "score");
+            data.GetField("passiveIdentity").GetField("professionalData").GetField(ref passiveIdProScore, "score");
+        }
+
+        LeftPrivateTopShoulderModelSwitcher.currentValue = passiveIdPrivateScore * 100f;
+        LeftPublicTopShoulderModelSwitcher.currentValue = passiveIdPublicScore * 100f;
+        LeftProTopShoulderModelSwitcher.currentValue = passiveIdProScore * 100f;
+
+        RightTopShoulderModelSwitcher.currentValue = passiveIdGlobalScore * 100f;
+
+        LeftPrivateTopShoulderInnerModifier.CurrentValue = passiveIdPrivateScore * 100f;
+        LeftPublicTopShoulderInnerModifier.CurrentValue = passiveIdPublicScore * 100f;
+        LeftProTopShoulderInnerModifier.CurrentValue = passiveIdProScore * 100f;
+
+        LeftPrivateTopShoulderOuterModifier.CurrentValue = passiveIdPrivateScore * 100f;
+        LeftPublicTopShoulderOuterModifier.CurrentValue = passiveIdPublicScore * 100f;
+        LeftProTopShoulderOuterModifier.CurrentValue = passiveIdProScore * 100f;
+
+        RightTopShoulderInnerModifier.CurrentValue = passiveIdGlobalScore * 100f;
 
         // ========== Mood ==========
 
@@ -205,6 +354,15 @@ public class SilhouetteController : MonoBehaviour {
         float moodPrivateExpressivity = Random.value;
         float moodPublicExpressivity = Random.value;
         float moodProExpressivity = Random.value;
+
+        if (data)
+        {
+            data.GetField("mood").GetField("globalData").GetField(ref moodGlobalExpressivity, "expressivity");
+            data.GetField("mood").GetField("privateData").GetField(ref moodPrivateExpressivity, "expressivity");
+            data.GetField("mood").GetField("publicData").GetField(ref moodPublicExpressivity, "expressivity");
+            data.GetField("mood").GetField("professionalData").GetField(ref moodProExpressivity, "expressivity");
+        }
+
         Color moodExpressivityMix = GenerateColor(moodPrivateExpressivity, moodPublicExpressivity, moodProExpressivity, 0.6f);
 
         LeftLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
@@ -277,8 +435,8 @@ public class SilhouetteController : MonoBehaviour {
     Color GenerateColor(float privatePart, float publicPart, float proPart, float brightness = -1f)
     {
         publicPart = publicPart / (publicPart + privatePart + proPart);
-        privatePart = publicPart / (publicPart + privatePart + proPart);
-        proPart = publicPart / (publicPart + privatePart + proPart);
+        privatePart = privatePart / (publicPart + privatePart + proPart);
+        proPart = proPart / (publicPart + privatePart + proPart);
 
         HSBColor hsb = new HSBColor(PrivateColorHSB.h * privatePart + PublicColorHSB.h * publicPart + ProColorHSB.h * proPart,
             PrivateColorHSB.s * privatePart + PublicColorHSB.s * publicPart + ProColorHSB.s * proPart,
@@ -293,10 +451,18 @@ public class SilhouetteController : MonoBehaviour {
         return hsb.ToColor();
     }
 
+    IdentityCircle GetIdentityCircle(string circleString)
+    {
+        return  circleString == "private" ? IdentityCircle.Private :
+                circleString == "public" ? IdentityCircle.Public :
+                circleString == "pro" ? IdentityCircle.Pro :
+                IdentityCircle.None;
+    }
+
     void OnGUI()
     {
         if (GUI.Button(new Rect(10, 10, 150, 50), "UpdateData"))
-            UpdateData();
+            UpdateData(null);
 
         if (GUI.Button(new Rect(10, 60, 150, 50), "Clean mem"))
             Resources.UnloadUnusedAssets();

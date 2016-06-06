@@ -14,6 +14,7 @@ ModelImporter:
     100012: //RootNode
     100014: Cylindre
     100016: Tore
+    100018: Bool_en_Neutre_1_Cube
     400000: Bool_en_Neutre_1_Solide_platonicien
     400002: Bool_en_Neutre_Cloneur_Cube_3
     400004: Bool_en_Neutre_Cloneur_Cube_4
@@ -23,6 +24,7 @@ ModelImporter:
     400012: //RootNode
     400014: Cylindre
     400016: Tore
+    400018: Bool_en_Neutre_1_Cube
     2300000: Bool_en_Neutre_1_Solide_platonicien
     2300002: Bool_en_Neutre_Cloneur_Cube_3
     2300004: Bool_en_Neutre_Cloneur_Cube_4
@@ -31,6 +33,7 @@ ModelImporter:
     2300010: Bool_en_Neutre_Cloneur_Cube_7
     2300012: Cylindre
     2300014: Tore
+    2300016: Bool_en_Neutre_1_Cube
     3300000: Bool_en_Neutre_1_Solide_platonicien
     3300002: Bool_en_Neutre_Cloneur_Cube_3
     3300004: Bool_en_Neutre_Cloneur_Cube_4
@@ -39,6 +42,7 @@ ModelImporter:
     3300010: Bool_en_Neutre_Cloneur_Cube_7
     3300012: Cylindre
     3300014: Tore
+    3300016: Bool_en_Neutre_1_Cube
     4300000: Bool_en_Neutre_1_Solide_platonicien
     4300002: Bool_en_Neutre_Cloneur_Cube_3
     4300004: Bool_en_Neutre_Cloneur_Cube_4
@@ -47,6 +51,7 @@ ModelImporter:
     4300010: Bool_en_Neutre_Cloneur_Cube_7
     4300012: Cylindre
     4300014: Tore
+    4300016: Bool_en_Neutre_1_Cube
   materials:
     importMaterials: 1
     materialName: 0
