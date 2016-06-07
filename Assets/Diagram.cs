@@ -15,7 +15,7 @@ public class Diagram : MonoBehaviour {
     public Text publicText;
     public Text proText;
 
-    void Awake () {
+    void Start () {
         UpdateDiagram();
 	}
 	
