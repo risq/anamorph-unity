@@ -7,6 +7,7 @@ public class WebSocketClient : MonoBehaviour {
 
     SocketIOComponent socket;
     bool registered = false;
+    JSONObject CurrentData;
     JSONObject JSONSample1;
     JSONObject JSONSample2;
     JSONObject JSONSample3;
@@ -70,9 +71,9 @@ public class WebSocketClient : MonoBehaviour {
     }
 
     public void OnSocialData(SocketIOEvent e) {
-        Debug.Log("OnSocialData");
-        Debug.Log(e.data);
-
+        Debug.Log("OnSocialData " + e.data);
+        CurrentData = e.data;
+        LoadData(CurrentData);
     }
 
     public void Register()
@@ -90,7 +91,11 @@ public class WebSocketClient : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1) && JSONSample1)
+        if (Input.GetKey(KeyCode.Alpha0) && CurrentData)
+        {
+            LoadData(CurrentData);
+        }
+        else if (Input.GetKey(KeyCode.Alpha1) && JSONSample1)
         {
             LoadData(JSONSample1);
         }
