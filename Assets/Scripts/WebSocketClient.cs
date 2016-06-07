@@ -13,12 +13,19 @@ public class WebSocketClient : MonoBehaviour {
     JSONObject JSONSample3;
     public SilhouetteController silhouetteController;
 
+    public GameObject NotConnectedLabel;
+
     void Start () {
-        Debug.Log("Start webSocketClient");    
+        Debug.Log("Start webSocketClient");
+        NotConnectedLabel.SetActive(true);
         socket = GetComponent<SocketIOComponent>();
+        
+        // socket.On("test", OnTest);
 
         socket.On("connect", OnConnect);
         socket.On("state", OnState);
+        socket.On("client:register:status", OnClientRegisterStatus);
+        socket.On("socialData", OnSocialData);
 
         socket.Connect();
     }
@@ -27,6 +34,11 @@ public class WebSocketClient : MonoBehaviour {
     {
         Debug.Log("OnConnect");
         Register();
+    }
+
+    public void OnTest(SocketIOEvent e)
+    {
+        Debug.Log("ONTEST");
     }
 
     public void OnDisconnect(SocketIOEvent e)
@@ -52,6 +64,7 @@ public class WebSocketClient : MonoBehaviour {
     {
         Debug.Log("OnSucessfulRegister");
         registered = true;
+        NotConnectedLabel.SetActive(false);
         socket.On("samples", OnSamples);
         socket.Emit("samples:get");
     }
@@ -59,7 +72,7 @@ public class WebSocketClient : MonoBehaviour {
     public void OnState(SocketIOEvent e)
     {
         Debug.Log("OnState");
-        Debug.Log(e.data["auth"]);
+        Debug.Log(e.data);
     }
 
     public void OnSamples(SocketIOEvent e)
@@ -83,9 +96,7 @@ public class WebSocketClient : MonoBehaviour {
             Debug.Log("Registering...");
             Dictionary<string, string> data = new Dictionary<string, string>();
             data["id"] = "1";
-            socket.On("client:register:status", OnClientRegisterStatus);
             socket.Emit("client:register", new JSONObject(data));
-            socket.On("socialData", OnSocialData);
         }
     }
 
@@ -106,6 +117,10 @@ public class WebSocketClient : MonoBehaviour {
         else if (Input.GetKey(KeyCode.Alpha3) && JSONSample3)
         {
             LoadData(JSONSample3);
+        }
+        else if (Input.GetKey(KeyCode.R))
+        {
+            Register();
         }
     }
 
