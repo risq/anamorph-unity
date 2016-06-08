@@ -72,7 +72,7 @@ public class SilhouetteController : MonoBehaviour {
     TransformModifier LeftPublicTopShoulderOuterModifier;
     TransformModifier LeftProTopShoulderOuterModifier;
 
-    TransformModifier RightTopShoulderInnerModifier;
+    PlaygroundParticlesC RightShoulderParticles;
 
     // Influence
     PlaygroundParticlesC FollowersParticles;
@@ -173,7 +173,7 @@ public class SilhouetteController : MonoBehaviour {
         LeftPublicTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Public/Outer").GetComponent<TransformModifier>();
         LeftProTopShoulderOuterModifier = GameObject.Find("LeftShoulder/Full Shoulder/Left Top Shoulder Model/Pro/Outer").GetComponent<TransformModifier>();
 
-        RightTopShoulderInnerModifier = GameObject.Find("/Right Top Shoulder Inner 2/Inner").GetComponent<TransformModifier>();
+        RightShoulderParticles = GameObject.Find("RightShoulder/Full Shoulder/Right Top Shoulder Model/Particles").GetComponent<PlaygroundParticlesC>();
 
         // Influence
         FollowersParticles = GameObject.Find("Head/Followers/Followers Particles System").GetComponent<PlaygroundParticlesC>();
@@ -396,7 +396,9 @@ public class SilhouetteController : MonoBehaviour {
         LeftPublicTopShoulderOuterModifier.CurrentValue = passiveIdPublicScore * 100f;
         LeftProTopShoulderOuterModifier.CurrentValue = passiveIdProScore * 100f;
 
-        RightTopShoulderInnerModifier.CurrentValue = passiveIdGlobalScore * 100f;
+        RightShoulderParticles.scale = Mathf.Lerp(0.008f, 0.05f, passiveIdGlobalScore);
+        RightShoulderParticles.particleCount = (int)Mathf.Lerp(10f, 50f, passiveIdGlobalScore);
+        RightShoulderParticles.lifetimeEmission = Mathf.Lerp(0.1f, 1f, passiveIdGlobalScore);
 
         // ========== Mood ==========
 
