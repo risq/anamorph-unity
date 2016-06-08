@@ -96,6 +96,8 @@ public class SilhouetteController : MonoBehaviour {
     // Mood
     ModelSwitcher LeftLungModelSwitcher;
     ModelSwitcher RightLungModelSwitcher;
+    ModelSwitcher LeftLungOuterModelSwitcher;
+    ModelSwitcher RightLungOuterModelSwitcher;
 
     // Interests
     ModelSwitcher StomachModelSwitcher;
@@ -195,6 +197,9 @@ public class SilhouetteController : MonoBehaviour {
         // Mood
         LeftLungModelSwitcher = GameObject.Find("Left Lung Model/Inner").GetComponent<ModelSwitcher>();
         RightLungModelSwitcher = GameObject.Find("Right Lung Model/Inner").GetComponent<ModelSwitcher>();
+
+        LeftLungOuterModelSwitcher = GameObject.Find("Left Lung Model/Outer").GetComponent<ModelSwitcher>();
+        RightLungOuterModelSwitcher = GameObject.Find("Right Lung Model/Outer").GetComponent<ModelSwitcher>();
 
         // Interests 
         StomachModelSwitcher = GameObject.Find("/Stomach Model/Inner").GetComponent<ModelSwitcher>();
@@ -409,10 +414,21 @@ public class SilhouetteController : MonoBehaviour {
             data.GetField("mood").GetField("professionalData").GetField(ref moodProExpressivity, "expressivity");
         }
 
-        Color moodExpressivityMix = GenerateColor(moodPrivateExpressivity, moodPublicExpressivity, moodProExpressivity, 0.6f);
+        // LeftLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
+        // RightLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
 
-        LeftLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
-        RightLungModelSwitcher.currentValue = moodGlobalExpressivity * 100f;
+        // Attitude
+        float moodGlobalAttitude = Random.value;
+
+        if (data)
+        {
+            data.GetField("mood").GetField("globalData").GetField(ref moodGlobalAttitude, "attitude");
+        }
+
+        LeftLungModelSwitcher.currentValue = moodGlobalAttitude * 100f;
+        RightLungModelSwitcher.currentValue = moodGlobalAttitude * 100f;
+        LeftLungOuterModelSwitcher.currentValue = moodGlobalAttitude * 100f;
+        RightLungOuterModelSwitcher.currentValue = moodGlobalAttitude * 100f;
 
         // ========== Interests ==========
 
