@@ -2,12 +2,21 @@
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityStandardAssets.ImageEffects;
+using System;
 
 public enum IdentityComposante { None, Activity, Influence, PassiveIdentity, Mood, Interests };
 public enum IdentityCircle { None, Public, Private, Pro };
+public enum ExperienceState { Home, Sync, Loading, Experience, End };
 
-public class GUIManager : MonoBehaviour {
+public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
+{
+    public CanvasGroup HomeScreen;
+    public CanvasGroup SyncScreen;
+    public CanvasGroup LoadingScreen;
+
     public Image overlay;
+
     public HUDGroup activityHUD;
     public HUDGroup influenceHUD;
     public HUDGroup passiveIdentityHUD;
@@ -16,13 +25,23 @@ public class GUIManager : MonoBehaviour {
 
     IdentityComposante currentIdentityComposante;
     IdentityCircle currentIdentityCircle;
+    ExperienceState currentState = ExperienceState.Home;
 
     Tweener overlayFadeTweener;
+    Tweener grayScaleTween;
+
+    Grayscale grayscaleEffect;
+    RandomGlitchEnabler glitchEnabler;
+
     const float overlayFadeAmount = 0.5f;
     const float overlayFadeTime = 1f;
 
     // Use this for initialization
     void Start () {
+        glitchEnabler = Camera.main.GetComponent<RandomGlitchEnabler>();
+        grayscaleEffect = Camera.main.GetComponent<Grayscale>();
+        grayscaleEffect.rampOffset = -1f;
+        grayscaleEffect.enabled = true;
         SetActiveHUD(IdentityComposante.None);
 	}
 	
@@ -138,5 +157,99 @@ public class GUIManager : MonoBehaviour {
             moodHUD.Hide();
             interestsHUD.Hide();
         }
+    }
+
+    public void OnRemoteRegistered()
+    {
+        Debug.Log("OnRemoteRegistered");
+        if (currentState == ExperienceState.Home || currentState == ExperienceState.Sync)
+        {
+            currentState = ExperienceState.Loading;
+            LoadingScreen.alpha = 1;
+            HomeScreen.DOKill();
+            SyncScreen.DOKill();
+            HomeScreen.DOFade(0, 1);
+            SyncScreen.DOFade(0, 1);
+        }
+    }
+
+    internal void OnDataLoaded()
+    {
+        Debug.Log("OnDataLoaded");
+        currentState = ExperienceState.Experience;
+        HomeScreen.DOKill();
+        SyncScreen.DOKill();
+        LoadingScreen.DOKill();
+        HomeScreen.DOFade(0, 1);
+        SyncScreen.DOFade(0, 1);
+        LoadingScreen.DOFade(0, 1).OnComplete(() =>
+        {
+            FadeInScreen();
+        });
+    }
+
+    void FadeOutScreen()
+    {
+        grayscaleEffect.rampOffset = 0f;
+        glitchEnabler.DoGlitch();
+        grayscaleEffect.enabled = true;
+        grayScaleTween.Kill();
+        grayScaleTween = DOTween.To(() => grayscaleEffect.rampOffset, x => grayscaleEffect.rampOffset = x, -1f, .5f);
+    }
+
+    void FadeInScreen()
+    {
+        grayScaleTween.Kill();
+        grayScaleTween = DOTween.To(() => grayscaleEffect.rampOffset, x => grayscaleEffect.rampOffset = x, 0, 1.5f).OnComplete(OnFadeInScreenComplete);
+    }
+
+    void OnFadeInScreenComplete()
+    {
+        glitchEnabler.DoGlitch();
+        grayscaleEffect.enabled = false;
+    }
+
+    public void UserDetected(long userId, int userIndex)
+    {
+        if (currentState == ExperienceState.Home)
+        {
+            SyncScreen.alpha = 1;
+            HomeScreen.DOKill();
+            HomeScreen.DOFade(0, 1);
+            currentState = ExperienceState.Sync;
+        }
+        else if (currentState == ExperienceState.Experience)
+        {
+            FadeInScreen();
+        }
+    }
+
+    public void UserLost(long userId, int userIndex)
+    {
+        if (currentState == ExperienceState.Sync)
+        {
+            HomeScreen.DOKill();
+            HomeScreen.DOFade(1, 1);
+            currentState = ExperienceState.Home;
+        }
+        else if (currentState == ExperienceState.Experience)
+        {
+            FadeOutScreen();
+        }
+    }
+
+    public void GestureInProgress(long userId, int userIndex, KinectGestures.Gestures gesture, float progress, KinectInterop.JointType joint, Vector3 screenPos)
+    {
+
+    }
+
+    public bool GestureCompleted(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint, Vector3 screenPos)
+    {
+        return false;
+    }
+
+    public bool GestureCancelled(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint)
+    {
+        return false;
     }
 }

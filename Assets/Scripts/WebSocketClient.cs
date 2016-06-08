@@ -13,19 +13,21 @@ public class WebSocketClient : MonoBehaviour {
     JSONObject JSONSample3;
     public SilhouetteController silhouetteController;
 
+    GUIManager guiManager;
+
     public GameObject NotConnectedLabel;
 
     void Start () {
-        Debug.Log("Start webSocketClient");
         NotConnectedLabel.SetActive(true);
+
+        guiManager = GameObject.FindObjectOfType<GUIManager>();
         socket = GetComponent<SocketIOComponent>();
         
-        // socket.On("test", OnTest);
-
         socket.On("connect", OnConnect);
         socket.On("state", OnState);
         socket.On("client:register:status", OnClientRegisterStatus);
         socket.On("socialData", OnSocialData);
+        socket.On("remoteRegistered", OnRemoteRegistered);
 
         socket.Connect();
     }
@@ -53,6 +55,12 @@ public class WebSocketClient : MonoBehaviour {
         {
             OnSucessfulRegister();
         }
+    }
+
+    public void OnRemoteRegistered(SocketIOEvent e)
+    {
+        Debug.Log("OnRemoteRegistered");
+        guiManager.OnRemoteRegistered();
     }
 
     public void OnClientValidConnection(SocketIOEvent e) {
@@ -87,6 +95,7 @@ public class WebSocketClient : MonoBehaviour {
         Debug.Log("OnSocialData " + e.data);
         CurrentData = e.data;
         LoadData(CurrentData);
+        guiManager.OnDataLoaded();
     }
 
     public void Register()
