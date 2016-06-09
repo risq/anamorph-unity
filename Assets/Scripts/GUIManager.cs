@@ -36,7 +36,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     Grayscale grayscaleEffect;
     RandomGlitchEnabler glitchEnabler;
 
-    const float overlayFadeAmount = 0.5f;
+    const float overlayFadeAmount = 0.8f;
     const float overlayFadeTime = 1f;
 
     // Use this for initialization
