@@ -20,6 +20,9 @@ public class SilhouetteController : MonoBehaviour {
     GameObject ProPrimaryLight;
     GameObject ProSecondaryLight;
 
+    TrailRenderer LeftHandTrail;
+    TrailRenderer RightHandTrail;
+
     // Activity
     ModelSwitcher LeftLowerArmModelSwitcher;
     ModelSwitcher LeftLowerArmPublicModelSwitcher;
@@ -104,6 +107,13 @@ public class SilhouetteController : MonoBehaviour {
     TransformModifier StomachSphereModifier;
     RotateAround StomachSphereRotate;
 
+    TrailRenderer StomachTrail1;
+    TrailRenderer StomachTrail2;
+    TrailRenderer StomachTrail3;
+    TrailRenderer StomachTrail4;
+    TrailRenderer StomachTrail5;
+    TrailRenderer StomachTrail6;
+
     SplineDecorator Spline;
 
     const int maxParticles = 300;
@@ -120,6 +130,9 @@ public class SilhouetteController : MonoBehaviour {
         PublicSecondaryLight = GameObject.Find("Light/Public/Secondary");
         ProPrimaryLight = GameObject.Find("Light/Pro/Primary");
         ProSecondaryLight = GameObject.Find("Light/Pro/Secondary");
+
+        LeftHandTrail = GameObject.Find("LeftElbow/LeftWrist/Left Hand").GetComponent<TrailRenderer>();
+        RightHandTrail = GameObject.Find("RightElbow/RightWrist/Right Hand").GetComponent<TrailRenderer>();
 
         // Activity
         LeftLowerArmModelSwitcher = GameObject.Find("LeftElbow/Lower Arm Model/Inner").GetComponent<ModelSwitcher>();
@@ -206,6 +219,13 @@ public class SilhouetteController : MonoBehaviour {
         StomachSphereModifier = GameObject.Find("/Stomach Model/Sphere").GetComponent<TransformModifier>();
         StomachSphereRotate = GameObject.Find("/Stomach Model/Sphere").GetComponent<RotateAround>();
 
+        StomachTrail1 = GameObject.Find("/Stomach Model/Sphere/Sphere1/Stomach Trail").GetComponent<TrailRenderer>();
+        StomachTrail2 = GameObject.Find("/Stomach Model/Sphere/Sphere2/Stomach Trail").GetComponent<TrailRenderer>();
+        StomachTrail3 = GameObject.Find("/Stomach Model/Sphere/Sphere3/Stomach Trail").GetComponent<TrailRenderer>();
+        StomachTrail4 = GameObject.Find("/Stomach Model/Sphere/Sphere4/Stomach Trail").GetComponent<TrailRenderer>();
+        StomachTrail5 = GameObject.Find("/Stomach Model/Sphere/Sphere5/Stomach Trail").GetComponent<TrailRenderer>();
+        StomachTrail6 = GameObject.Find("/Stomach Model/Sphere/Sphere6/Stomach Trail").GetComponent<TrailRenderer>();
+
         Spline = GameObject.Find("Spline Model").GetComponent<SplineDecorator>();
 
         UpdateData(null);
@@ -233,6 +253,12 @@ public class SilhouetteController : MonoBehaviour {
         Debug.Log("secondaryCircle " + secondaryCircle);
         SetLights(primaryCircle, secondaryCircle);
 
+        LeftHandTrail = GameObject.Find("LeftElbow/LeftWrist/Left Hand").GetComponent<TrailRenderer>();
+        RightHandTrail = GameObject.Find("RightElbow/RightWrist/Right Hand").GetComponent<TrailRenderer>();
+
+        SetColor(LeftHandTrail.material, GetMainColor(primaryCircle));
+        SetColor(RightHandTrail.material, GetMainColor(primaryCircle));
+
         // ========== Activity ==========
 
         // Freq
@@ -240,6 +266,7 @@ public class SilhouetteController : MonoBehaviour {
         float activityPrivateFreq = Random.value;
         float activityPublicFreq = Random.value;
         float activityProFreq = Random.value;
+        float seniority = Random.Range(0f, 10f);
 
         if (data)
         {
@@ -247,7 +274,16 @@ public class SilhouetteController : MonoBehaviour {
             data.GetField("activity").GetField("privateData").GetField(ref activityPrivateFreq, "postFrequencyScore");
             data.GetField("activity").GetField("publicData").GetField(ref activityPublicFreq, "postFrequencyScore");
             data.GetField("activity").GetField("professionalData").GetField(ref activityProFreq, "postFrequencyScore");
+            data.GetField("activity").GetField("globalData").GetField(ref seniority, "seniority");
         }
+
+        float clampedSeniority = Mathf.InverseLerp(0f, 10f, seniority);
+
+        LeftHandTrail.time = Mathf.Lerp(0.3f, 1.5f, clampedSeniority);
+        RightHandTrail.time = Mathf.Lerp(0.3f, 1.5f, clampedSeniority);
+
+        LeftHandTrail.startWidth = Mathf.Lerp(0.3f, 0.05f, clampedSeniority);
+        RightHandTrail.startWidth = Mathf.Lerp(0.3f, 0.05f, clampedSeniority);
 
         Color activityFreqMix = GenerateColor(activityPrivateFreq, activityPublicFreq, activityProFreq);
 
@@ -288,7 +324,6 @@ public class SilhouetteController : MonoBehaviour {
             data.GetField("activity").GetField("publicData").GetField(ref activityPublicVol, "volumePosts");
             data.GetField("activity").GetField("professionalData").GetField(ref activityProVol, "volumePosts");
         }
-
 
         SetBones(activityGlobalFreq, activityPublicVol, activityPrivateVol, activityProVol);
 
@@ -445,11 +480,25 @@ public class SilhouetteController : MonoBehaviour {
         StomachSphereModifier.CurrentValue = hobbiesVolume * 100f;
         StomachSphereRotate.speed = Mathf.Lerp(80f, 20f, hobbiesVolume);
 
+        SetColor(StomachTrail1.material, GetMainColor(primaryCircle));
+        SetColor(StomachTrail2.material, GetMainColor(primaryCircle));
+        SetColor(StomachTrail3.material, GetMainColor(primaryCircle));
+        SetColor(StomachTrail4.material, GetMainColor(primaryCircle));
+        SetColor(StomachTrail5.material, GetMainColor(primaryCircle));
+        SetColor(StomachTrail6.material, GetMainColor(primaryCircle));
+
+        StomachTrail1.time = Mathf.Lerp(0.5f, 5f, hobbiesVolume);
+        StomachTrail2.time = Mathf.Lerp(0.5f, 5f, hobbiesVolume);
+        StomachTrail3.time = Mathf.Lerp(0.5f, 5f, hobbiesVolume);
+        StomachTrail4.time = Mathf.Lerp(0.5f, 5f, hobbiesVolume);
+        StomachTrail5.time = Mathf.Lerp(0.5f, 5f, hobbiesVolume);
+        StomachTrail6.time = Mathf.Lerp(0.5f, 5f, hobbiesVolume);
     }
 
     void SetColor(Material objectMaterial, Color color)
     {
         objectMaterial.SetColor("_Color", color);
+        objectMaterial.SetColor("_TintColor", color);
         // objectMaterial.SetColor("_FresColor", color);
         // objectMaterial.SetColor("_DiffColor", color);
     }
@@ -532,6 +581,14 @@ public class SilhouetteController : MonoBehaviour {
                 circleString == "public" ? IdentityCircle.Public :
                 circleString == "pro" ? IdentityCircle.Pro :
                 IdentityCircle.None;
+    }
+
+    Color GetMainColor(IdentityCircle circle)
+    {
+        return circle == IdentityCircle.Private ? PrivateColor :
+            circle == IdentityCircle.Public ? PublicColor :
+            circle == IdentityCircle.Pro ? ProColor :
+            Color.white;
     }
 
     void OnGUI()
