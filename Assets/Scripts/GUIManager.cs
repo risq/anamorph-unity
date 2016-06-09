@@ -23,6 +23,9 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     public HUDGroup moodHUD;
     public HUDGroup interestsHUD;
 
+    public KinectCursor leftHandCursor;
+    public KinectCursor rightHandCursor;
+
     IdentityComposante currentIdentityComposante;
     IdentityCircle currentIdentityCircle;
     ExperienceState currentState = ExperienceState.Home;
@@ -43,12 +46,31 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         grayscaleEffect.rampOffset = -1f;
         grayscaleEffect.enabled = true;
         SetActiveHUD(IdentityComposante.None);
+
+        ShowHomeScreen();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            if (currentState == ExperienceState.Sync)
+                ShowHomeScreen();
+            else if (currentState == ExperienceState.Loading)
+                ShowSyncScreen();
+            else if (currentState == ExperienceState.Experience)
+                ShowLoadingScreen();
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            if (currentState == ExperienceState.Home)
+                ShowSyncScreen();
+            else if (currentState == ExperienceState.Sync)
+                ShowLoadingScreen();
+            else if (currentState == ExperienceState.Loading)
+                ShowExperienceScreen();
+        }
+    }
 
     public void OnCursorValidate(KinectButton.ButtonType buttonType)
     {
@@ -164,28 +186,70 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         Debug.Log("OnRemoteRegistered");
         if (currentState == ExperienceState.Home || currentState == ExperienceState.Sync)
         {
-            currentState = ExperienceState.Loading;
-            LoadingScreen.alpha = 1;
-            HomeScreen.DOKill();
-            SyncScreen.DOKill();
-            HomeScreen.DOFade(0, 1);
-            SyncScreen.DOFade(0, 1);
+            ShowLoadingScreen();
         }
     }
 
     internal void OnDataLoaded()
     {
         Debug.Log("OnDataLoaded");
-        currentState = ExperienceState.Experience;
+        ShowExperienceScreen();
+    }
+
+    void ShowHomeScreen()
+    {
+        Debug.Log("ShowHomeScreen");
         HomeScreen.DOKill();
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
+
+        HomeScreen.DOFade(1, 1);
+        SyncScreen.DOFade(0, 1);
+        LoadingScreen.DOFade(0, 1);
+
+        currentState = ExperienceState.Home;
+    }
+
+    void ShowSyncScreen()
+    {
+        HomeScreen.DOKill();
+        SyncScreen.DOKill();
+        LoadingScreen.DOKill();
+
+        HomeScreen.DOFade(0, 1);
+        SyncScreen.DOFade(1, 1);
+        LoadingScreen.DOFade(0, 1);
+
+        currentState = ExperienceState.Sync;
+    }
+
+    void ShowLoadingScreen()
+    {
+        HomeScreen.DOKill();
+        SyncScreen.DOKill();
+        LoadingScreen.DOKill();
+
+        HomeScreen.DOFade(0, 1);
+        SyncScreen.DOFade(0, 1);
+        LoadingScreen.DOFade(1, 1);
+
+        currentState = ExperienceState.Loading;
+    }
+
+    void ShowExperienceScreen()
+    {
+        HomeScreen.DOKill();
+        SyncScreen.DOKill();
+        LoadingScreen.DOKill();
+
         HomeScreen.DOFade(0, 1);
         SyncScreen.DOFade(0, 1);
         LoadingScreen.DOFade(0, 1).OnComplete(() =>
         {
             FadeInScreen();
         });
+
+        currentState = ExperienceState.Experience;
     }
 
     void FadeOutScreen()
@@ -213,10 +277,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     {
         if (currentState == ExperienceState.Home)
         {
-            SyncScreen.alpha = 1;
-            HomeScreen.DOKill();
-            HomeScreen.DOFade(0, 1);
-            currentState = ExperienceState.Sync;
+            ShowSyncScreen();
         }
         else if (currentState == ExperienceState.Experience)
         {
@@ -228,9 +289,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     {
         if (currentState == ExperienceState.Sync)
         {
-            HomeScreen.DOKill();
-            HomeScreen.DOFade(1, 1);
-            currentState = ExperienceState.Home;
+            ShowHomeScreen();
         }
         else if (currentState == ExperienceState.Experience)
         {

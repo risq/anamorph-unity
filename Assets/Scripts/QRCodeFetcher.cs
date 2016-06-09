@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class QRCodeFetcher : MonoBehaviour {
-    public string url = "http://localhost:80/qr/1";
+    public string url = "http://anamorph.valentinledrapier.com/qr/1";
 
     IEnumerator Start()
     {

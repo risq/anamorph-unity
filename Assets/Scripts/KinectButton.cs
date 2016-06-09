@@ -14,7 +14,7 @@ public class KinectButton : MonoBehaviour {
     float distance;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         pos = new Vector2(transform.position.x, transform.position.y);
         animator = GetComponent<Animator>();
         guiManager = (GUIManager)FindObjectOfType(typeof(GUIManager));

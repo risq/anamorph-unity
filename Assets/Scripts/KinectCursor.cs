@@ -11,15 +11,18 @@ public class KinectCursor : MonoBehaviour {
     int kinectButtonsLength;
     KinectButton closestButton;
 
+    public bool cursorEnabled = false;
+
     // Use this for initialization
     void Start () {
         tr = GetComponent<Transform>();
-	}
+        kinectButtonsLength = kinectButtons.Length;
+        StartCoroutine(StartTestingButtons());
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        kinectButtonsLength = kinectButtons.Length;
-        StartCoroutine(StartTestingButtons());
+        
     }
 
     void TestActiveKinectButton()
@@ -59,8 +62,12 @@ public class KinectCursor : MonoBehaviour {
     {
         while (true)
         {
-            TestActiveKinectButton();
-            yield return new WaitForSeconds(0.3f);
+            if (cursorEnabled)
+            {
+                TestActiveKinectButton();
+            }
+            
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
