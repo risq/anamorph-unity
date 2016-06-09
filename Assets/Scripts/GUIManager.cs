@@ -94,6 +94,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         {
             SetActiveHUD(IdentityComposante.Interests);
         }
+
     }
 
     public void OnCursorUnvalidate(KinectButton.ButtonType buttonType)
@@ -122,6 +123,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Hide();
             moodHUD.Hide();
             interestsHUD.Hide();
+
+            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Influence)
         {
@@ -134,6 +137,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Hide();
             moodHUD.Hide();
             interestsHUD.Hide();
+
+            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.PassiveIdentity)
         {
@@ -145,6 +150,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Show();
             moodHUD.Hide();
             interestsHUD.Hide();
+
+            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Mood)
         {
@@ -156,6 +163,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Hide();
             moodHUD.Show();
             interestsHUD.Hide();
+
+            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Interests)
         {
@@ -167,6 +176,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Hide();
             moodHUD.Hide();
             interestsHUD.Show();
+
+            rightHandCursor.cursorEnabled = true;
         }
         else
         {
@@ -178,6 +189,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Hide();
             moodHUD.Hide();
             interestsHUD.Hide();
+
+            rightHandCursor.cursorEnabled = false;
         }
     }
 
@@ -198,7 +211,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowHomeScreen()
     {
-        Debug.Log("ShowHomeScreen");
+        grayscaleEffect.rampOffset = -1f;
+
         HomeScreen.DOKill();
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
@@ -212,6 +226,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowSyncScreen()
     {
+        grayscaleEffect.rampOffset = -1f;
+
         HomeScreen.DOKill();
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
@@ -225,6 +241,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowLoadingScreen()
     {
+        grayscaleEffect.rampOffset = -1f;
+
         HomeScreen.DOKill();
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
@@ -271,6 +289,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     {
         glitchEnabler.DoGlitch();
         grayscaleEffect.enabled = false;
+        leftHandCursor.cursorEnabled = true;
     }
 
     public void UserDetected(long userId, int userIndex)

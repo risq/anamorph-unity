@@ -33,7 +33,7 @@ public class KinectCursor : MonoBehaviour {
         for (int i = 0; i < kinectButtonsLength; i++)
         {
             float hitTestDistance = kinectButtons[i].HitTest(tr.position);
-
+            //Debug.Log("hitTestDistance " + hitTestDistance + " " + kinectButtons[i].buttonType);
             if (hitTestDistance >= 0 && hitTestDistance < closestButtonDistance)
             {
                 closestButton = kinectButtons[i];

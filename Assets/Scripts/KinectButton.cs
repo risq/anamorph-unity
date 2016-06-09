@@ -8,13 +8,13 @@ public class KinectButton : MonoBehaviour {
     public float radius = 1f;
     public ButtonType buttonType;
 
-    Vector2 pos;
+    public Vector2 pos;
     Animator animator;
     GUIManager guiManager;
     float distance;
 
     // Use this for initialization
-    void Awake () {
+    void Start () {
         pos = new Vector2(transform.position.x, transform.position.y);
         animator = GetComponent<Animator>();
         guiManager = (GUIManager)FindObjectOfType(typeof(GUIManager));
@@ -28,6 +28,10 @@ public class KinectButton : MonoBehaviour {
     public float HitTest(Vector2 cursorPos)
     {
         distance = Vector2.Distance(pos, cursorPos);
+        if (buttonType == ButtonType.Mood)
+        {
+            Debug.Log("Distance from " + pos + " to " + cursorPos + " : " + distance);
+        }
         return distance <= radius ? distance : -1f;
     }
 
