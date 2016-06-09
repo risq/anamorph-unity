@@ -4,15 +4,19 @@ using DG.Tweening;
 
 public class HUDPane : MonoBehaviour {
 
+    public IdentityCircle circle = IdentityCircle.None;
+
     Vector3 initialPosition;
     Vector3 moveTo;
 
     Tweener tweener;
     
     RectTransform rtr;
+    CanvasGroup canvasGroup;
 	
 	void Start () {
         rtr = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
         initialPosition = rtr.localPosition;
     }
 	
@@ -22,13 +26,13 @@ public class HUDPane : MonoBehaviour {
 
     public void Fold ()
     {
-        tweener.Kill();
-        tweener = rtr.DOLocalMove(new Vector3(0, 0, 0), 0.2f);
+        rtr.DOKill();
+        rtr.DOLocalMove(new Vector3(0, 0, 0), 0.2f);
     }
 
     public void Unfold()
     {
-        tweener.Kill();
-        tweener = rtr.DOLocalMove(initialPosition, 0.5f);
+        rtr.DOKill();
+        rtr.DOLocalMove(initialPosition, 1f);
     }
 }

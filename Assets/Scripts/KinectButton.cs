@@ -28,10 +28,6 @@ public class KinectButton : MonoBehaviour {
     public float HitTest(Vector2 cursorPos)
     {
         distance = Vector2.Distance(pos, cursorPos);
-        if (buttonType == ButtonType.Mood)
-        {
-            Debug.Log("Distance from " + pos + " to " + cursorPos + " : " + distance);
-        }
         return distance <= radius ? distance : -1f;
     }
 

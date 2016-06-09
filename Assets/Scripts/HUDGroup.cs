@@ -11,7 +11,7 @@ public class HUDGroup : MonoBehaviour {
     CanvasGroup canvasGroup;
     Tweener tweener;
 
-    void Start ()
+    void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         panes = GetComponentsInChildren<HUDPane>();
@@ -21,22 +21,17 @@ public class HUDGroup : MonoBehaviour {
     public void Show()
     {
         linkedFocusCamera.SetActive(true);
-        tweener.Kill();
-        tweener = canvasGroup.DOFade(1, 0.5f);
-        for (int i = 0; i < panesCount; i++)
-        {
-            panes[i].Unfold();
-        }
+
+        canvasGroup.DOKill();
+        canvasGroup.DOFade(1, 1);
     }
 
     public void Hide()
     {
         linkedFocusCamera.SetActive(false);
-        tweener = canvasGroup.DOFade(0, 0.5f);
-        for (int i = 0; i < panesCount; i++)
-        {
-            panes[i].Fold();
-        }
+    
+        canvasGroup.DOKill();
+        canvasGroup.DOFade(0, 1);
     }
 
 }

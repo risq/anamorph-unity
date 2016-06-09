@@ -6,7 +6,7 @@ using UnityStandardAssets.ImageEffects;
 using System;
 
 public enum IdentityComposante { None, Activity, Influence, PassiveIdentity, Mood, Interests };
-public enum IdentityCircle { None, Public, Private, Pro };
+public enum IdentityCircle { None, Public, Private, Pro, Global };
 public enum ExperienceState { Home, Sync, Loading, Experience, End };
 
 public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
@@ -94,7 +94,6 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         {
             SetActiveHUD(IdentityComposante.Interests);
         }
-
     }
 
     public void OnCursorUnvalidate(KinectButton.ButtonType buttonType)
@@ -106,6 +105,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             buttonType == KinectButton.ButtonType.Interests && currentIdentityComposante == IdentityComposante.Interests)
         {
             SetActiveHUD(IdentityComposante.None);
+        }
+        else if (buttonType == KinectButton.ButtonType.Private || buttonType == KinectButton.ButtonType.Public || buttonType == KinectButton.ButtonType.Pro)
+        {
+            
         }
     }
 
@@ -192,6 +195,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
             rightHandCursor.cursorEnabled = false;
         }
+
+        rightHandCursor.DisableAll();
     }
 
     public void OnRemoteRegistered()

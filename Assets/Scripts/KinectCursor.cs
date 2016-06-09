@@ -71,4 +71,12 @@ public class KinectCursor : MonoBehaviour {
         }
     }
 
+    public void DisableAll()
+    {
+        for (int i = 0; i < kinectButtonsLength; i++)
+        {
+            kinectButtons[i].OnCursorLeave();
+        }
+    }
+
 }
