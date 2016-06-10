@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
 
@@ -13,11 +14,24 @@ public class HUDPane : MonoBehaviour {
     
     RectTransform rtr;
     CanvasGroup canvasGroup;
-	
-	void Start () {
+
+    TypingEffect[] typingEffects;
+
+    bool folded = false;
+
+
+    void Start () {
         rtr = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         initialPosition = rtr.localPosition;
+
+        Text[] texts = GetComponentsInChildren<Text>();
+        typingEffects = new TypingEffect[texts.Length];
+
+        for (int i = 0; i < texts.Length; i++)
+        {
+            typingEffects[i] = texts[i].gameObject.AddComponent<TypingEffect>();
+        }     
     }
 	
 	void Update () {
@@ -26,15 +40,27 @@ public class HUDPane : MonoBehaviour {
 
     public void Fold ()
     {
-        rtr.DOKill();
-        rtr.DOLocalMove(new Vector3(0, 0, 100), 0.2f);
-        canvasGroup.DOFade(0, 0.2f);
+        //if (!folded)
+        //{
+            rtr.DOKill();
+            rtr.DOLocalMove(new Vector3(0, 0, 100), 0.2f);
+            canvasGroup.DOFade(0, 0.2f);
+            folded = true;
+        //}
     }
 
     public void Unfold()
     {
-        rtr.DOKill();
-        rtr.DOLocalMove(initialPosition, .5f);
-        canvasGroup.DOFade(1, 1f);
+        //if (folded)
+        //{
+            rtr.DOKill();
+            rtr.DOLocalMove(initialPosition, .5f);
+            canvasGroup.DOFade(1, 1f);
+            foreach (TypingEffect typingEffect in typingEffects)
+            {
+                typingEffect.StartTypingEffect();
+            }
+            folded = false;
+        //}
     }
 }
