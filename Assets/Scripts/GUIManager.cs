@@ -135,7 +135,6 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         if (activeHUD == IdentityComposante.Activity)
         {
             currentIdentityComposante = IdentityComposante.Activity;
-            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Show();
             influenceHUD.Hide();
@@ -144,14 +143,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             interestsHUD.Hide();
 
             currentHUD = activityHUD;
-
-            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Influence)
         {
             currentIdentityComposante = IdentityComposante.Influence;
-            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
-
 
             activityHUD.Hide();
             influenceHUD.Show();
@@ -160,13 +155,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             interestsHUD.Hide();
 
             currentHUD = influenceHUD;
-
-            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.PassiveIdentity)
         {
             currentIdentityComposante = IdentityComposante.PassiveIdentity;
-            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Hide();
             influenceHUD.Hide();
@@ -175,13 +167,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             interestsHUD.Hide();
 
             currentHUD = passiveIdentityHUD;
-
-            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Mood)
         {
             currentIdentityComposante = IdentityComposante.Mood;
-            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Hide();
             influenceHUD.Hide();
@@ -190,13 +179,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             interestsHUD.Hide();
 
             currentHUD = moodHUD;
-
-            rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Interests)
         {
             currentIdentityComposante = IdentityComposante.Interests;
-            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
 
             activityHUD.Hide();
             influenceHUD.Hide();
@@ -205,8 +191,6 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             interestsHUD.Show();
 
             currentHUD = interestsHUD;
-
-            rightHandCursor.cursorEnabled = true;
         }
         else
         {
@@ -222,11 +206,15 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             currentHUD = null;
 
             rightHandCursor.cursorEnabled = false;
+            audioManager.OnUIClose();
         }
 
         if (currentHUD)
         {
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
+            rightHandCursor.cursorEnabled = true;
             currentHUD.Filter(IdentityCircle.Global);
+            audioManager.OnUIOpen();
         }
 
         rightHandCursor.DisableAll();
