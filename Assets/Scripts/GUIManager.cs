@@ -37,12 +37,14 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     Grayscale grayscaleEffect;
     RandomGlitchEnabler glitchEnabler;
+    AudioManager audioManager;
 
     const float overlayFadeAmount = 0.8f;
     const float overlayFadeTime = 1f;
 
     // Use this for initialization
     void Start () {
+        audioManager = FindObjectOfType<AudioManager>();
         glitchEnabler = Camera.main.GetComponent<RandomGlitchEnabler>();
         grayscaleEffect = Camera.main.GetComponent<Grayscale>();
         grayscaleEffect.rampOffset = -1f;
@@ -247,6 +249,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowHomeScreen()
     {
+        audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
         HomeScreen.DOKill();
@@ -262,6 +265,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowSyncScreen()
     {
+        audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
         HomeScreen.DOKill();
@@ -277,6 +281,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowLoadingScreen()
     {
+        audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
         HomeScreen.DOKill();
@@ -292,6 +297,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowExperienceScreen()
     {
+        audioManager.ToExperienceSoundtrack();
         HomeScreen.DOKill();
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
