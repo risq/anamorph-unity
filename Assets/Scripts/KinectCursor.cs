@@ -10,12 +10,14 @@ public class KinectCursor : MonoBehaviour {
     float closestButtonDistance;
     int kinectButtonsLength;
     KinectButton closestButton;
+    AudioManager audioManager;
 
     public bool cursorEnabled = false;
 
     // Use this for initialization
     void Start () {
         tr = GetComponent<Transform>();
+        audioManager = FindObjectOfType<AudioManager>();
         kinectButtonsLength = kinectButtons.Length;
         StartCoroutine(StartTestingButtons());
     }
@@ -48,6 +50,7 @@ public class KinectCursor : MonoBehaviour {
                     activeKinectButton.OnCursorLeave();
 
                 closestButton.OnCursorEnter();
+                audioManager.PlayUISound();
                 activeKinectButton = closestButton;
             }
         }

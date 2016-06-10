@@ -8,6 +8,17 @@ public class AudioManager : MonoBehaviour {
     public AudioMixerSnapshot experienceSnapshot;
     public AudioMixerSnapshot inUISnapshot;
 
+    public AudioClip[] UISounds;
+    public AudioMixerGroup UISoundsMixerGroup;
+
+    AudioSource UISoundsSource;
+
+    void Start()
+    {
+        UISoundsSource = gameObject.AddComponent<AudioSource>();
+        UISoundsSource.outputAudioMixerGroup = UISoundsMixerGroup;
+    }
+
     public void ToExperienceSoundtrack()
     {
         experienceSnapshot.TransitionTo(0.5f);
@@ -26,5 +37,10 @@ public class AudioManager : MonoBehaviour {
     public void OnUIClose()
     {
         experienceSnapshot.TransitionTo(0.3f);
+    }
+
+    public void PlayUISound()
+    {
+        UISoundsSource.PlayOneShot(UISounds[Random.Range(0, UISounds.Length)]);
     }
 }
