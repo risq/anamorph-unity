@@ -26,6 +26,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     public KinectCursor leftHandCursor;
     public KinectCursor rightHandCursor;
 
+    HUDGroup currentHUD;
+
     IdentityComposante currentIdentityComposante;
     IdentityCircle currentIdentityCircle;
     ExperienceState currentState = ExperienceState.Home;
@@ -94,6 +96,18 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         {
             SetActiveHUD(IdentityComposante.Interests);
         }
+        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Private)
+        {
+            currentHUD.Filter(IdentityCircle.Private);
+        }
+        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Public)
+        {
+            currentHUD.Filter(IdentityCircle.Public);
+        }
+        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Pro)
+        {
+            currentHUD.Filter(IdentityCircle.Pro);
+        }
     }
 
     public void OnCursorUnvalidate(KinectButton.ButtonType buttonType)
@@ -127,6 +141,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             moodHUD.Hide();
             interestsHUD.Hide();
 
+            currentHUD = activityHUD;
+
             rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Influence)
@@ -141,6 +157,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             moodHUD.Hide();
             interestsHUD.Hide();
 
+            currentHUD = influenceHUD;
+
             rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.PassiveIdentity)
@@ -153,6 +171,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Show();
             moodHUD.Hide();
             interestsHUD.Hide();
+
+            currentHUD = passiveIdentityHUD;
 
             rightHandCursor.cursorEnabled = true;
         }
@@ -167,6 +187,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             moodHUD.Show();
             interestsHUD.Hide();
 
+            currentHUD = moodHUD;
+
             rightHandCursor.cursorEnabled = true;
         }
         else if (activeHUD == IdentityComposante.Interests)
@@ -179,6 +201,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             passiveIdentityHUD.Hide();
             moodHUD.Hide();
             interestsHUD.Show();
+
+            currentHUD = interestsHUD;
 
             rightHandCursor.cursorEnabled = true;
         }
@@ -193,7 +217,14 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             moodHUD.Hide();
             interestsHUD.Hide();
 
+            currentHUD = null;
+
             rightHandCursor.cursorEnabled = false;
+        }
+
+        if (currentHUD)
+        {
+            currentHUD.Filter(IdentityCircle.Global);
         }
 
         rightHandCursor.DisableAll();

@@ -27,12 +27,14 @@ public class HUDPane : MonoBehaviour {
     public void Fold ()
     {
         rtr.DOKill();
-        rtr.DOLocalMove(new Vector3(0, 0, 0), 0.2f);
+        rtr.DOLocalMove(new Vector3(0, 0, 100), 0.2f);
+        canvasGroup.DOFade(0, 0.2f);
     }
 
     public void Unfold()
     {
         rtr.DOKill();
-        rtr.DOLocalMove(initialPosition, 1f);
+        rtr.DOLocalMove(initialPosition, .5f);
+        canvasGroup.DOFade(1, 1f);
     }
 }

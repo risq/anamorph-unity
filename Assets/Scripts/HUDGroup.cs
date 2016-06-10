@@ -34,4 +34,19 @@ public class HUDGroup : MonoBehaviour {
         canvasGroup.DOFade(0, 1);
     }
 
+    public void Filter(IdentityCircle circle)
+    {
+        for(int i = 0; i < panesCount; i++)
+        {
+            if (panes[i].circle == IdentityCircle.Global || panes[i].circle == circle)
+            {
+                panes[i].Unfold();
+            }
+            else
+            {
+                panes[i].Fold();
+            }
+        }
+    }
+
 }
