@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6ddf0e136e20dc1459d410d1576da3de
-timeCreated: 1465372454
+timeCreated: 1465560504
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -8,15 +8,20 @@ ModelImporter:
     100000: //RootNode
     100002: Neutre_Proc3Durale
     100004: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
+    100006: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
     400000: //RootNode
     400002: Neutre_Proc3Durale
     400004: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
+    400006: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
     2300000: Neutre_Proc3Durale
     2300002: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
+    2300004: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
     3300000: Neutre_Proc3Durale
     3300002: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
+    3300004: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
     4300000: Neutre_Proc3Durale
     4300002: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
+    4300004: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1_Solide_platonicien2
   materials:
     importMaterials: 1
     materialName: 0

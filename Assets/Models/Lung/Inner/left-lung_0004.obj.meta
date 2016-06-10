@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 057c914aac6f0d04e94a9f1cdf5678ef
-timeCreated: 1464088543
+timeCreated: 1465560503
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -105,6 +105,65 @@ ModelImporter:
     100194: Neutre_Proc3Durale_MeshPart0
     100196: Neutre_Proc3Durale_MeshPart1
     100198: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1
+    100200: Bool_en_Cloneur_Cube_10
+    100202: Bool_en_Cloneur_Cube_11
+    100204: Bool_en_Cloneur_Cube_12
+    100206: Bool_en_Cloneur_Cube_13
+    100208: Bool_en_Cloneur_Cube_18
+    100210: Bool_en_Cloneur_Cube_19
+    100212: Bool_en_Cloneur_Cube_20
+    100214: Bool_en_Cloneur_Cube_21
+    100216: Bool_en_Cloneur_Cube_26
+    100218: Bool_en_Cloneur_Cube_27
+    100220: Bool_en_Cloneur_Cube_28
+    100222: Bool_en_Cloneur_Cube_29
+    100224: Bool_en_Cloneur_Cube_34
+    100226: Bool_en_Cloneur_Cube_35
+    100228: Bool_en_Cloneur_Cube_36
+    100230: Bool_en_Cloneur_Cube_37
+    100232: Bool_en_Cloneur_Cube_42
+    100234: Bool_en_Cloneur_Cube_43
+    100236: Bool_en_Cloneur_Cube_44
+    100238: Bool_en_Cloneur_Cube_50
+    100240: Bool_en_Cloneur_Cube_51
+    100242: Bool_en_Cloneur_Cube_52
+    100244: Bool_en_Cloneur_Cube_58
+    100246: Bool_en_Cloneur_Cube_59
+    100248: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1
+    100250: Bool_en_Cloneur_Sph_re_10
+    100252: Bool_en_Cloneur_Sph_re_11
+    100254: Bool_en_Cloneur_Sph_re_12
+    100256: Bool_en_Cloneur_Sph_re_13
+    100258: Bool_en_Cloneur_Sph_re_18
+    100260: Bool_en_Cloneur_Sph_re_19
+    100262: Bool_en_Cloneur_Sph_re_2
+    100264: Bool_en_Cloneur_Sph_re_20
+    100266: Bool_en_Cloneur_Sph_re_21
+    100268: Bool_en_Cloneur_Sph_re_26
+    100270: Bool_en_Cloneur_Sph_re_27
+    100272: Bool_en_Cloneur_Sph_re_28
+    100274: Bool_en_Cloneur_Sph_re_29
+    100276: Bool_en_Cloneur_Sph_re_3
+    100278: Bool_en_Cloneur_Sph_re_34
+    100280: Bool_en_Cloneur_Sph_re_35
+    100282: Bool_en_Cloneur_Sph_re_36
+    100284: Bool_en_Cloneur_Sph_re_37
+    100286: Bool_en_Cloneur_Sph_re_4
+    100288: Bool_en_Cloneur_Sph_re_42
+    100290: Bool_en_Cloneur_Sph_re_43
+    100292: Bool_en_Cloneur_Sph_re_44
+    100294: Bool_en_Cloneur_Sph_re_45
+    100296: Bool_en_Cloneur_Sph_re_5
+    100298: Bool_en_Cloneur_Sph_re_50
+    100300: Bool_en_Cloneur_Sph_re_51
+    100302: Bool_en_Cloneur_Sph_re_52
+    100304: Bool_en_Cloneur_Sph_re_58
+    100306: Bool_en_Cloneur_Sph_re_59
+    100308: Bool_en_Cloneur_Sph_re_60
+    100310: Bool_en_Cloneur_Cube_4
+    100312: Bool_en_Cloneur_Cube_45
+    100314: Bool_en_Cloneur_Cube_5
+    100316: Bool_en_Cloneur_Cube_60
     400000: Bool_en_boleen_Cloneur_Cube_10
     400002: Bool_en_boleen_Cloneur_Cube_11
     400004: Bool_en_boleen_Cloneur_Cube_9
@@ -205,6 +264,65 @@ ModelImporter:
     400194: Neutre_Proc3Durale_MeshPart0
     400196: Neutre_Proc3Durale_MeshPart1
     400198: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1
+    400200: Bool_en_Cloneur_Cube_10
+    400202: Bool_en_Cloneur_Cube_11
+    400204: Bool_en_Cloneur_Cube_12
+    400206: Bool_en_Cloneur_Cube_13
+    400208: Bool_en_Cloneur_Cube_18
+    400210: Bool_en_Cloneur_Cube_19
+    400212: Bool_en_Cloneur_Cube_20
+    400214: Bool_en_Cloneur_Cube_21
+    400216: Bool_en_Cloneur_Cube_26
+    400218: Bool_en_Cloneur_Cube_27
+    400220: Bool_en_Cloneur_Cube_28
+    400222: Bool_en_Cloneur_Cube_29
+    400224: Bool_en_Cloneur_Cube_34
+    400226: Bool_en_Cloneur_Cube_35
+    400228: Bool_en_Cloneur_Cube_36
+    400230: Bool_en_Cloneur_Cube_37
+    400232: Bool_en_Cloneur_Cube_42
+    400234: Bool_en_Cloneur_Cube_43
+    400236: Bool_en_Cloneur_Cube_44
+    400238: Bool_en_Cloneur_Cube_50
+    400240: Bool_en_Cloneur_Cube_51
+    400242: Bool_en_Cloneur_Cube_52
+    400244: Bool_en_Cloneur_Cube_58
+    400246: Bool_en_Cloneur_Cube_59
+    400248: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1
+    400250: Bool_en_Cloneur_Sph_re_10
+    400252: Bool_en_Cloneur_Sph_re_11
+    400254: Bool_en_Cloneur_Sph_re_12
+    400256: Bool_en_Cloneur_Sph_re_13
+    400258: Bool_en_Cloneur_Sph_re_18
+    400260: Bool_en_Cloneur_Sph_re_19
+    400262: Bool_en_Cloneur_Sph_re_2
+    400264: Bool_en_Cloneur_Sph_re_20
+    400266: Bool_en_Cloneur_Sph_re_21
+    400268: Bool_en_Cloneur_Sph_re_26
+    400270: Bool_en_Cloneur_Sph_re_27
+    400272: Bool_en_Cloneur_Sph_re_28
+    400274: Bool_en_Cloneur_Sph_re_29
+    400276: Bool_en_Cloneur_Sph_re_3
+    400278: Bool_en_Cloneur_Sph_re_34
+    400280: Bool_en_Cloneur_Sph_re_35
+    400282: Bool_en_Cloneur_Sph_re_36
+    400284: Bool_en_Cloneur_Sph_re_37
+    400286: Bool_en_Cloneur_Sph_re_4
+    400288: Bool_en_Cloneur_Sph_re_42
+    400290: Bool_en_Cloneur_Sph_re_43
+    400292: Bool_en_Cloneur_Sph_re_44
+    400294: Bool_en_Cloneur_Sph_re_45
+    400296: Bool_en_Cloneur_Sph_re_5
+    400298: Bool_en_Cloneur_Sph_re_50
+    400300: Bool_en_Cloneur_Sph_re_51
+    400302: Bool_en_Cloneur_Sph_re_52
+    400304: Bool_en_Cloneur_Sph_re_58
+    400306: Bool_en_Cloneur_Sph_re_59
+    400308: Bool_en_Cloneur_Sph_re_60
+    400310: Bool_en_Cloneur_Cube_4
+    400312: Bool_en_Cloneur_Cube_45
+    400314: Bool_en_Cloneur_Cube_5
+    400316: Bool_en_Cloneur_Cube_60
     2300000: Bool_en_boleen_Cloneur_Cube_10
     2300002: Bool_en_boleen_Cloneur_Cube_11
     2300004: Bool_en_boleen_Cloneur_Cube_9
@@ -304,6 +422,65 @@ ModelImporter:
     2300192: Neutre_Proc3Durale_MeshPart1
     2300194: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1
     2300196: Neutre_Proc3Durale
+    2300198: Bool_en_Cloneur_Cube_10
+    2300200: Bool_en_Cloneur_Cube_11
+    2300202: Bool_en_Cloneur_Cube_12
+    2300204: Bool_en_Cloneur_Cube_13
+    2300206: Bool_en_Cloneur_Cube_18
+    2300208: Bool_en_Cloneur_Cube_19
+    2300210: Bool_en_Cloneur_Cube_20
+    2300212: Bool_en_Cloneur_Cube_21
+    2300214: Bool_en_Cloneur_Cube_26
+    2300216: Bool_en_Cloneur_Cube_27
+    2300218: Bool_en_Cloneur_Cube_28
+    2300220: Bool_en_Cloneur_Cube_29
+    2300222: Bool_en_Cloneur_Cube_34
+    2300224: Bool_en_Cloneur_Cube_35
+    2300226: Bool_en_Cloneur_Cube_36
+    2300228: Bool_en_Cloneur_Cube_37
+    2300230: Bool_en_Cloneur_Cube_42
+    2300232: Bool_en_Cloneur_Cube_43
+    2300234: Bool_en_Cloneur_Cube_44
+    2300236: Bool_en_Cloneur_Cube_50
+    2300238: Bool_en_Cloneur_Cube_51
+    2300240: Bool_en_Cloneur_Cube_52
+    2300242: Bool_en_Cloneur_Cube_58
+    2300244: Bool_en_Cloneur_Cube_59
+    2300246: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1
+    2300248: Bool_en_Cloneur_Sph_re_10
+    2300250: Bool_en_Cloneur_Sph_re_11
+    2300252: Bool_en_Cloneur_Sph_re_12
+    2300254: Bool_en_Cloneur_Sph_re_13
+    2300256: Bool_en_Cloneur_Sph_re_18
+    2300258: Bool_en_Cloneur_Sph_re_19
+    2300260: Bool_en_Cloneur_Sph_re_2
+    2300262: Bool_en_Cloneur_Sph_re_20
+    2300264: Bool_en_Cloneur_Sph_re_21
+    2300266: Bool_en_Cloneur_Sph_re_26
+    2300268: Bool_en_Cloneur_Sph_re_27
+    2300270: Bool_en_Cloneur_Sph_re_28
+    2300272: Bool_en_Cloneur_Sph_re_29
+    2300274: Bool_en_Cloneur_Sph_re_3
+    2300276: Bool_en_Cloneur_Sph_re_34
+    2300278: Bool_en_Cloneur_Sph_re_35
+    2300280: Bool_en_Cloneur_Sph_re_36
+    2300282: Bool_en_Cloneur_Sph_re_37
+    2300284: Bool_en_Cloneur_Sph_re_4
+    2300286: Bool_en_Cloneur_Sph_re_42
+    2300288: Bool_en_Cloneur_Sph_re_43
+    2300290: Bool_en_Cloneur_Sph_re_44
+    2300292: Bool_en_Cloneur_Sph_re_45
+    2300294: Bool_en_Cloneur_Sph_re_5
+    2300296: Bool_en_Cloneur_Sph_re_50
+    2300298: Bool_en_Cloneur_Sph_re_51
+    2300300: Bool_en_Cloneur_Sph_re_52
+    2300302: Bool_en_Cloneur_Sph_re_58
+    2300304: Bool_en_Cloneur_Sph_re_59
+    2300306: Bool_en_Cloneur_Sph_re_60
+    2300308: Bool_en_Cloneur_Cube_4
+    2300310: Bool_en_Cloneur_Cube_45
+    2300312: Bool_en_Cloneur_Cube_5
+    2300314: Bool_en_Cloneur_Cube_60
     3300000: Bool_en_boleen_Cloneur_Cube_10
     3300002: Bool_en_boleen_Cloneur_Cube_11
     3300004: Bool_en_boleen_Cloneur_Cube_9
@@ -403,6 +580,65 @@ ModelImporter:
     3300192: Neutre_Proc3Durale_MeshPart1
     3300194: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1
     3300196: Neutre_Proc3Durale
+    3300198: Bool_en_Cloneur_Cube_10
+    3300200: Bool_en_Cloneur_Cube_11
+    3300202: Bool_en_Cloneur_Cube_12
+    3300204: Bool_en_Cloneur_Cube_13
+    3300206: Bool_en_Cloneur_Cube_18
+    3300208: Bool_en_Cloneur_Cube_19
+    3300210: Bool_en_Cloneur_Cube_20
+    3300212: Bool_en_Cloneur_Cube_21
+    3300214: Bool_en_Cloneur_Cube_26
+    3300216: Bool_en_Cloneur_Cube_27
+    3300218: Bool_en_Cloneur_Cube_28
+    3300220: Bool_en_Cloneur_Cube_29
+    3300222: Bool_en_Cloneur_Cube_34
+    3300224: Bool_en_Cloneur_Cube_35
+    3300226: Bool_en_Cloneur_Cube_36
+    3300228: Bool_en_Cloneur_Cube_37
+    3300230: Bool_en_Cloneur_Cube_42
+    3300232: Bool_en_Cloneur_Cube_43
+    3300234: Bool_en_Cloneur_Cube_44
+    3300236: Bool_en_Cloneur_Cube_50
+    3300238: Bool_en_Cloneur_Cube_51
+    3300240: Bool_en_Cloneur_Cube_52
+    3300242: Bool_en_Cloneur_Cube_58
+    3300244: Bool_en_Cloneur_Cube_59
+    3300246: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1
+    3300248: Bool_en_Cloneur_Sph_re_10
+    3300250: Bool_en_Cloneur_Sph_re_11
+    3300252: Bool_en_Cloneur_Sph_re_12
+    3300254: Bool_en_Cloneur_Sph_re_13
+    3300256: Bool_en_Cloneur_Sph_re_18
+    3300258: Bool_en_Cloneur_Sph_re_19
+    3300260: Bool_en_Cloneur_Sph_re_2
+    3300262: Bool_en_Cloneur_Sph_re_20
+    3300264: Bool_en_Cloneur_Sph_re_21
+    3300266: Bool_en_Cloneur_Sph_re_26
+    3300268: Bool_en_Cloneur_Sph_re_27
+    3300270: Bool_en_Cloneur_Sph_re_28
+    3300272: Bool_en_Cloneur_Sph_re_29
+    3300274: Bool_en_Cloneur_Sph_re_3
+    3300276: Bool_en_Cloneur_Sph_re_34
+    3300278: Bool_en_Cloneur_Sph_re_35
+    3300280: Bool_en_Cloneur_Sph_re_36
+    3300282: Bool_en_Cloneur_Sph_re_37
+    3300284: Bool_en_Cloneur_Sph_re_4
+    3300286: Bool_en_Cloneur_Sph_re_42
+    3300288: Bool_en_Cloneur_Sph_re_43
+    3300290: Bool_en_Cloneur_Sph_re_44
+    3300292: Bool_en_Cloneur_Sph_re_45
+    3300294: Bool_en_Cloneur_Sph_re_5
+    3300296: Bool_en_Cloneur_Sph_re_50
+    3300298: Bool_en_Cloneur_Sph_re_51
+    3300300: Bool_en_Cloneur_Sph_re_52
+    3300302: Bool_en_Cloneur_Sph_re_58
+    3300304: Bool_en_Cloneur_Sph_re_59
+    3300306: Bool_en_Cloneur_Sph_re_60
+    3300308: Bool_en_Cloneur_Cube_4
+    3300310: Bool_en_Cloneur_Cube_45
+    3300312: Bool_en_Cloneur_Cube_5
+    3300314: Bool_en_Cloneur_Cube_60
     4300000: Bool_en_boleen_Cloneur_Cube_10
     4300002: Bool_en_boleen_Cloneur_Cube_11
     4300004: Bool_en_boleen_Cloneur_Cube_9
@@ -502,6 +738,65 @@ ModelImporter:
     4300192: Neutre_Proc3Durale_MeshPart1
     4300194: Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre1_Solide_platonicien_Solide_platonicien1
     4300196: Neutre_Proc3Durale
+    4300198: Bool_en_Cloneur_Cube_10
+    4300200: Bool_en_Cloneur_Cube_11
+    4300202: Bool_en_Cloneur_Cube_12
+    4300204: Bool_en_Cloneur_Cube_13
+    4300206: Bool_en_Cloneur_Cube_18
+    4300208: Bool_en_Cloneur_Cube_19
+    4300210: Bool_en_Cloneur_Cube_20
+    4300212: Bool_en_Cloneur_Cube_21
+    4300214: Bool_en_Cloneur_Cube_26
+    4300216: Bool_en_Cloneur_Cube_27
+    4300218: Bool_en_Cloneur_Cube_28
+    4300220: Bool_en_Cloneur_Cube_29
+    4300222: Bool_en_Cloneur_Cube_34
+    4300224: Bool_en_Cloneur_Cube_35
+    4300226: Bool_en_Cloneur_Cube_36
+    4300228: Bool_en_Cloneur_Cube_37
+    4300230: Bool_en_Cloneur_Cube_42
+    4300232: Bool_en_Cloneur_Cube_43
+    4300234: Bool_en_Cloneur_Cube_44
+    4300236: Bool_en_Cloneur_Cube_50
+    4300238: Bool_en_Cloneur_Cube_51
+    4300240: Bool_en_Cloneur_Cube_52
+    4300242: Bool_en_Cloneur_Cube_58
+    4300244: Bool_en_Cloneur_Cube_59
+    4300246: Bool_en_Poumons_1_R_seau_d_atomes_1_Sym_trie_Surface_de_subdivision_Neutre_Solide_platonicien_Solide_platonicien1
+    4300248: Bool_en_Cloneur_Sph_re_10
+    4300250: Bool_en_Cloneur_Sph_re_11
+    4300252: Bool_en_Cloneur_Sph_re_12
+    4300254: Bool_en_Cloneur_Sph_re_13
+    4300256: Bool_en_Cloneur_Sph_re_18
+    4300258: Bool_en_Cloneur_Sph_re_19
+    4300260: Bool_en_Cloneur_Sph_re_2
+    4300262: Bool_en_Cloneur_Sph_re_20
+    4300264: Bool_en_Cloneur_Sph_re_21
+    4300266: Bool_en_Cloneur_Sph_re_26
+    4300268: Bool_en_Cloneur_Sph_re_27
+    4300270: Bool_en_Cloneur_Sph_re_28
+    4300272: Bool_en_Cloneur_Sph_re_29
+    4300274: Bool_en_Cloneur_Sph_re_3
+    4300276: Bool_en_Cloneur_Sph_re_34
+    4300278: Bool_en_Cloneur_Sph_re_35
+    4300280: Bool_en_Cloneur_Sph_re_36
+    4300282: Bool_en_Cloneur_Sph_re_37
+    4300284: Bool_en_Cloneur_Sph_re_4
+    4300286: Bool_en_Cloneur_Sph_re_42
+    4300288: Bool_en_Cloneur_Sph_re_43
+    4300290: Bool_en_Cloneur_Sph_re_44
+    4300292: Bool_en_Cloneur_Sph_re_45
+    4300294: Bool_en_Cloneur_Sph_re_5
+    4300296: Bool_en_Cloneur_Sph_re_50
+    4300298: Bool_en_Cloneur_Sph_re_51
+    4300300: Bool_en_Cloneur_Sph_re_52
+    4300302: Bool_en_Cloneur_Sph_re_58
+    4300304: Bool_en_Cloneur_Sph_re_59
+    4300306: Bool_en_Cloneur_Sph_re_60
+    4300308: Bool_en_Cloneur_Cube_4
+    4300310: Bool_en_Cloneur_Cube_45
+    4300312: Bool_en_Cloneur_Cube_5
+    4300314: Bool_en_Cloneur_Cube_60
   materials:
     importMaterials: 1
     materialName: 0
