@@ -39,8 +39,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     RandomGlitchEnabler glitchEnabler;
     AudioManager audioManager;
 
-    const float overlayFadeAmount = 0.8f;
-    const float overlayFadeTime = 1f;
+    public float overlayFadeAmount = 0.82f;
+    public float overlayFadeTime = 1f;
 
     // Use this for initialization
     void Start () {
