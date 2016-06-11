@@ -78,6 +78,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     public void OnCursorValidate(KinectButton.ButtonType buttonType)
     {
+        audioManager.PlayValidateSound();
+
         if (buttonType == KinectButton.ButtonType.Activity)
         {
             SetActiveHUD(IdentityComposante.Activity);
@@ -249,6 +251,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         LoadingScreen.DOFade(0, 1);
 
         currentState = ExperienceState.Home;
+        leftHandCursor.cursorEnabled = false;
     }
 
     void ShowSyncScreen()
@@ -265,6 +268,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         LoadingScreen.DOFade(0, 1);
 
         currentState = ExperienceState.Sync;
+        leftHandCursor.cursorEnabled = false;
     }
 
     void ShowLoadingScreen()
@@ -281,6 +285,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         LoadingScreen.DOFade(1, 1);
 
         currentState = ExperienceState.Loading;
+        leftHandCursor.cursorEnabled = false;
     }
 
     void ShowExperienceScreen()
@@ -307,6 +312,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         grayscaleEffect.enabled = true;
         grayScaleTween.Kill();
         grayScaleTween = DOTween.To(() => grayscaleEffect.rampOffset, x => grayscaleEffect.rampOffset = x, -1f, .5f);
+        leftHandCursor.cursorEnabled = false;
     }
 
     void FadeInScreen()

@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour {
     public AudioMixerSnapshot inUISnapshot;
 
     public AudioClip[] UISounds;
+    public AudioClip[] validateSounds;
+    public AudioClip unvalidateSounds;
     public AudioMixerGroup UISoundsMixerGroup;
     public AudioMixerGroup GlitchesMixerGroup;
 
@@ -21,10 +23,13 @@ public class AudioManager : MonoBehaviour {
     {
         UISoundsSource = gameObject.AddComponent<AudioSource>();
         UISoundsSource.outputAudioMixerGroup = UISoundsMixerGroup;
+        UISoundsSource.playOnAwake = false;
+        UISoundsSource.loop = false;
 
         noiseSoundSource = gameObject.AddComponent<AudioSource>();
         noiseSoundSource.outputAudioMixerGroup = GlitchesMixerGroup;
         noiseSoundSource.clip = noiseSound;
+        noiseSoundSource.playOnAwake = false;
         noiseSoundSource.loop = true;
     }
 
@@ -51,6 +56,16 @@ public class AudioManager : MonoBehaviour {
     public void PlayUISound()
     {
         UISoundsSource.PlayOneShot(UISounds[Random.Range(0, UISounds.Length)]);
+    }
+
+    public void PlayValidateSound()
+    {
+        UISoundsSource.PlayOneShot(validateSounds[Random.Range(0, validateSounds.Length)]);
+    }
+
+    public void PlayUnvalidateSound()
+    {
+        UISoundsSource.PlayOneShot(unvalidateSounds);
     }
 
     public void StartNoiseSound()
