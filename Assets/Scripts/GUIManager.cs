@@ -26,6 +26,9 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     public KinectCursor leftHandCursor;
     public KinectCursor rightHandCursor;
 
+    public float overlayFadeAmount = 0.82f;
+    public float overlayFadeTime = 1f;
+
     HUDGroup currentHUD;
 
     IdentityComposante currentIdentityComposante;
@@ -39,8 +42,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     RandomGlitchEnabler glitchEnabler;
     AudioManager audioManager;
 
-    public float overlayFadeAmount = 0.82f;
-    public float overlayFadeTime = 1f;
+    bool started = false;
 
     // Use this for initialization
     void Start () {
@@ -49,10 +51,17 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         grayscaleEffect = Camera.main.GetComponent<Grayscale>();
         grayscaleEffect.rampOffset = -1f;
         grayscaleEffect.enabled = true;
-        SetActiveHUD(IdentityComposante.None);
 
-        //ShowHomeScreen();
-	}
+        StartCoroutine(LateStart());
+    }
+
+    IEnumerator LateStart()
+    {
+        yield return new WaitForSeconds(1);
+        ShowHomeScreen();
+        SetActiveHUD(IdentityComposante.None);
+        started = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -208,7 +217,9 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             currentHUD = null;
 
             rightHandCursor.cursorEnabled = false;
-            audioManager.OnUIClose();
+
+            if (currentState == ExperienceState.Experience)
+                audioManager.OnUIClose();
         }
 
         if (currentHUD)
@@ -335,7 +346,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     {
         if (currentState == ExperienceState.Home)
         {
-            ShowSyncScreen();
+            if (started)
+                ShowSyncScreen();
         }
         else if (currentState == ExperienceState.Experience)
         {

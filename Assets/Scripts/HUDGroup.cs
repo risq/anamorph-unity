@@ -20,6 +20,7 @@ public class HUDGroup : MonoBehaviour {
 
     public void Show()
     {
+        Debug.Log("Show hud: " + name);
         linkedFocusCamera.SetActive(true);
 
         canvasGroup.DOKill();
@@ -28,6 +29,7 @@ public class HUDGroup : MonoBehaviour {
 
     public void Hide()
     {
+        Debug.Log("Hide hud: " + name);
         linkedFocusCamera.SetActive(false);
     
         canvasGroup.DOKill();

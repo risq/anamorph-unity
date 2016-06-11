@@ -14,7 +14,7 @@ public class TypingEffect : MonoBehaviour {
 
     bool done = true;
 
-    string st = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_#@$ÀÉÈ";
+    string st = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_#@$ÀÉÈ,.:!?;/-";
 
     public float speed = 0.1f;
 

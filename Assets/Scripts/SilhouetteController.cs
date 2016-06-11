@@ -249,8 +249,6 @@ public class SilhouetteController : MonoBehaviour {
             secondaryCircle = GetIdentityCircle(secondaryCircleString);
         }
 
-        Debug.Log("primaryCircle " + primaryCircle);
-        Debug.Log("secondaryCircle " + secondaryCircle);
         SetLights(primaryCircle, secondaryCircle);
 
         LeftHandTrail = GameObject.Find("LeftElbow/LeftWrist/Left Hand").GetComponent<TrailRenderer>();

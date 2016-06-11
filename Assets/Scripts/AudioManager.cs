@@ -8,19 +8,37 @@ public class AudioManager : MonoBehaviour {
     public AudioMixerSnapshot experienceSnapshot;
     public AudioMixerSnapshot inUISnapshot;
 
+    public AudioClip homeSound;
+    public AudioClip experienceSound;
     public AudioClip[] UISounds;
     public AudioClip[] validateSounds;
     public AudioClip unvalidateSounds;
+    public AudioMixerGroup HomeMixerGroup;
+    public AudioMixerGroup ExperienceMixerGroup;
     public AudioMixerGroup UISoundsMixerGroup;
     public AudioMixerGroup GlitchesMixerGroup;
 
     public AudioClip noiseSound;
 
+    AudioSource HomeSource;
+    AudioSource ExperienceSource;
     AudioSource UISoundsSource;
     AudioSource noiseSoundSource;
 
     void Start()
     {
+        HomeSource = gameObject.AddComponent<AudioSource>();
+        HomeSource.outputAudioMixerGroup = HomeMixerGroup;
+        HomeSource.clip = homeSound;
+        HomeSource.playOnAwake = false;
+        HomeSource.loop = true;
+
+        ExperienceSource = gameObject.AddComponent<AudioSource>();
+        ExperienceSource.outputAudioMixerGroup = ExperienceMixerGroup;
+        ExperienceSource.clip = experienceSound;
+        ExperienceSource.playOnAwake = false;
+        ExperienceSource.loop = true;
+
         UISoundsSource = gameObject.AddComponent<AudioSource>();
         UISoundsSource.outputAudioMixerGroup = UISoundsMixerGroup;
         UISoundsSource.playOnAwake = false;
@@ -33,14 +51,16 @@ public class AudioManager : MonoBehaviour {
         noiseSoundSource.loop = true;
     }
 
-    public void ToExperienceSoundtrack()
-    {
-        experienceSnapshot.TransitionTo(0.5f);
-    }
-
     public void ToHomeSoundtrack()
     {
-        homeSnapshot.TransitionTo(0.5f);
+        HomeSource.Play();
+        homeSnapshot.TransitionTo(1f);
+    }
+
+    public void ToExperienceSoundtrack()
+    {
+        ExperienceSource.Play();
+        experienceSnapshot.TransitionTo(0.5f);
     }
 
     public void OnUIOpen()
