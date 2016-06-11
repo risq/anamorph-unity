@@ -11,9 +11,9 @@ public enum ExperienceState { Home, Sync, Loading, Experience, End };
 
 public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
-    public CanvasGroup HomeScreen;
-    public CanvasGroup SyncScreen;
-    public CanvasGroup LoadingScreen;
+    public HUDScreen HomeScreen;
+    public HUDScreen SyncScreen;
+    public HUDScreen LoadingScreen;
 
     public Image overlay;
 
@@ -51,7 +51,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         grayscaleEffect.enabled = true;
         SetActiveHUD(IdentityComposante.None);
 
-        ShowHomeScreen();
+        //ShowHomeScreen();
 	}
 	
 	// Update is called once per frame
@@ -246,12 +246,13 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
 
-        HomeScreen.DOFade(1, 1);
-        SyncScreen.DOFade(0, 1);
-        LoadingScreen.DOFade(0, 1);
+        HomeScreen.FadeIn();
+        SyncScreen.FadeOut();
+        LoadingScreen.FadeOut();
 
         currentState = ExperienceState.Home;
         leftHandCursor.cursorEnabled = false;
+        audioManager.PlayValidateSound();
     }
 
     void ShowSyncScreen()
@@ -263,12 +264,13 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
 
-        HomeScreen.DOFade(0, 1);
-        SyncScreen.DOFade(1, 1);
-        LoadingScreen.DOFade(0, 1);
+        HomeScreen.FadeOut();
+        SyncScreen.FadeIn();
+        LoadingScreen.FadeOut();
 
         currentState = ExperienceState.Sync;
         leftHandCursor.cursorEnabled = false;
+        audioManager.PlayValidateSound();
     }
 
     void ShowLoadingScreen()
@@ -280,12 +282,13 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
 
-        HomeScreen.DOFade(0, 1);
-        SyncScreen.DOFade(0, 1);
-        LoadingScreen.DOFade(1, 1);
+        HomeScreen.FadeOut();
+        SyncScreen.FadeOut();
+        LoadingScreen.FadeIn();
 
         currentState = ExperienceState.Loading;
         leftHandCursor.cursorEnabled = false;
+        audioManager.PlayValidateSound();
     }
 
     void ShowExperienceScreen()
@@ -295,9 +298,9 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         SyncScreen.DOKill();
         LoadingScreen.DOKill();
 
-        HomeScreen.DOFade(0, 1);
-        SyncScreen.DOFade(0, 1);
-        LoadingScreen.DOFade(0, 1).OnComplete(() =>
+        HomeScreen.FadeOut();
+        SyncScreen.FadeOut();
+        LoadingScreen.canvasGroup.DOFade(0, 1).OnComplete(() =>
         {
             FadeInScreen();
         });

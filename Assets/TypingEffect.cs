@@ -14,10 +14,12 @@ public class TypingEffect : MonoBehaviour {
 
     bool done = true;
 
-    string st = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_#@$";
+    string st = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_#@$ÀÉÈ";
+
+    public float speed = 0.1f;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         textComponent = GetComponent<Text>();
         message = textComponent.text;
@@ -51,7 +53,7 @@ public class TypingEffect : MonoBehaviour {
             newMessage = "";
             for (int i = 0; i < messageChars.Length; i++)
             {
-                if (messageChars[i] != '\n' && messageChars[i] != ' ' && newMessageChars[i] != messageChars[i] && Random.value > 0.1f)
+                if (messageChars[i] != '\n' && messageChars[i] != ' ' && newMessageChars[i] != messageChars[i] && Random.value > speed)
                 {
                     newMessage += st[Random.Range(0, st.Length)];
                 }
