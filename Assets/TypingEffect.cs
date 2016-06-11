@@ -29,10 +29,13 @@ public class TypingEffect : MonoBehaviour {
         if (messageChars.Length > 0)
         {
             textComponent.text = "";
-
+            newMessage = "";
             for (int i = 0; i < messageChars.Length; i++)
             {
-                newMessage += messageChars[Random.Range(0, messageChars.Length)];
+                if (messageChars[i] == '\n' || messageChars[i] == ' ')
+                    newMessage += messageChars[i];
+                else
+                    newMessage += st[Random.Range(0, st.Length)];
             }
             newMessageChars = newMessage.ToCharArray();
             textComponent.text = newMessage;
@@ -48,9 +51,9 @@ public class TypingEffect : MonoBehaviour {
             newMessage = "";
             for (int i = 0; i < messageChars.Length; i++)
             {
-                if (newMessageChars[i] != messageChars[i] && Random.value > 0.05f)
+                if (messageChars[i] != '\n' && messageChars[i] != ' ' && newMessageChars[i] != messageChars[i] && Random.value > 0.1f)
                 {
-                    newMessage += messageChars[Random.Range(0, messageChars.Length)];
+                    newMessage += st[Random.Range(0, st.Length)];
                 }
                 else
                 {
