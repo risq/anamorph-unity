@@ -14,7 +14,7 @@ public class TypingEffect : MonoBehaviour {
 
     bool done = true;
 
-    string st = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    string st = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_#@$";
 
     // Use this for initialization
     void Start()

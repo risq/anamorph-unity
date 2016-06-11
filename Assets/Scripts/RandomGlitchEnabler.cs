@@ -10,8 +10,11 @@ public class RandomGlitchEnabler : MonoBehaviour {
     public float minIntensity = 0f;
     public float maxIntensity = 2f;
 
+    AudioManager audioManager;
+
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         glitchEffect.enabled = false;
         StartCoroutine(ActivationLoop());
     }
@@ -22,8 +25,10 @@ public class RandomGlitchEnabler : MonoBehaviour {
         {
             glitchEffect.intensity = Random.Range(minIntensity, maxIntensity);
             glitchEffect.enabled = true;
+            audioManager.StartNoiseSound();
             yield return new WaitForSeconds(Random.Range(0, averageDeactivationTime * 2));
             glitchEffect.enabled = false;
+            audioManager.StopNoiseSound();
             yield return new WaitForSeconds(Random.Range(0, averageActivationTime * 2));
         }
     }
@@ -32,8 +37,10 @@ public class RandomGlitchEnabler : MonoBehaviour {
     {
         glitchEffect.intensity = Random.Range(minIntensity, maxIntensity);
         glitchEffect.enabled = true;
+        audioManager.StartNoiseSound();
         yield return new WaitForSeconds(Random.Range(0, averageDeactivationTime * 2));
         glitchEffect.enabled = false;
+        audioManager.StopNoiseSound();
     }
 
     public void DoGlitch()

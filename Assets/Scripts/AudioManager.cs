@@ -10,13 +10,22 @@ public class AudioManager : MonoBehaviour {
 
     public AudioClip[] UISounds;
     public AudioMixerGroup UISoundsMixerGroup;
+    public AudioMixerGroup GlitchesMixerGroup;
+
+    public AudioClip noiseSound;
 
     AudioSource UISoundsSource;
+    AudioSource noiseSoundSource;
 
     void Start()
     {
         UISoundsSource = gameObject.AddComponent<AudioSource>();
         UISoundsSource.outputAudioMixerGroup = UISoundsMixerGroup;
+
+        noiseSoundSource = gameObject.AddComponent<AudioSource>();
+        noiseSoundSource.outputAudioMixerGroup = GlitchesMixerGroup;
+        noiseSoundSource.clip = noiseSound;
+        noiseSoundSource.loop = true;
     }
 
     public void ToExperienceSoundtrack()
@@ -42,5 +51,15 @@ public class AudioManager : MonoBehaviour {
     public void PlayUISound()
     {
         UISoundsSource.PlayOneShot(UISounds[Random.Range(0, UISounds.Length)]);
+    }
+
+    public void StartNoiseSound()
+    {
+        noiseSoundSource.Play();
+    }
+
+    public void StopNoiseSound()
+    {
+        noiseSoundSource.Stop();
     }
 }
