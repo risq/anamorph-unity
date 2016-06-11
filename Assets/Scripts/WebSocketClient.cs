@@ -89,6 +89,8 @@ public class WebSocketClient : MonoBehaviour {
         JSONSample1 = e.data.GetField("sample1");
         JSONSample2 = e.data.GetField("sample2");
         JSONSample3 = e.data.GetField("sample3");
+
+        LoadData(JSONSample1);
     }
 
     public void OnSocialData(SocketIOEvent e) {
