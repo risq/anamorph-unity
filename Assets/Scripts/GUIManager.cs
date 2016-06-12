@@ -25,6 +25,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     public KinectCursor leftHandCursor;
     public KinectCursor rightHandCursor;
+    public KinectCursor leftHandPhotoCursor;
+    public KinectCursor rightHandPhotoCursor;
 
     public float overlayFadeAmount = 0.82f;
     public float overlayFadeTime = 1f;
@@ -121,10 +123,23 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         {
             currentHUD.Filter(IdentityCircle.Pro);
         }
+        else if (buttonType == KinectButton.ButtonType.Photo)
+        {
+            TakePhoto();
+        }
+    }
+
+    public void OnCursorSemivalidate(KinectButton.ButtonType buttonType)
+    {
+        if (buttonType == KinectButton.ButtonType.Photo)
+        {
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
+        }
     }
 
     public void OnCursorUnvalidate(KinectButton.ButtonType buttonType)
     {
+        Debug.Log("OnCursorUnvalidate " + buttonType);
         if (buttonType == KinectButton.ButtonType.Activity && currentIdentityComposante == IdentityComposante.Activity ||
             buttonType == KinectButton.ButtonType.Influence && currentIdentityComposante == IdentityComposante.Influence ||
             buttonType == KinectButton.ButtonType.PassiveIdentity && currentIdentityComposante == IdentityComposante.PassiveIdentity ||
@@ -136,6 +151,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         else if (buttonType == KinectButton.ButtonType.Private || buttonType == KinectButton.ButtonType.Public || buttonType == KinectButton.ButtonType.Pro)
         {
             
+        }
+        else if (buttonType == KinectButton.ButtonType.Photo)
+        {
+            overlayFadeTweener = overlay.DOFade(0, overlayFadeTime);
         }
     }
 
@@ -233,6 +252,12 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         rightHandCursor.DisableAll();
     }
 
+    void TakePhoto()
+    {
+        SetActiveHUD(IdentityComposante.None);
+        Debug.Log("Take photo !");
+    }
+
     public void OnRemoteRegistered()
     {
         Debug.Log("OnRemoteRegistered");
@@ -263,6 +288,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
         currentState = ExperienceState.Home;
         leftHandCursor.cursorEnabled = false;
+        leftHandPhotoCursor.cursorEnabled = false;
+        rightHandPhotoCursor.cursorEnabled = false;
         audioManager.PlayValidateSound();
     }
 
@@ -281,6 +308,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
         currentState = ExperienceState.Sync;
         leftHandCursor.cursorEnabled = false;
+        leftHandPhotoCursor.cursorEnabled = false;
+        rightHandPhotoCursor.cursorEnabled = false;
         audioManager.PlayValidateSound();
     }
 
@@ -299,6 +328,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
         currentState = ExperienceState.Loading;
         leftHandCursor.cursorEnabled = false;
+        leftHandPhotoCursor.cursorEnabled = false;
+        rightHandPhotoCursor.cursorEnabled = false;
         audioManager.PlayValidateSound();
     }
 
@@ -327,6 +358,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         grayScaleTween.Kill();
         grayScaleTween = DOTween.To(() => grayscaleEffect.rampOffset, x => grayscaleEffect.rampOffset = x, -1f, .5f);
         leftHandCursor.cursorEnabled = false;
+        leftHandPhotoCursor.cursorEnabled = false;
+        rightHandPhotoCursor.cursorEnabled = false;
     }
 
     void FadeInScreen()
@@ -340,6 +373,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         glitchEnabler.DoGlitch();
         grayscaleEffect.enabled = false;
         leftHandCursor.cursorEnabled = true;
+        leftHandPhotoCursor.cursorEnabled = true;
+        rightHandPhotoCursor.cursorEnabled = true;
     }
 
     public void UserDetected(long userId, int userIndex)

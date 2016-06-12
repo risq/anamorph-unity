@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum CursorType { None, LeftCursor, RightCursor };
+
 public class KinectCursor : MonoBehaviour {
 
     public KinectButton[] kinectButtons;
+    public CursorType cursorType;
+
     KinectButton activeKinectButton;
     Transform tr;
 
@@ -47,16 +51,16 @@ public class KinectCursor : MonoBehaviour {
             if (closestButton != activeKinectButton)
             {
                 if (activeKinectButton)
-                    activeKinectButton.OnCursorLeave();
+                    activeKinectButton.OnCursorLeave(cursorType);
 
-                closestButton.OnCursorEnter();
+                closestButton.OnCursorEnter(cursorType);
                 audioManager.PlayUISound();
                 activeKinectButton = closestButton;
             }
         }
         else if (activeKinectButton)
         {
-            activeKinectButton.OnCursorLeave();
+            activeKinectButton.OnCursorLeave(cursorType);
             activeKinectButton = null;
         }
     }
@@ -78,7 +82,7 @@ public class KinectCursor : MonoBehaviour {
     {
         for (int i = 0; i < kinectButtonsLength; i++)
         {
-            kinectButtons[i].OnCursorLeave();
+            kinectButtons[i].OnCursorLeave(cursorType);
         }
     }
 
