@@ -588,13 +588,4 @@ public class SilhouetteController : MonoBehaviour {
             circle == IdentityCircle.Pro ? ProColor :
             Color.white;
     }
-
-    void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 150, 50), "UpdateData"))
-            UpdateData(null);
-
-        if (GUI.Button(new Rect(10, 60, 150, 50), "Clean mem"))
-            Resources.UnloadUnusedAssets();
-    }
 }

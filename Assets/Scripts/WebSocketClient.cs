@@ -113,25 +113,29 @@ public class WebSocketClient : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha0) && CurrentData)
+        if (Input.GetKeyUp(KeyCode.Alpha0) && CurrentData)
         {
             LoadData(CurrentData);
         }
-        else if (Input.GetKey(KeyCode.Alpha1) && JSONSample1)
+        else if (Input.GetKeyUp(KeyCode.Alpha1) && JSONSample1)
         {
             LoadData(JSONSample1);
         }
-        else if (Input.GetKey(KeyCode.Alpha2) && JSONSample2)
+        else if (Input.GetKeyUp(KeyCode.Alpha2) && JSONSample2)
         {
             LoadData(JSONSample2);
         }
-        else if (Input.GetKey(KeyCode.Alpha3) && JSONSample3)
+        else if (Input.GetKeyUp(KeyCode.Alpha3) && JSONSample3)
         {
             LoadData(JSONSample3);
         }
-        else if (Input.GetKey(KeyCode.R))
+        else if (Input.GetKeyUp(KeyCode.R))
         {
             Register();
+        }
+        else if (Input.GetKeyUp(KeyCode.A))
+        {
+            LoadData(null);
         }
     }
 
