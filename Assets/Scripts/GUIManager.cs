@@ -51,6 +51,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     PhotoManager photoManager;
 
     bool started = false;
+    bool photoButtonActivating = false;
 
     // Use this for initialization
     void Start () {
@@ -99,39 +100,39 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     {
         audioManager.PlayValidateSound();
 
-        if (buttonType == KinectButton.ButtonType.Activity)
+        if (buttonType == KinectButton.ButtonType.Activity && !photoButtonActivating)
         {
             SetActiveHUD(IdentityComposante.Activity);
         }
-        else if (buttonType == KinectButton.ButtonType.Influence)
+        else if (buttonType == KinectButton.ButtonType.Influence && !photoButtonActivating)
         {
             SetActiveHUD(IdentityComposante.Influence);
         }
-        else if (buttonType == KinectButton.ButtonType.PassiveIdentity)
+        else if (buttonType == KinectButton.ButtonType.PassiveIdentity && !photoButtonActivating)
         {
             SetActiveHUD(IdentityComposante.PassiveIdentity);
         }
-        else if (buttonType == KinectButton.ButtonType.Mood)
+        else if (buttonType == KinectButton.ButtonType.Mood && !photoButtonActivating)
         {
             SetActiveHUD(IdentityComposante.Mood);
         }
-        else if (buttonType == KinectButton.ButtonType.Interests)
+        else if (buttonType == KinectButton.ButtonType.Interests && !photoButtonActivating)
         {
             SetActiveHUD(IdentityComposante.Interests);
         }
-        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Private)
+        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Private && !photoButtonActivating)
         {
             currentHUD.Filter(IdentityCircle.Private);
         }
-        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Public)
+        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Public && !photoButtonActivating)
         {
             currentHUD.Filter(IdentityCircle.Public);
         }
-        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Pro)
+        else if (currentHUD != null && buttonType == KinectButton.ButtonType.Pro && !photoButtonActivating)
         {
             currentHUD.Filter(IdentityCircle.Pro);
         }
-        else if (buttonType == KinectButton.ButtonType.Photo)
+        else if (buttonType == KinectButton.ButtonType.Photo && currentHUD == null)
         {
             ShowPhotoScreen();
         }
@@ -139,8 +140,16 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     public void OnCursorSemivalidate(KinectButton.ButtonType buttonType)
     {
-        if (buttonType == KinectButton.ButtonType.Photo)
+        if (buttonType == KinectButton.ButtonType.Photo && currentHUD == null)
         {
+            photoButtonActivating = true;
+            leftHandCursor.cursorEnabled = false;
+            rightHandCursor.cursorEnabled = false;
+
+            leftHandCursor.DisableAll();
+            rightHandCursor.DisableAll();
+
+            overlayFadeTweener.Kill();
             overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime * 5);
         }
     }
@@ -160,8 +169,11 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         {
             
         }
-        else if (buttonType == KinectButton.ButtonType.Photo)
+        else if (buttonType == KinectButton.ButtonType.Photo && photoButtonActivating)
         {
+            photoButtonActivating = false;
+            leftHandCursor.cursorEnabled = true;
+            overlayFadeTweener.Kill();
             overlayFadeTweener = overlay.DOFade(0, overlayFadeTime);
         }
     }
@@ -244,6 +256,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
             currentHUD = null;
 
             rightHandCursor.cursorEnabled = false;
+            rightHandPhotoCursor.cursorEnabled = true;
+            leftHandPhotoCursor.cursorEnabled = true;
 
             if (currentState == ExperienceState.Experience)
                 audioManager.OnUIClose();
@@ -253,6 +267,12 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         {
             overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
             rightHandCursor.cursorEnabled = true;
+            rightHandPhotoCursor.cursorEnabled = false;
+            leftHandPhotoCursor.cursorEnabled = false;
+
+            leftHandPhotoCursor.DisableAll();
+            rightHandPhotoCursor.DisableAll();
+
             currentHUD.Filter(IdentityCircle.Global);
             audioManager.OnUIOpen();
         }
@@ -279,6 +299,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     {
         audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
+
+        fixedBackUI.DOFade(1, overlayFadeTime);
+        fixedFrontUI.DOFade(1, overlayFadeTime);
+        interfaceUI.DOFade(1, overlayFadeTime);
 
         HomeScreen.FadeIn();
         SyncScreen.FadeOut();
@@ -377,6 +401,11 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         leftHandCursor.cursorEnabled = false;
         leftHandPhotoCursor.cursorEnabled = false;
         rightHandPhotoCursor.cursorEnabled = false;
+
+        leftHandCursor.DisableAll();
+        leftHandPhotoCursor.DisableAll();
+        rightHandCursor.DisableAll();
+        rightHandPhotoCursor.DisableAll();
     }
 
     void FadeInScreen()

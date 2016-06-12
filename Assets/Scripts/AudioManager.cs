@@ -15,10 +15,13 @@ public class AudioManager : MonoBehaviour {
     public AudioClip[] validateSounds;
     public AudioClip unvalidateSounds;
     public AudioClip photoSound;
+    public AudioClip beepSound;
+
     public AudioMixerGroup HomeMixerGroup;
     public AudioMixerGroup ExperienceMixerGroup;
     public AudioMixerGroup UISoundsMixerGroup;
     public AudioMixerGroup GlitchesMixerGroup;
+    public AudioMixerGroup PhotoMixerGroup;
 
     public AudioClip noiseSound;
 
@@ -26,6 +29,7 @@ public class AudioManager : MonoBehaviour {
     AudioSource ExperienceSource;
     AudioSource UISoundsSource;
     AudioSource noiseSoundSource;
+    AudioSource photoSoundSource;
 
     void Start()
     {
@@ -51,6 +55,11 @@ public class AudioManager : MonoBehaviour {
         noiseSoundSource.clip = noiseSound;
         noiseSoundSource.playOnAwake = false;
         noiseSoundSource.loop = true;
+
+        photoSoundSource = gameObject.AddComponent<AudioSource>();
+        photoSoundSource.outputAudioMixerGroup = PhotoMixerGroup;
+        photoSoundSource.playOnAwake = false;
+        photoSoundSource.loop = false;
     }
 
     public void ToHomeSoundtrack()
@@ -102,7 +111,12 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayPhotoSound()
     {
-        UISoundsSource.PlayOneShot(photoSound);
+        photoSoundSource.PlayOneShot(photoSound);
+    }
+
+    public void PlayPhotoBeep()
+    {
+        photoSoundSource.PlayOneShot(beepSound);
     }
 
     public void StartNoiseSound()

@@ -5,10 +5,13 @@ using System.Collections;
 public class PhotoManager : MonoBehaviour {
 
     public RawImage photoView;
+    public Text counter;
 
     Animator animator;
     AudioManager audioManager;
     GlitchEffect cameraGlitchEffect;
+
+    int counterValue = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -47,5 +50,12 @@ public class PhotoManager : MonoBehaviour {
 
         audioManager.PlayPhotoSound();
         audioManager.AfterPhotoSoundtrack();
+    }
+
+    public void Beep()
+    {
+        audioManager.PlayPhotoBeep();
+        counterValue = counterValue > 0 ? counterValue - 1 : 0;
+        counter.text = counterValue.ToString();
     }
 }
