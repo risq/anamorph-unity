@@ -7,12 +7,14 @@ public class AudioManager : MonoBehaviour {
     public AudioMixerSnapshot homeSnapshot;
     public AudioMixerSnapshot experienceSnapshot;
     public AudioMixerSnapshot inUISnapshot;
+    public AudioMixerSnapshot photoSnapshot;
 
     public AudioClip homeSound;
     public AudioClip experienceSound;
     public AudioClip[] UISounds;
     public AudioClip[] validateSounds;
     public AudioClip unvalidateSounds;
+    public AudioClip photoSound;
     public AudioMixerGroup HomeMixerGroup;
     public AudioMixerGroup ExperienceMixerGroup;
     public AudioMixerGroup UISoundsMixerGroup;
@@ -63,6 +65,16 @@ public class AudioManager : MonoBehaviour {
         experienceSnapshot.TransitionTo(0.5f);
     }
 
+    public void ToPhotoSoundtrack()
+    {
+        photoSnapshot.TransitionTo(3f);
+    }
+
+    public void AfterPhotoSoundtrack()
+    {
+        experienceSnapshot.TransitionTo(2f);
+    }
+
     public void OnUIOpen()
     {
         inUISnapshot.TransitionTo(0.6f);
@@ -86,6 +98,11 @@ public class AudioManager : MonoBehaviour {
     public void PlayUnvalidateSound()
     {
         UISoundsSource.PlayOneShot(unvalidateSounds);
+    }
+
+    public void PlayPhotoSound()
+    {
+        UISoundsSource.PlayOneShot(photoSound);
     }
 
     public void StartNoiseSound()

@@ -7,13 +7,14 @@ using System;
 
 public enum IdentityComposante { None, Activity, Influence, PassiveIdentity, Mood, Interests };
 public enum IdentityCircle { None, Public, Private, Pro, Global };
-public enum ExperienceState { Home, Sync, Loading, Experience, End };
+public enum ExperienceState { Home, Sync, Loading, Experience, Photo };
 
 public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
     public HUDScreen HomeScreen;
     public HUDScreen SyncScreen;
     public HUDScreen LoadingScreen;
+    public HUDScreen PhotoScreen;
 
     public Image overlay;
 
@@ -27,6 +28,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     public KinectCursor rightHandCursor;
     public KinectCursor leftHandPhotoCursor;
     public KinectCursor rightHandPhotoCursor;
+
+    public CanvasGroup fixedBackUI;
+    public CanvasGroup fixedFrontUI;
+    public CanvasGroup interfaceUI;
 
     public float overlayFadeAmount = 0.82f;
     public float overlayFadeTime = 1f;
@@ -43,6 +48,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     Grayscale grayscaleEffect;
     RandomGlitchEnabler glitchEnabler;
     AudioManager audioManager;
+    PhotoManager photoManager;
 
     bool started = false;
 
@@ -51,6 +57,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         audioManager = FindObjectOfType<AudioManager>();
         glitchEnabler = Camera.main.GetComponent<RandomGlitchEnabler>();
         grayscaleEffect = Camera.main.GetComponent<Grayscale>();
+        photoManager = PhotoScreen.GetComponent<PhotoManager>();
+
         grayscaleEffect.rampOffset = -1f;
         grayscaleEffect.enabled = true;
 
@@ -125,7 +133,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         }
         else if (buttonType == KinectButton.ButtonType.Photo)
         {
-            TakePhoto();
+            ShowPhotoScreen();
         }
     }
 
@@ -133,7 +141,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     {
         if (buttonType == KinectButton.ButtonType.Photo)
         {
-            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime);
+            overlayFadeTweener = overlay.DOFade(overlayFadeAmount, overlayFadeTime * 5);
         }
     }
 
@@ -252,12 +260,6 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         rightHandCursor.DisableAll();
     }
 
-    void TakePhoto()
-    {
-        SetActiveHUD(IdentityComposante.None);
-        Debug.Log("Take photo !");
-    }
-
     public void OnRemoteRegistered()
     {
         Debug.Log("OnRemoteRegistered");
@@ -278,13 +280,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
-        HomeScreen.DOKill();
-        SyncScreen.DOKill();
-        LoadingScreen.DOKill();
-
         HomeScreen.FadeIn();
         SyncScreen.FadeOut();
         LoadingScreen.FadeOut();
+        PhotoScreen.FadeOut();
 
         currentState = ExperienceState.Home;
         leftHandCursor.cursorEnabled = false;
@@ -298,13 +297,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
-        HomeScreen.DOKill();
-        SyncScreen.DOKill();
-        LoadingScreen.DOKill();
-
         HomeScreen.FadeOut();
         SyncScreen.FadeIn();
         LoadingScreen.FadeOut();
+        PhotoScreen.FadeOut();
 
         currentState = ExperienceState.Sync;
         leftHandCursor.cursorEnabled = false;
@@ -318,13 +314,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
-        HomeScreen.DOKill();
-        SyncScreen.DOKill();
-        LoadingScreen.DOKill();
-
         HomeScreen.FadeOut();
         SyncScreen.FadeOut();
         LoadingScreen.FadeIn();
+        PhotoScreen.FadeOut();
 
         currentState = ExperienceState.Loading;
         leftHandCursor.cursorEnabled = false;
@@ -336,9 +329,6 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     void ShowExperienceScreen()
     {
         audioManager.ToExperienceSoundtrack();
-        HomeScreen.DOKill();
-        SyncScreen.DOKill();
-        LoadingScreen.DOKill();
 
         HomeScreen.FadeOut();
         SyncScreen.FadeOut();
@@ -346,9 +336,36 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         {
             FadeInScreen();
         });
+        PhotoScreen.FadeOut();
 
         currentState = ExperienceState.Experience;
     }
+
+    void ShowPhotoScreen()
+    {
+        HomeScreen.FadeOut();
+        SyncScreen.FadeOut();
+        LoadingScreen.FadeOut();
+        PhotoScreen.FadeIn();
+
+        currentState = ExperienceState.Photo;
+        SetActiveHUD(IdentityComposante.None);
+
+        fixedBackUI.DOFade(0, overlayFadeTime);
+        fixedFrontUI.DOFade(0, overlayFadeTime);
+        interfaceUI.DOFade(0, overlayFadeTime);
+
+        leftHandCursor.enabled = false;
+        leftHandPhotoCursor.enabled = false;
+        rightHandCursor.enabled = false;
+        rightHandCursor.enabled = false;
+
+        audioManager.ToPhotoSoundtrack();
+        audioManager.PlayValidateSound();
+
+        photoManager.TakePhoto();
+    }
+
 
     void FadeOutScreen()
     {
@@ -399,6 +416,10 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         else if (currentState == ExperienceState.Experience)
         {
             FadeOutScreen();
+        }
+        else if (currentState == ExperienceState.Photo)
+        {
+            ShowHomeScreen();
         }
     }
 

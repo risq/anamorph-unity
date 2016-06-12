@@ -19,7 +19,7 @@ public class HUDScreen : MonoBehaviour {
         for (int i = 0; i < texts.Length; i++)
         {
             typingEffects[i] = texts[i].gameObject.AddComponent<TypingEffect>();
-            typingEffects[i].speed = 0.01f;
+            typingEffects[i].speed = 0.05f;
         }
     }
 
