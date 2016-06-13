@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour {
 
     public void ToPhotoSoundtrack()
     {
-        photoSnapshot.TransitionTo(3f);
+        photoSnapshot.TransitionTo(3.5f);
     }
 
     public void AfterPhotoSoundtrack()

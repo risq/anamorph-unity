@@ -19,6 +19,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     public HUDScreen PhotoScreen;
 
     public Image overlay;
+    public Image fullOverlay;
 
     public HUDGroup activityHUD;
     public HUDGroup influenceHUD;
@@ -307,6 +308,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowHomeScreen()
     {
+        fullOverlay.DOFade(1, 0);
+
         audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
@@ -322,8 +325,6 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         leftHandPhotoCursor.cursorEnabled = false;
         rightHandPhotoCursor.cursorEnabled = false;
         audioManager.PlayValidateSound();
-
-        
     }
 
     void ShowSyncScreen()
@@ -362,6 +363,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     void ShowExperienceScreen()
     {
+        fullOverlay.DOFade(0, 0);
+
         audioManager.ToExperienceSoundtrack();
         SetActiveHUD(IdentityComposante.None);
 
@@ -370,7 +373,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         LoadingScreen.canvasGroup.DOFade(0, 1).OnComplete(() =>
         {
             FadeInScreen();
-            ShowUI();
+            ShowUI(5f);
         });
         PhotoScreen.FadeOut();
 
@@ -450,12 +453,13 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         HUDsUI.DOFade(0, overlayFadeTime);
     }
 
-    public void ShowUI()
+    public void ShowUI(float time = 1f)
     {
-        fixedBackUI.DOFade(1, overlayFadeTime);
-        fixedFrontUI.DOFade(1, overlayFadeTime);
-        interfaceUI.DOFade(1, overlayFadeTime);
-        HUDsUI.DOFade(1, overlayFadeTime);
+        Debug.Log("showUI - " + time);
+        fixedBackUI.DOFade(1, time);
+        fixedFrontUI.DOFade(1, time);
+        interfaceUI.DOFade(1, time);
+        HUDsUI.DOFade(1, time);
     }
 
     public void UserDetected(long userId, int userIndex)
