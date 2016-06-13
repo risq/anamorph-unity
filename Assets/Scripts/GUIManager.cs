@@ -9,6 +9,8 @@ public enum IdentityComposante { None, Activity, Influence, PassiveIdentity, Moo
 public enum IdentityCircle { None, Public, Private, Pro, Global };
 public enum ExperienceState { Home, Sync, Loading, Experience, Photo };
 
+public delegate void OnFadeDelegate();
+
 public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
     public HUDScreen HomeScreen;
@@ -32,6 +34,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     public CanvasGroup fixedBackUI;
     public CanvasGroup fixedFrontUI;
     public CanvasGroup interfaceUI;
+    public CanvasGroup HUDsUI;
 
     public float overlayFadeAmount = 0.82f;
     public float overlayFadeTime = 1f;
@@ -93,6 +96,14 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
                 ShowLoadingScreen();
             else if (currentState == ExperienceState.Loading)
                 ShowExperienceScreen();
+        }
+        else if (Input.GetKeyUp(KeyCode.H))
+        {
+            HideUI();
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            ShowUI();
         }
     }
 
@@ -156,7 +167,6 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     public void OnCursorUnvalidate(KinectButton.ButtonType buttonType)
     {
-        Debug.Log("OnCursorUnvalidate " + buttonType);
         if (buttonType == KinectButton.ButtonType.Activity && currentIdentityComposante == IdentityComposante.Activity ||
             buttonType == KinectButton.ButtonType.Influence && currentIdentityComposante == IdentityComposante.Influence ||
             buttonType == KinectButton.ButtonType.PassiveIdentity && currentIdentityComposante == IdentityComposante.PassiveIdentity ||
@@ -300,9 +310,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         audioManager.ToHomeSoundtrack();
         grayscaleEffect.rampOffset = -1f;
 
-        fixedBackUI.DOFade(1, overlayFadeTime);
-        fixedFrontUI.DOFade(1, overlayFadeTime);
-        interfaceUI.DOFade(1, overlayFadeTime);
+        HideUI();
 
         HomeScreen.FadeIn();
         SyncScreen.FadeOut();
@@ -314,6 +322,8 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         leftHandPhotoCursor.cursorEnabled = false;
         rightHandPhotoCursor.cursorEnabled = false;
         audioManager.PlayValidateSound();
+
+        
     }
 
     void ShowSyncScreen()
@@ -353,12 +363,14 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     void ShowExperienceScreen()
     {
         audioManager.ToExperienceSoundtrack();
+        SetActiveHUD(IdentityComposante.None);
 
         HomeScreen.FadeOut();
         SyncScreen.FadeOut();
         LoadingScreen.canvasGroup.DOFade(0, 1).OnComplete(() =>
         {
             FadeInScreen();
+            ShowUI();
         });
         PhotoScreen.FadeOut();
 
@@ -375,9 +387,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         currentState = ExperienceState.Photo;
         SetActiveHUD(IdentityComposante.None);
 
-        fixedBackUI.DOFade(0, overlayFadeTime);
-        fixedFrontUI.DOFade(0, overlayFadeTime);
-        interfaceUI.DOFade(0, overlayFadeTime);
+        HideUI();
 
         leftHandCursor.enabled = false;
         leftHandPhotoCursor.enabled = false;
@@ -391,13 +401,13 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
     }
 
 
-    void FadeOutScreen()
+    void FadeOutScreen(TweenCallback OnFadeOut = null)
     {
         grayscaleEffect.rampOffset = 0f;
         glitchEnabler.DoGlitch();
         grayscaleEffect.enabled = true;
         grayScaleTween.Kill();
-        grayScaleTween = DOTween.To(() => grayscaleEffect.rampOffset, x => grayscaleEffect.rampOffset = x, -1f, .5f);
+        grayScaleTween = DOTween.To(() => grayscaleEffect.rampOffset, x => grayscaleEffect.rampOffset = x, -1f, .5f).OnComplete(OnFadeOut);
         leftHandCursor.cursorEnabled = false;
         leftHandPhotoCursor.cursorEnabled = false;
         rightHandPhotoCursor.cursorEnabled = false;
@@ -414,13 +424,38 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         grayScaleTween = DOTween.To(() => grayscaleEffect.rampOffset, x => grayscaleEffect.rampOffset = x, 0, 1.5f).OnComplete(OnFadeInScreenComplete);
     }
 
-    void OnFadeInScreenComplete()
+    public void FadeOutInScreen(TweenCallback OnFadeOut)
+    {
+        FadeOutScreen(() =>
+        {
+            OnFadeOut();
+            FadeInScreen();
+        });
+    }
+
+     void OnFadeInScreenComplete()
     {
         glitchEnabler.DoGlitch();
         grayscaleEffect.enabled = false;
         leftHandCursor.cursorEnabled = true;
         leftHandPhotoCursor.cursorEnabled = true;
         rightHandPhotoCursor.cursorEnabled = true;
+    }
+
+    public void HideUI()
+    {
+        fixedBackUI.DOFade(0, overlayFadeTime);
+        fixedFrontUI.DOFade(0, overlayFadeTime);
+        interfaceUI.DOFade(0, overlayFadeTime);
+        HUDsUI.DOFade(0, overlayFadeTime);
+    }
+
+    public void ShowUI()
+    {
+        fixedBackUI.DOFade(1, overlayFadeTime);
+        fixedFrontUI.DOFade(1, overlayFadeTime);
+        interfaceUI.DOFade(1, overlayFadeTime);
+        HUDsUI.DOFade(1, overlayFadeTime);
     }
 
     public void UserDetected(long userId, int userIndex)

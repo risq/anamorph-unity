@@ -119,15 +119,15 @@ public class WebSocketClient : MonoBehaviour {
         }
         else if (Input.GetKeyUp(KeyCode.Alpha1) && JSONSample1)
         {
-            LoadData(JSONSample1);
+            LoadData(JSONSample1, true, true);
         }
         else if (Input.GetKeyUp(KeyCode.Alpha2) && JSONSample2)
         {
-            LoadData(JSONSample2);
+            LoadData(JSONSample2, true, true);
         }
         else if (Input.GetKeyUp(KeyCode.Alpha3) && JSONSample3)
         {
-            LoadData(JSONSample3);
+            LoadData(JSONSample3, true, true);
         }
         else if (Input.GetKeyUp(KeyCode.R))
         {
@@ -135,12 +135,28 @@ public class WebSocketClient : MonoBehaviour {
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
-            LoadData(null);
+            LoadData(null); // Random
         }
     }
 
-    void LoadData(JSONObject data)
+    void LoadData(JSONObject data, bool fade = false, bool hideUI = false)
     {
-        silhouetteController.UpdateData(data);
+        if (hideUI)
+            guiManager.HideUI();
+        else
+            guiManager.ShowUI();
+
+        if (fade)
+        {
+            guiManager.FadeOutInScreen(() =>
+            {
+                silhouetteController.UpdateData(data);
+            });
+        }
+        else
+        {
+            silhouetteController.UpdateData(data);
+        }
+        
     }
 }

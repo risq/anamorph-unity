@@ -230,7 +230,7 @@ public class SilhouetteController : MonoBehaviour {
 
         UpdateData(null);
     }
-	
+
     public void UpdateData(JSONObject data)
     {
         // ========== General ==========
