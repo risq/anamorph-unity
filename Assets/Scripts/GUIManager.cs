@@ -373,7 +373,7 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
         LoadingScreen.canvasGroup.DOFade(0, 1).OnComplete(() =>
         {
             FadeInScreen();
-            ShowUI(5f);
+            ShowUI(10f);
         });
         PhotoScreen.FadeOut();
 
@@ -447,6 +447,11 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     public void HideUI()
     {
+        fixedBackUI.DOKill();
+        fixedFrontUI.DOKill();
+        interfaceUI.DOKill();
+        HUDsUI.DOKill();
+
         fixedBackUI.DOFade(0, overlayFadeTime);
         fixedFrontUI.DOFade(0, overlayFadeTime);
         interfaceUI.DOFade(0, overlayFadeTime);
@@ -455,7 +460,11 @@ public class GUIManager : MonoBehaviour, KinectGestures.GestureListenerInterface
 
     public void ShowUI(float time = 1f)
     {
-        Debug.Log("showUI - " + time);
+        fixedBackUI.DOKill();
+        fixedFrontUI.DOKill();
+        interfaceUI.DOKill();
+        HUDsUI.DOKill();
+
         fixedBackUI.DOFade(1, time);
         fixedFrontUI.DOFade(1, time);
         interfaceUI.DOFade(1, time);

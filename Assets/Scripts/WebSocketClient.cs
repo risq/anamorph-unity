@@ -135,7 +135,7 @@ public class WebSocketClient : MonoBehaviour {
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
-            LoadData(null); // Random
+            LoadData(null, true, true); // Random
         }
     }
 
